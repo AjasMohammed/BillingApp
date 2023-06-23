@@ -20,6 +20,8 @@ from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QSizePolicy, QVBoxLayout, QWidget)
 import resource_rc
 
+from PySide6.QtSvg import QSvgRenderer
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
@@ -132,6 +134,9 @@ class Ui_MainWindow(object):
 "	border-top-left-radius: 18px ;\n"
 "	border-bottom-left-radius: 18px;\n"
 "")
+
+        icon_path = ""
+
         icon = QIcon()
         icon.addFile(u":/icons/home-blue.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.dashboard_btn.setIcon(icon)
@@ -145,6 +150,9 @@ class Ui_MainWindow(object):
         self.newbill_btn.setFont(font2)
         self.newbill_btn.setStyleSheet(u"	padding: 10px 5px;\n"
 "	text-align: left;")
+
+        icon_path = ""
+
         icon1 = QIcon()
         icon1.addFile(u":/icons/file-plus-white.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.newbill_btn.setIcon(icon1)
@@ -158,6 +166,9 @@ class Ui_MainWindow(object):
         self.statistics_btn.setFont(font2)
         self.statistics_btn.setStyleSheet(u"	padding: 10px 5px;\n"
 "	text-align: left;")
+
+        icon_path = ""
+
         icon2 = QIcon()
         icon2.addFile(u":/icons/bar-chart-white.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.statistics_btn.setIcon(icon2)
@@ -171,6 +182,9 @@ class Ui_MainWindow(object):
         self.logout_btn.setFont(font2)
         self.logout_btn.setStyleSheet(u"	padding: 10px 5px;\n"
 "	text-align: left;")
+
+        icon_path = ""
+
         icon3 = QIcon()
         icon3.addFile(u":/icons/log-out-white.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.logout_btn.setIcon(icon3)
@@ -211,6 +225,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.menu_btn = QPushButton(self.menu)
         self.menu_btn.setObjectName(u"menu_btn")
+
+        icon_path = ""
+
         icon4 = QIcon()
         icon4.addFile(u":/icons/bars-solid.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.menu_btn.setIcon(icon4)
@@ -277,6 +294,9 @@ class Ui_MainWindow(object):
         self.profile_btn.setObjectName(u"profile_btn")
         self.profile_btn.setAutoFillBackground(False)
         self.profile_btn.setStyleSheet(u"")
+
+        icon_path = ""
+
         icon5 = QIcon()
         icon5.addFile(u":/icons/circle-user-regular.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.profile_btn.setIcon(icon5)
@@ -470,6 +490,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
         self.arrow_btn = QPushButton(self.goto_btn)
         self.arrow_btn.setObjectName(u"arrow_btn")
+
+        icon_path = ""
+
         icon6 = QIcon()
         icon6.addFile(u":/icons/arrow-right-solid.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.arrow_btn.setIcon(icon6)
