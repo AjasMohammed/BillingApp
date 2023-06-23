@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1054</width>
+    <width>898</width>
     <height>579</height>
    </rect>
   </property>
@@ -58,7 +58,7 @@ border-radius: 20px;
      <number>0</number>
     </property>
     <item>
-     <widget class="QWidget" name="menu_side" native="true">
+     <widget class="QCustomSlideMenu" name="menu_side" native="true">
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
@@ -1546,12 +1546,20 @@ border-radius: 20px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1054</width>
+     <width>898</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomSlideMenu</class>
+   <extends>QWidget</extends>
+   <header location="global">Custom_Widgets.Widgets.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="resources.qrc"/>
  </resources>

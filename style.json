@@ -1,0 +1,16 @@
+{
+    "QCard": [{
+        "cards": [
+            "card1",
+            "card2",
+            "card3",
+            "card4"
+        ],
+        "shadow":[{
+            "color": "#000",
+            "blurRadius": 20,
+            "xOffset": 0,
+            "yOffset": 0
+        }]
+    }]
+}
