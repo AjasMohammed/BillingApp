@@ -8,9 +8,35 @@
         ],
         "shadow":[{
             "color": "#000",
-            "blurRadius": 20,
+            "blurRadius": 10,
             "xOffset": 0,
             "yOffset": 0
+        }]
+    }],
+    "QCustomSlideMenu": [{
+        "name": "menu_side",
+        "defaultSize": [{
+            "width": 230,
+            "height": "parent"
+        }],
+        "collapsedSize": [{
+            "width": 0,
+            "height": "parent"
+        }],
+        "expandedSize": [{
+            "width": 230,
+            "height": "parent"
+        }],
+        "toggleButton": [{
+            "buttonName": "menu_btn",
+            "icons": [{
+                "whenMenuIsCollapsed": ":/blueicons/icons/blue_icons/menu.svg",
+                "whenMenuIsExpanded": ":/blueicons/icons/blue_icons/chevron-left.svg"
+            }]
+        }],
+        "menuTransitionAnimation": [{
+            "animationDuration": 500,
+            "animationEasingCurve": "OutBack"
         }]
     }]
 }

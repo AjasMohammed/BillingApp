@@ -1,0 +1,52 @@
+{
+    "QCard": [{
+        "cards": [
+            "card1",
+            "card2",
+            "card3",
+            "card4"
+        ],
+        "shadow":[{
+            "color": "#000",
+            "blurRadius": 10,
+            "xOffset": 0,
+            "yOffset": 0
+        }]
+    }],
+    "QCustomSlideMenu": [{
+        "name": "menu_side",
+        "floatPosition": [{
+            "relativeTo": "main_body",
+            "position": "top-left",
+            "shadow": [{
+                "color": "#000",
+                "blurRadius": 20,
+                "xOffset": 0,
+                "yOffset": 0
+            }]
+        }],
+        "defaultSize": [{
+            "width": 100,
+            "height": "auto"
+        }],
+        "collapsedSize": [{
+            "width": 0,
+            "height": 0
+        }],
+        "expandedSize": [{
+            "width": 100,
+            "height": "auto"
+        }],
+        "toggleButton": [{
+            "buttonName": "menuBtn",
+            "icons": [{
+                "whenMenuIsCollapsed": ":/path/icon.svg",
+                "whenMenuIsExpanded": ":/path/icon.svg"
+            }]
+        }],
+        "menuTransitionAnimation": [{
+            "animationDuration": 1000,
+            "animationEasingCurve": "OutBack"
+        }]
+    }]
+}

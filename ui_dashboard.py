@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'dashboardeJHDbm.ui'
+## Form generated from reading UI file 'dashboardERrZXH.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -20,17 +20,21 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(965, 579)
+        MainWindow.resize(980, 578)
         MainWindow.setStyleSheet(u"")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
+        font = QFont()
+        font.setFamily(u"Adobe Ming Std")
+        font.setBold(False)
+        font.setWeight(50)
+        self.centralwidget.setFont(font)
         self.centralwidget.setStyleSheet(u"*{\n"
 "	color: #000;\n"
 "	border: none;\n"
 "}\n"
 "#centralwidget{\n"
 "	background-color: #eff9fe;\n"
-"\n"
 "}\n"
 "\n"
 "#menu_side{\n"
@@ -52,10 +56,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.menu_side = QCustomSlideMenu(self.centralwidget)
         self.menu_side.setObjectName(u"menu_side")
+        self.menu_side.setMinimumSize(QSize(230, 0))
+        self.menu_side.setMaximumSize(QSize(230, 16777215))
         self.menu_side.setAutoFillBackground(False)
-        self.menu_side.setStyleSheet(u"background-color:#004cff;\n"
-"\n"
-"")
+        self.menu_side.setStyleSheet(u"background-color:#004cff;")
         self.verticalLayout_25 = QVBoxLayout(self.menu_side)
         self.verticalLayout_25.setSpacing(0)
         self.verticalLayout_25.setObjectName(u"verticalLayout_25")
@@ -80,11 +84,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setContentsMargins(-1, -1, -1, 50)
         self.label_menu = QLabel(self.frame_menutitle)
         self.label_menu.setObjectName(u"label_menu")
-        font = QFont()
-        font.setPointSize(15)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_menu.setFont(font)
+        font1 = QFont()
+        font1.setPointSize(15)
+        font1.setBold(True)
+        font1.setWeight(75)
+        self.label_menu.setFont(font1)
         self.label_menu.setLineWidth(1)
 
         self.horizontalLayout_5.addWidget(self.label_menu, 0, Qt.AlignLeft|Qt.AlignTop)
@@ -100,9 +104,9 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.frame_menuitems.sizePolicy().hasHeightForWidth())
         self.frame_menuitems.setSizePolicy(sizePolicy)
         self.frame_menuitems.setSizeIncrement(QSize(0, 0))
-        font1 = QFont()
-        font1.setPointSize(8)
-        self.frame_menuitems.setFont(font1)
+        font2 = QFont()
+        font2.setPointSize(8)
+        self.frame_menuitems.setFont(font2)
         self.frame_menuitems.setFrameShape(QFrame.StyledPanel)
         self.frame_menuitems.setFrameShadow(QFrame.Raised)
         self.verticalLayout_28 = QVBoxLayout(self.frame_menuitems)
@@ -120,9 +124,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_27.setContentsMargins(35, 0, 0, 0)
         self.dashboard_btn = QPushButton(self.frame_menubtns)
         self.dashboard_btn.setObjectName(u"dashboard_btn")
-        font2 = QFont()
-        font2.setPointSize(12)
-        self.dashboard_btn.setFont(font2)
+        font3 = QFont()
+        font3.setPointSize(12)
+        self.dashboard_btn.setFont(font3)
         self.dashboard_btn.setStyleSheet(u"	background-color: #fefeff;\n"
 "	padding: 10px 5px;\n"
 "	text-align: left;\n"
@@ -130,7 +134,7 @@ class Ui_MainWindow(object):
 "	border-bottom-left-radius: 18px;\n"
 "")
         icon = QIcon()
-        icon.addFile(u":/icons/icons/home-blue.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/blueicons/icons/blue_icons/home.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.dashboard_btn.setIcon(icon)
         self.dashboard_btn.setIconSize(QSize(20, 20))
         self.dashboard_btn.setFlat(True)
@@ -139,11 +143,12 @@ class Ui_MainWindow(object):
 
         self.newbill_btn = QPushButton(self.frame_menubtns)
         self.newbill_btn.setObjectName(u"newbill_btn")
-        self.newbill_btn.setFont(font2)
+        self.newbill_btn.setFont(font3)
         self.newbill_btn.setStyleSheet(u"	padding: 10px 5px;\n"
-"	text-align: left;")
+"	text-align: left;\n"
+"")
         icon1 = QIcon()
-        icon1.addFile(u":/icons/icons/file-plus-white.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u":/whiteicons/icons/white_icons/file-plus.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.newbill_btn.setIcon(icon1)
         self.newbill_btn.setIconSize(QSize(20, 20))
         self.newbill_btn.setFlat(True)
@@ -152,11 +157,11 @@ class Ui_MainWindow(object):
 
         self.statistics_btn = QPushButton(self.frame_menubtns)
         self.statistics_btn.setObjectName(u"statistics_btn")
-        self.statistics_btn.setFont(font2)
+        self.statistics_btn.setFont(font3)
         self.statistics_btn.setStyleSheet(u"	padding: 10px 5px;\n"
 "	text-align: left;")
         icon2 = QIcon()
-        icon2.addFile(u":/icons/icons/bar-chart-white.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u":/whiteicons/icons/white_icons/bar-chart.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.statistics_btn.setIcon(icon2)
         self.statistics_btn.setIconSize(QSize(20, 20))
         self.statistics_btn.setFlat(True)
@@ -165,11 +170,11 @@ class Ui_MainWindow(object):
 
         self.logout_btn = QPushButton(self.frame_menubtns)
         self.logout_btn.setObjectName(u"logout_btn")
-        self.logout_btn.setFont(font2)
+        self.logout_btn.setFont(font3)
         self.logout_btn.setStyleSheet(u"	padding: 10px 5px;\n"
 "	text-align: left;")
         icon3 = QIcon()
-        icon3.addFile(u":/icons/icons/log-out-white.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u":/whiteicons/icons/white_icons/log-out.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.logout_btn.setIcon(icon3)
         self.logout_btn.setIconSize(QSize(20, 20))
         self.logout_btn.setFlat(True)
@@ -209,19 +214,21 @@ class Ui_MainWindow(object):
         self.menu_btn = QPushButton(self.menu)
         self.menu_btn.setObjectName(u"menu_btn")
         icon4 = QIcon()
-        icon4.addFile(u":/icons/icons/bars-solid.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u":/blueicons/icons/blue_icons/menu.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.menu_btn.setIcon(icon4)
-        self.menu_btn.setIconSize(QSize(30, 30))
+        self.menu_btn.setIconSize(QSize(32, 32))
         self.menu_btn.setFlat(True)
 
         self.horizontalLayout_6.addWidget(self.menu_btn)
 
         self.label_appname = QLabel(self.menu)
         self.label_appname.setObjectName(u"label_appname")
-        font3 = QFont()
-        font3.setFamily(u"SF New Republic")
-        font3.setPointSize(20)
-        self.label_appname.setFont(font3)
+        font4 = QFont()
+        font4.setFamily(u"Adobe Ming Std L")
+        font4.setPointSize(15)
+        font4.setBold(True)
+        font4.setWeight(75)
+        self.label_appname.setFont(font4)
 
         self.horizontalLayout_6.addWidget(self.label_appname)
 
@@ -243,13 +250,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.label_dashboard = QLabel(self.frame)
         self.label_dashboard.setObjectName(u"label_dashboard")
-        font4 = QFont()
-        font4.setFamily(u"SF New Republic")
-        font4.setPointSize(28)
-        font4.setBold(True)
-        font4.setUnderline(False)
-        font4.setWeight(75)
-        self.label_dashboard.setFont(font4)
+        font5 = QFont()
+        font5.setFamily(u"Adobe Ming Std L")
+        font5.setPointSize(28)
+        font5.setBold(True)
+        font5.setUnderline(False)
+        font5.setWeight(75)
+        self.label_dashboard.setFont(font5)
         self.label_dashboard.setStyleSheet(u"")
 
         self.horizontalLayout_4.addWidget(self.label_dashboard)
@@ -276,7 +283,7 @@ class Ui_MainWindow(object):
         self.profile_btn.setAutoFillBackground(False)
         self.profile_btn.setStyleSheet(u"")
         icon5 = QIcon()
-        icon5.addFile(u":/icons/icons/circle-user-regular.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u":/blueicons/icons/blue_icons/user.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.profile_btn.setIcon(icon5)
         self.profile_btn.setIconSize(QSize(70, 70))
         self.profile_btn.setFlat(True)
@@ -294,7 +301,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_23.setContentsMargins(0, 0, 0, 0)
         self.label_username = QLabel(self.username)
         self.label_username.setObjectName(u"label_username")
-        self.label_username.setFont(font2)
+        self.label_username.setFont(font3)
         self.label_username.setFrameShape(QFrame.NoFrame)
         self.label_username.setAlignment(Qt.AlignCenter)
 
@@ -316,18 +323,18 @@ class Ui_MainWindow(object):
         self.horizontalLayout_36.setContentsMargins(-1, -1, -1, 9)
         self.title_recentbill = QWidget(self.middle)
         self.title_recentbill.setObjectName(u"title_recentbill")
-        font5 = QFont()
-        font5.setPointSize(10)
-        self.title_recentbill.setFont(font5)
+        font6 = QFont()
+        font6.setPointSize(10)
+        self.title_recentbill.setFont(font6)
         self.title_recentbill.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border-radius: 20px;")
         self.verticalLayout_21 = QVBoxLayout(self.title_recentbill)
         self.verticalLayout_21.setObjectName(u"verticalLayout_21")
         self.label_recentbill = QLabel(self.title_recentbill)
         self.label_recentbill.setObjectName(u"label_recentbill")
-        font6 = QFont()
-        font6.setPointSize(15)
-        self.label_recentbill.setFont(font6)
+        font7 = QFont()
+        font7.setPointSize(15)
+        self.label_recentbill.setFont(font7)
 
         self.verticalLayout_21.addWidget(self.label_recentbill)
 
@@ -339,14 +346,14 @@ class Ui_MainWindow(object):
 
         self.body_frame = QWidget(self.mainbody)
         self.body_frame.setObjectName(u"body_frame")
-        font7 = QFont()
-        font7.setUnderline(False)
-        self.body_frame.setFont(font7)
+        font8 = QFont()
+        font8.setUnderline(False)
+        self.body_frame.setFont(font8)
         self.body_frame.setStyleSheet(u"")
         self.horizontalLayout_7 = QHBoxLayout(self.body_frame)
         self.horizontalLayout_7.setSpacing(20)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.horizontalLayout_7.setContentsMargins(-1, 0, -1, -1)
+        self.horizontalLayout_7.setContentsMargins(10, 10, 10, 10)
         self.card1 = QFrame(self.body_frame)
         self.card1.setObjectName(u"card1")
         self.card1.setStyleSheet(u"")
@@ -368,12 +375,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.label_name = QLabel(self.title_frame)
         self.label_name.setObjectName(u"label_name")
-        font8 = QFont()
-        font8.setPointSize(12)
-        font8.setBold(True)
-        font8.setUnderline(False)
-        font8.setWeight(75)
-        self.label_name.setFont(font8)
+        font9 = QFont()
+        font9.setPointSize(12)
+        font9.setBold(False)
+        font9.setUnderline(True)
+        font9.setWeight(50)
+        font9.setStrikeOut(False)
+        self.label_name.setFont(font9)
         self.label_name.setScaledContents(True)
         self.label_name.setAlignment(Qt.AlignCenter)
         self.label_name.setWordWrap(True)
@@ -385,18 +393,18 @@ class Ui_MainWindow(object):
 
         self.coust_name = QWidget(self.cardbody_frame)
         self.coust_name.setObjectName(u"coust_name")
-        self.coust_name.setFont(font5)
+        self.coust_name.setFont(font6)
         self.horizontalLayout_8 = QHBoxLayout(self.coust_name)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
         self.label_coustomer = QLabel(self.coust_name)
         self.label_coustomer.setObjectName(u"label_coustomer")
-        self.label_coustomer.setFont(font5)
+        self.label_coustomer.setFont(font6)
 
         self.horizontalLayout_8.addWidget(self.label_coustomer)
 
         self.label_coustomername = QLabel(self.coust_name)
         self.label_coustomername.setObjectName(u"label_coustomername")
-        self.label_coustomername.setFont(font5)
+        self.label_coustomername.setFont(font6)
 
         self.horizontalLayout_8.addWidget(self.label_coustomername)
 
@@ -405,18 +413,18 @@ class Ui_MainWindow(object):
 
         self.total = QWidget(self.cardbody_frame)
         self.total.setObjectName(u"total")
-        self.total.setFont(font5)
+        self.total.setFont(font6)
         self.horizontalLayout_9 = QHBoxLayout(self.total)
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.label_total = QLabel(self.total)
         self.label_total.setObjectName(u"label_total")
-        self.label_total.setFont(font5)
+        self.label_total.setFont(font6)
 
         self.horizontalLayout_9.addWidget(self.label_total)
 
         self.label_price = QLabel(self.total)
         self.label_price.setObjectName(u"label_price")
-        self.label_price.setFont(font5)
+        self.label_price.setFont(font6)
 
         self.horizontalLayout_9.addWidget(self.label_price)
 
@@ -425,18 +433,18 @@ class Ui_MainWindow(object):
 
         self.date = QWidget(self.cardbody_frame)
         self.date.setObjectName(u"date")
-        self.date.setFont(font5)
+        self.date.setFont(font6)
         self.horizontalLayout_10 = QHBoxLayout(self.date)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
         self.label_date = QLabel(self.date)
         self.label_date.setObjectName(u"label_date")
-        self.label_date.setFont(font5)
+        self.label_date.setFont(font6)
 
         self.horizontalLayout_10.addWidget(self.label_date)
 
         self.label_billdate = QLabel(self.date)
         self.label_billdate.setObjectName(u"label_billdate")
-        self.label_billdate.setFont(font5)
+        self.label_billdate.setFont(font6)
 
         self.horizontalLayout_10.addWidget(self.label_billdate)
 
@@ -445,18 +453,18 @@ class Ui_MainWindow(object):
 
         self.id = QWidget(self.cardbody_frame)
         self.id.setObjectName(u"id")
-        self.id.setFont(font5)
+        self.id.setFont(font6)
         self.horizontalLayout_11 = QHBoxLayout(self.id)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
         self.label_billid = QLabel(self.id)
         self.label_billid.setObjectName(u"label_billid")
-        self.label_billid.setFont(font5)
+        self.label_billid.setFont(font6)
 
         self.horizontalLayout_11.addWidget(self.label_billid)
 
         self.label_id = QLabel(self.id)
         self.label_id.setObjectName(u"label_id")
-        self.label_id.setFont(font5)
+        self.label_id.setFont(font6)
 
         self.horizontalLayout_11.addWidget(self.label_id)
 
@@ -470,8 +478,9 @@ class Ui_MainWindow(object):
         self.arrow_btn = QPushButton(self.goto_btn)
         self.arrow_btn.setObjectName(u"arrow_btn")
         icon6 = QIcon()
-        icon6.addFile(u":/icons/icons/arrow-right-solid.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(u":/blueicons/icons/blue_icons/arrow-right.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.arrow_btn.setIcon(icon6)
+        self.arrow_btn.setIconSize(QSize(35, 16))
         self.arrow_btn.setFlat(True)
 
         self.verticalLayout_7.addWidget(self.arrow_btn, 0, Qt.AlignRight)
@@ -506,7 +515,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
         self.label_name_5 = QLabel(self.title_frame_5)
         self.label_name_5.setObjectName(u"label_name_5")
-        self.label_name_5.setFont(font8)
+        self.label_name_5.setFont(font9)
         self.label_name_5.setScaledContents(True)
         self.label_name_5.setAlignment(Qt.AlignCenter)
         self.label_name_5.setWordWrap(True)
@@ -518,18 +527,18 @@ class Ui_MainWindow(object):
 
         self.coust_name_5 = QWidget(self.cardbody_frame_2)
         self.coust_name_5.setObjectName(u"coust_name_5")
-        self.coust_name_5.setFont(font5)
+        self.coust_name_5.setFont(font6)
         self.horizontalLayout_24 = QHBoxLayout(self.coust_name_5)
         self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
         self.label_coustomer_5 = QLabel(self.coust_name_5)
         self.label_coustomer_5.setObjectName(u"label_coustomer_5")
-        self.label_coustomer_5.setFont(font5)
+        self.label_coustomer_5.setFont(font6)
 
         self.horizontalLayout_24.addWidget(self.label_coustomer_5)
 
         self.label_coustomername_5 = QLabel(self.coust_name_5)
         self.label_coustomername_5.setObjectName(u"label_coustomername_5")
-        self.label_coustomername_5.setFont(font5)
+        self.label_coustomername_5.setFont(font6)
 
         self.horizontalLayout_24.addWidget(self.label_coustomername_5)
 
@@ -538,18 +547,18 @@ class Ui_MainWindow(object):
 
         self.total_5 = QWidget(self.cardbody_frame_2)
         self.total_5.setObjectName(u"total_5")
-        self.total_5.setFont(font5)
+        self.total_5.setFont(font6)
         self.horizontalLayout_25 = QHBoxLayout(self.total_5)
         self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
         self.label_total_5 = QLabel(self.total_5)
         self.label_total_5.setObjectName(u"label_total_5")
-        self.label_total_5.setFont(font5)
+        self.label_total_5.setFont(font6)
 
         self.horizontalLayout_25.addWidget(self.label_total_5)
 
         self.label_price_5 = QLabel(self.total_5)
         self.label_price_5.setObjectName(u"label_price_5")
-        self.label_price_5.setFont(font5)
+        self.label_price_5.setFont(font6)
 
         self.horizontalLayout_25.addWidget(self.label_price_5)
 
@@ -558,18 +567,18 @@ class Ui_MainWindow(object):
 
         self.date_5 = QWidget(self.cardbody_frame_2)
         self.date_5.setObjectName(u"date_5")
-        self.date_5.setFont(font5)
+        self.date_5.setFont(font6)
         self.horizontalLayout_26 = QHBoxLayout(self.date_5)
         self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
         self.label_date_5 = QLabel(self.date_5)
         self.label_date_5.setObjectName(u"label_date_5")
-        self.label_date_5.setFont(font5)
+        self.label_date_5.setFont(font6)
 
         self.horizontalLayout_26.addWidget(self.label_date_5)
 
         self.label_billdate_5 = QLabel(self.date_5)
         self.label_billdate_5.setObjectName(u"label_billdate_5")
-        self.label_billdate_5.setFont(font5)
+        self.label_billdate_5.setFont(font6)
 
         self.horizontalLayout_26.addWidget(self.label_billdate_5)
 
@@ -578,18 +587,18 @@ class Ui_MainWindow(object):
 
         self.id_5 = QWidget(self.cardbody_frame_2)
         self.id_5.setObjectName(u"id_5")
-        self.id_5.setFont(font5)
+        self.id_5.setFont(font6)
         self.horizontalLayout_27 = QHBoxLayout(self.id_5)
         self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
         self.label_billid_5 = QLabel(self.id_5)
         self.label_billid_5.setObjectName(u"label_billid_5")
-        self.label_billid_5.setFont(font5)
+        self.label_billid_5.setFont(font6)
 
         self.horizontalLayout_27.addWidget(self.label_billid_5)
 
         self.label_id_5 = QLabel(self.id_5)
         self.label_id_5.setObjectName(u"label_id_5")
-        self.label_id_5.setFont(font5)
+        self.label_id_5.setFont(font6)
 
         self.horizontalLayout_27.addWidget(self.label_id_5)
 
@@ -603,6 +612,7 @@ class Ui_MainWindow(object):
         self.arrow_btn_2 = QPushButton(self.goto_btn_2)
         self.arrow_btn_2.setObjectName(u"arrow_btn_2")
         self.arrow_btn_2.setIcon(icon6)
+        self.arrow_btn_2.setIconSize(QSize(35, 16))
         self.arrow_btn_2.setFlat(True)
 
         self.verticalLayout_11.addWidget(self.arrow_btn_2, 0, Qt.AlignRight)
@@ -637,7 +647,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
         self.label_name_6 = QLabel(self.title_frame_6)
         self.label_name_6.setObjectName(u"label_name_6")
-        self.label_name_6.setFont(font8)
+        self.label_name_6.setFont(font9)
         self.label_name_6.setScaledContents(True)
         self.label_name_6.setAlignment(Qt.AlignCenter)
         self.label_name_6.setWordWrap(True)
@@ -649,18 +659,18 @@ class Ui_MainWindow(object):
 
         self.coust_name_6 = QWidget(self.cardbody_frame_3)
         self.coust_name_6.setObjectName(u"coust_name_6")
-        self.coust_name_6.setFont(font5)
+        self.coust_name_6.setFont(font6)
         self.horizontalLayout_28 = QHBoxLayout(self.coust_name_6)
         self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
         self.label_coustomer_6 = QLabel(self.coust_name_6)
         self.label_coustomer_6.setObjectName(u"label_coustomer_6")
-        self.label_coustomer_6.setFont(font5)
+        self.label_coustomer_6.setFont(font6)
 
         self.horizontalLayout_28.addWidget(self.label_coustomer_6)
 
         self.label_coustomername_6 = QLabel(self.coust_name_6)
         self.label_coustomername_6.setObjectName(u"label_coustomername_6")
-        self.label_coustomername_6.setFont(font5)
+        self.label_coustomername_6.setFont(font6)
 
         self.horizontalLayout_28.addWidget(self.label_coustomername_6)
 
@@ -669,18 +679,18 @@ class Ui_MainWindow(object):
 
         self.total_6 = QWidget(self.cardbody_frame_3)
         self.total_6.setObjectName(u"total_6")
-        self.total_6.setFont(font5)
+        self.total_6.setFont(font6)
         self.horizontalLayout_29 = QHBoxLayout(self.total_6)
         self.horizontalLayout_29.setObjectName(u"horizontalLayout_29")
         self.label_total_6 = QLabel(self.total_6)
         self.label_total_6.setObjectName(u"label_total_6")
-        self.label_total_6.setFont(font5)
+        self.label_total_6.setFont(font6)
 
         self.horizontalLayout_29.addWidget(self.label_total_6)
 
         self.label_price_6 = QLabel(self.total_6)
         self.label_price_6.setObjectName(u"label_price_6")
-        self.label_price_6.setFont(font5)
+        self.label_price_6.setFont(font6)
 
         self.horizontalLayout_29.addWidget(self.label_price_6)
 
@@ -689,18 +699,18 @@ class Ui_MainWindow(object):
 
         self.date_6 = QWidget(self.cardbody_frame_3)
         self.date_6.setObjectName(u"date_6")
-        self.date_6.setFont(font5)
+        self.date_6.setFont(font6)
         self.horizontalLayout_30 = QHBoxLayout(self.date_6)
         self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
         self.label_date_6 = QLabel(self.date_6)
         self.label_date_6.setObjectName(u"label_date_6")
-        self.label_date_6.setFont(font5)
+        self.label_date_6.setFont(font6)
 
         self.horizontalLayout_30.addWidget(self.label_date_6)
 
         self.label_billdate_6 = QLabel(self.date_6)
         self.label_billdate_6.setObjectName(u"label_billdate_6")
-        self.label_billdate_6.setFont(font5)
+        self.label_billdate_6.setFont(font6)
 
         self.horizontalLayout_30.addWidget(self.label_billdate_6)
 
@@ -709,18 +719,18 @@ class Ui_MainWindow(object):
 
         self.id_6 = QWidget(self.cardbody_frame_3)
         self.id_6.setObjectName(u"id_6")
-        self.id_6.setFont(font5)
+        self.id_6.setFont(font6)
         self.horizontalLayout_31 = QHBoxLayout(self.id_6)
         self.horizontalLayout_31.setObjectName(u"horizontalLayout_31")
         self.label_billid_6 = QLabel(self.id_6)
         self.label_billid_6.setObjectName(u"label_billid_6")
-        self.label_billid_6.setFont(font5)
+        self.label_billid_6.setFont(font6)
 
         self.horizontalLayout_31.addWidget(self.label_billid_6)
 
         self.label_id_6 = QLabel(self.id_6)
         self.label_id_6.setObjectName(u"label_id_6")
-        self.label_id_6.setFont(font5)
+        self.label_id_6.setFont(font6)
 
         self.horizontalLayout_31.addWidget(self.label_id_6)
 
@@ -734,6 +744,7 @@ class Ui_MainWindow(object):
         self.arrow_btn_3 = QPushButton(self.goto_btn_3)
         self.arrow_btn_3.setObjectName(u"arrow_btn_3")
         self.arrow_btn_3.setIcon(icon6)
+        self.arrow_btn_3.setIconSize(QSize(35, 16))
         self.arrow_btn_3.setFlat(True)
 
         self.verticalLayout_14.addWidget(self.arrow_btn_3, 0, Qt.AlignRight)
@@ -768,7 +779,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_16.setObjectName(u"verticalLayout_16")
         self.label_name_7 = QLabel(self.title_frame_7)
         self.label_name_7.setObjectName(u"label_name_7")
-        self.label_name_7.setFont(font8)
+        self.label_name_7.setFont(font9)
         self.label_name_7.setScaledContents(True)
         self.label_name_7.setAlignment(Qt.AlignCenter)
         self.label_name_7.setWordWrap(True)
@@ -780,18 +791,18 @@ class Ui_MainWindow(object):
 
         self.coust_name_7 = QWidget(self.cardbody_frame_4)
         self.coust_name_7.setObjectName(u"coust_name_7")
-        self.coust_name_7.setFont(font5)
+        self.coust_name_7.setFont(font6)
         self.horizontalLayout_32 = QHBoxLayout(self.coust_name_7)
         self.horizontalLayout_32.setObjectName(u"horizontalLayout_32")
         self.label_coustomer_7 = QLabel(self.coust_name_7)
         self.label_coustomer_7.setObjectName(u"label_coustomer_7")
-        self.label_coustomer_7.setFont(font5)
+        self.label_coustomer_7.setFont(font6)
 
         self.horizontalLayout_32.addWidget(self.label_coustomer_7)
 
         self.label_coustomername_7 = QLabel(self.coust_name_7)
         self.label_coustomername_7.setObjectName(u"label_coustomername_7")
-        self.label_coustomername_7.setFont(font5)
+        self.label_coustomername_7.setFont(font6)
 
         self.horizontalLayout_32.addWidget(self.label_coustomername_7)
 
@@ -800,18 +811,18 @@ class Ui_MainWindow(object):
 
         self.total_7 = QWidget(self.cardbody_frame_4)
         self.total_7.setObjectName(u"total_7")
-        self.total_7.setFont(font5)
+        self.total_7.setFont(font6)
         self.horizontalLayout_33 = QHBoxLayout(self.total_7)
         self.horizontalLayout_33.setObjectName(u"horizontalLayout_33")
         self.label_total_7 = QLabel(self.total_7)
         self.label_total_7.setObjectName(u"label_total_7")
-        self.label_total_7.setFont(font5)
+        self.label_total_7.setFont(font6)
 
         self.horizontalLayout_33.addWidget(self.label_total_7)
 
         self.label_price_7 = QLabel(self.total_7)
         self.label_price_7.setObjectName(u"label_price_7")
-        self.label_price_7.setFont(font5)
+        self.label_price_7.setFont(font6)
 
         self.horizontalLayout_33.addWidget(self.label_price_7)
 
@@ -820,18 +831,18 @@ class Ui_MainWindow(object):
 
         self.date_7 = QWidget(self.cardbody_frame_4)
         self.date_7.setObjectName(u"date_7")
-        self.date_7.setFont(font5)
+        self.date_7.setFont(font6)
         self.horizontalLayout_34 = QHBoxLayout(self.date_7)
         self.horizontalLayout_34.setObjectName(u"horizontalLayout_34")
         self.label_date_7 = QLabel(self.date_7)
         self.label_date_7.setObjectName(u"label_date_7")
-        self.label_date_7.setFont(font5)
+        self.label_date_7.setFont(font6)
 
         self.horizontalLayout_34.addWidget(self.label_date_7)
 
         self.label_billdate_7 = QLabel(self.date_7)
         self.label_billdate_7.setObjectName(u"label_billdate_7")
-        self.label_billdate_7.setFont(font5)
+        self.label_billdate_7.setFont(font6)
 
         self.horizontalLayout_34.addWidget(self.label_billdate_7)
 
@@ -840,18 +851,18 @@ class Ui_MainWindow(object):
 
         self.id_7 = QWidget(self.cardbody_frame_4)
         self.id_7.setObjectName(u"id_7")
-        self.id_7.setFont(font5)
+        self.id_7.setFont(font6)
         self.horizontalLayout_35 = QHBoxLayout(self.id_7)
         self.horizontalLayout_35.setObjectName(u"horizontalLayout_35")
         self.label_billid_7 = QLabel(self.id_7)
         self.label_billid_7.setObjectName(u"label_billid_7")
-        self.label_billid_7.setFont(font5)
+        self.label_billid_7.setFont(font6)
 
         self.horizontalLayout_35.addWidget(self.label_billid_7)
 
         self.label_id_7 = QLabel(self.id_7)
         self.label_id_7.setObjectName(u"label_id_7")
-        self.label_id_7.setFont(font5)
+        self.label_id_7.setFont(font6)
 
         self.horizontalLayout_35.addWidget(self.label_id_7)
 
@@ -865,6 +876,7 @@ class Ui_MainWindow(object):
         self.arrow_btn_4 = QPushButton(self.goto_btn_4)
         self.arrow_btn_4.setObjectName(u"arrow_btn_4")
         self.arrow_btn_4.setIcon(icon6)
+        self.arrow_btn_4.setIconSize(QSize(35, 16))
         self.arrow_btn_4.setFlat(True)
 
         self.verticalLayout_17.addWidget(self.arrow_btn_4, 0, Qt.AlignRight)
@@ -887,7 +899,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 965, 21))
+        self.menubar.setGeometry(QRect(0, 0, 980, 21))
         MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
@@ -906,8 +918,8 @@ class Ui_MainWindow(object):
         self.statistics_btn.setText(QCoreApplication.translate("MainWindow", u" Statistics", None))
         self.logout_btn.setText(QCoreApplication.translate("MainWindow", u" LogOut", None))
         self.menu_btn.setText("")
-        self.label_appname.setText(QCoreApplication.translate("MainWindow", u"PyBill", None))
-        self.label_dashboard.setText(QCoreApplication.translate("MainWindow", u"DashBoard", None))
+        self.label_appname.setText(QCoreApplication.translate("MainWindow", u"Dashboard", None))
+        self.label_dashboard.setText(QCoreApplication.translate("MainWindow", u"Py Bill", None))
         self.profile_btn.setText("")
         self.label_username.setText(QCoreApplication.translate("MainWindow", u"username", None))
         self.label_recentbill.setText(QCoreApplication.translate("MainWindow", u"Recent Bills:", None))

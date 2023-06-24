@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>965</width>
+    <width>980</width>
     <height>579</height>
    </rect>
   </property>
@@ -17,6 +17,13 @@
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="font">
+    <font>
+     <family>Adobe Ming Std</family>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">*{
 	color: #000;
@@ -24,7 +31,6 @@
 }
 #centralwidget{
 	background-color: #eff9fe;
-
 }
 
 #menu_side{
@@ -59,13 +65,23 @@ border-radius: 20px;
     </property>
     <item>
      <widget class="QCustomSlideMenu" name="menu_side" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>230</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>230</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:#004cff;
-
-</string>
+       <string notr="true">background-color:#004cff;</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_25" stretch="0">
        <property name="spacing">
@@ -236,7 +252,7 @@ border-radius: 20px;
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/icons/icons/home-blue.svg</normaloff>:/icons/icons/home-blue.svg</iconset>
+                    <normaloff>:/blueicons/icons/blue_icons/home.svg</normaloff>:/blueicons/icons/blue_icons/home.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -258,14 +274,15 @@ border-radius: 20px;
                   </property>
                   <property name="styleSheet">
                    <string notr="true">	padding: 10px 5px;
-	text-align: left;</string>
+	text-align: left;
+</string>
                   </property>
                   <property name="text">
                    <string> New Bill</string>
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/icons/icons/file-plus-white.svg</normaloff>:/icons/icons/file-plus-white.svg</iconset>
+                    <normaloff>:/whiteicons/icons/white_icons/file-plus.svg</normaloff>:/whiteicons/icons/white_icons/file-plus.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -294,7 +311,7 @@ border-radius: 20px;
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/icons/icons/bar-chart-white.svg</normaloff>:/icons/icons/bar-chart-white.svg</iconset>
+                    <normaloff>:/whiteicons/icons/white_icons/bar-chart.svg</normaloff>:/whiteicons/icons/white_icons/bar-chart.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -323,7 +340,7 @@ border-radius: 20px;
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/icons/icons/log-out-white.svg</normaloff>:/icons/icons/log-out-white.svg</iconset>
+                    <normaloff>:/whiteicons/icons/white_icons/log-out.svg</normaloff>:/whiteicons/icons/white_icons/log-out.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -400,12 +417,12 @@ border-radius: 20px;
                </property>
                <property name="icon">
                 <iconset resource="resources.qrc">
-                 <normaloff>:/icons/icons/bars-solid.svg</normaloff>:/icons/icons/bars-solid.svg</iconset>
+                 <normaloff>:/blueicons/icons/blue_icons/menu.svg</normaloff>:/blueicons/icons/blue_icons/menu.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
-                 <width>30</width>
-                 <height>30</height>
+                 <width>32</width>
+                 <height>32</height>
                 </size>
                </property>
                <property name="flat">
@@ -417,12 +434,14 @@ border-radius: 20px;
               <widget class="QLabel" name="label_appname">
                <property name="font">
                 <font>
-                 <family>SF New Republic</family>
-                 <pointsize>20</pointsize>
+                 <family>Adobe Ming Std L</family>
+                 <pointsize>15</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
                 </font>
                </property>
                <property name="text">
-                <string>PyBill</string>
+                <string>Dashboard</string>
                </property>
               </widget>
              </item>
@@ -466,7 +485,7 @@ border-radius: 20px;
                  <widget class="QLabel" name="label_dashboard">
                   <property name="font">
                    <font>
-                    <family>SF New Republic</family>
+                    <family>Adobe Ming Std L</family>
                     <pointsize>28</pointsize>
                     <weight>75</weight>
                     <bold>true</bold>
@@ -477,7 +496,7 @@ border-radius: 20px;
                    <string notr="true"/>
                   </property>
                   <property name="text">
-                   <string>DashBoard</string>
+                   <string>Py Bill</string>
                   </property>
                  </widget>
                 </item>
@@ -524,7 +543,7 @@ border-radius: 20px;
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/icons/icons/circle-user-regular.svg</normaloff>:/icons/icons/circle-user-regular.svg</iconset>
+                    <normaloff>:/blueicons/icons/blue_icons/user.svg</normaloff>:/blueicons/icons/blue_icons/user.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -638,8 +657,17 @@ border-radius: 20px;</string>
           <property name="spacing">
            <number>20</number>
           </property>
+          <property name="leftMargin">
+           <number>10</number>
+          </property>
           <property name="topMargin">
-           <number>0</number>
+           <number>10</number>
+          </property>
+          <property name="rightMargin">
+           <number>10</number>
+          </property>
+          <property name="bottomMargin">
+           <number>10</number>
           </property>
           <item>
            <widget class="QFrame" name="card1">
@@ -676,9 +704,10 @@ border-radius: 20px;</string>
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
-                       <weight>75</weight>
-                       <bold>true</bold>
-                       <underline>false</underline>
+                       <weight>50</weight>
+                       <bold>false</bold>
+                       <underline>true</underline>
+                       <strikeout>false</strikeout>
                       </font>
                      </property>
                      <property name="text">
@@ -848,7 +877,13 @@ border-radius: 20px;</string>
                      </property>
                      <property name="icon">
                       <iconset resource="resources.qrc">
-                       <normaloff>:/icons/icons/arrow-right-solid.svg</normaloff>:/icons/icons/arrow-right-solid.svg</iconset>
+                       <normaloff>:/blueicons/icons/blue_icons/arrow-right.svg</normaloff>:/blueicons/icons/blue_icons/arrow-right.svg</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>35</width>
+                       <height>16</height>
+                      </size>
                      </property>
                      <property name="flat">
                       <bool>true</bool>
@@ -899,9 +934,10 @@ border-radius: 20px;</string>
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
-                       <weight>75</weight>
-                       <bold>true</bold>
-                       <underline>false</underline>
+                       <weight>50</weight>
+                       <bold>false</bold>
+                       <underline>true</underline>
+                       <strikeout>false</strikeout>
                       </font>
                      </property>
                      <property name="text">
@@ -1071,7 +1107,13 @@ border-radius: 20px;</string>
                      </property>
                      <property name="icon">
                       <iconset resource="resources.qrc">
-                       <normaloff>:/icons/icons/arrow-right-solid.svg</normaloff>:/icons/icons/arrow-right-solid.svg</iconset>
+                       <normaloff>:/blueicons/icons/blue_icons/arrow-right.svg</normaloff>:/blueicons/icons/blue_icons/arrow-right.svg</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>35</width>
+                       <height>16</height>
+                      </size>
                      </property>
                      <property name="flat">
                       <bool>true</bool>
@@ -1122,9 +1164,10 @@ border-radius: 20px;</string>
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
-                       <weight>75</weight>
-                       <bold>true</bold>
-                       <underline>false</underline>
+                       <weight>50</weight>
+                       <bold>false</bold>
+                       <underline>true</underline>
+                       <strikeout>false</strikeout>
                       </font>
                      </property>
                      <property name="text">
@@ -1294,7 +1337,13 @@ border-radius: 20px;</string>
                      </property>
                      <property name="icon">
                       <iconset resource="resources.qrc">
-                       <normaloff>:/icons/icons/arrow-right-solid.svg</normaloff>:/icons/icons/arrow-right-solid.svg</iconset>
+                       <normaloff>:/blueicons/icons/blue_icons/arrow-right.svg</normaloff>:/blueicons/icons/blue_icons/arrow-right.svg</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>35</width>
+                       <height>16</height>
+                      </size>
                      </property>
                      <property name="flat">
                       <bool>true</bool>
@@ -1345,9 +1394,10 @@ border-radius: 20px;</string>
                      <property name="font">
                       <font>
                        <pointsize>12</pointsize>
-                       <weight>75</weight>
-                       <bold>true</bold>
-                       <underline>false</underline>
+                       <weight>50</weight>
+                       <bold>false</bold>
+                       <underline>true</underline>
+                       <strikeout>false</strikeout>
                       </font>
                      </property>
                      <property name="text">
@@ -1517,7 +1567,13 @@ border-radius: 20px;</string>
                      </property>
                      <property name="icon">
                       <iconset resource="resources.qrc">
-                       <normaloff>:/icons/icons/arrow-right-solid.svg</normaloff>:/icons/icons/arrow-right-solid.svg</iconset>
+                       <normaloff>:/blueicons/icons/blue_icons/arrow-right.svg</normaloff>:/blueicons/icons/blue_icons/arrow-right.svg</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>35</width>
+                       <height>16</height>
+                      </size>
                      </property>
                      <property name="flat">
                       <bool>true</bool>
@@ -1546,7 +1602,7 @@ border-radius: 20px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>965</width>
+     <width>980</width>
      <height>21</height>
     </rect>
    </property>
