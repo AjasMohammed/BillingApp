@@ -49,19 +49,23 @@
             "Buttons": [
                 {
                     "Name": "dashboard_btn",
-                    "Icon": ":/whiteicons/icons/white_icons/home.svg"
+                    "IconActive": ":/blueicons/icons/blue_icons/home.svg",
+                    "IconInactive": ":/whiteicons/icons/white_icons/home.svg"
                 },
                 {
                     "Name": "newbill_btn",
-                    "Icon": ":/blueicons/icons/blue_icons/file-plus.svg"
+                    "IconActive": ":/blueicons/icons/blue_icons/file-plus.svg",
+                    "IconInactive": ":/whiteicons/icons/white_icons/file-plus.svg"
                 },
                 {
                     "Name": "statistics_btn",
-                    "Icon": ":/blueicons/icons/blue_icons/bar-chart.svg"
+                    "IconActive": ":/blueicons/icons/blue_icons/bar-chart.svg",
+                    "IconInactive": ":/whiteicons/icons/white_icons/bar-chart.svg"
                 },
                 {
                     "Name": "logout_btn",
-                    "Icon": ":/blueicons/icons/blue_icons/log-out.svg"
+                    "IconActive": ":/blueicons/icons/blue_icons/log-out.svg",
+                    "IconInactive": ":/whiteicons/icons/white_icons/log-out.svg"
                 }
             ],
             "Style":[{
