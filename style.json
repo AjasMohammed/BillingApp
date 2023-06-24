@@ -4,11 +4,16 @@
             "card1",
             "card2",
             "card3",
-            "card4"
+            "card4",
+            "header_frame",
+            "recent_title_frame",
+            "mid_card1",
+            "mid_card2",
+            "mid_card3"
         ],
         "shadow":[{
             "color": "#000",
-            "blurRadius": 10,
+            "blurRadius": 12,
             "xOffset": 0,
             "yOffset": 0
         }]
@@ -16,7 +21,7 @@
     "QCustomSlideMenu": [{
         "name": "menu_side",
         "defaultSize": [{
-            "width": 230,
+            "width": 0,
             "height": "parent"
         }],
         "collapsedSize": [{
@@ -38,5 +43,31 @@
             "animationDuration": 500,
             "animationEasingCurve": "OutBack"
         }]
-    }]
+    }],
+    
+        "QPushButtonGroup": [{
+            "Buttons": [
+                {
+                    "Name": "dashboard_btn",
+                    "Icon": ":/whiteicons/icons/white_icons/home.svg"
+                },
+                {
+                    "Name": "newbill_btn",
+                    "Icon": ":/blueicons/icons/blue_icons/file-plus.svg"
+                },
+                {
+                    "Name": "statistics_btn",
+                    "Icon": ":/blueicons/icons/blue_icons/bar-chart.svg"
+                },
+                {
+                    "Name": "logout_btn",
+                    "Icon": ":/blueicons/icons/blue_icons/log-out.svg"
+                }
+            ],
+            "Style":[{
+                "Active": "background-color: #fefeff;border-top-left-radius: 18px ;border-bottom-left-radius: 18px",
+                "NotActive": ""
+            }]
+        }]
+    
 }

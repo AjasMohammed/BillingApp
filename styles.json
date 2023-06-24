@@ -48,5 +48,19 @@
             "animationDuration": 1000,
             "animationEasingCurve": "OutBack"
         }]
-    }]
+    }],
+    
+        "QPushButtonGroup": [{
+            "Buttons": [
+                "pushButton",
+                "pushButton_2",
+                "pushButton_3",
+                "pushButton_4"
+            ],
+            "Style":[{
+                "Active": "background-color: #015371;",
+                "NotActive": "background-color: transparent;"
+            }]
+        }]
+    
 }
