@@ -1,17 +1,17 @@
 <RCC>
   <qresource prefix="icons">
-    <file alias="address-book-regular.svg">address-book-regular.svg</file>
-    <file alias="arrow-right-solid.svg">arrow-right-solid.svg</file>
-    <file alias="bar-chart-blue.svg">bar-chart-blue.svg</file>
-    <file alias="bar-chart-white.svg">bar-chart-white.svg</file>
-    <file alias="bars-solid.svg">bars-solid.svg</file>
-    <file alias="circle-user-regular.svg">circle-user-regular.svg</file>
-    <file alias="file-plus-blue.svg">file-plus-blue.svg</file>
-    <file alias="file-plus-white.svg">file-plus-white.svg</file>
-    <file alias="home-blue.svg">home-blue.svg</file>
-    <file alias="home-white.svg">home-white.svg</file>
-    <file alias="log-out-blue.svg">log-out-blue.svg</file>
-    <file alias="log-out-white.svg">log-out-white.svg</file>
-    <file alias="user-solid.svg">user-solid.svg</file>
+    <file>icons/address-book-regular.svg</file>
+    <file>icons/arrow-right-solid.svg</file>
+    <file>icons/bar-chart-blue.svg</file>
+    <file>icons/bar-chart-white.svg</file>
+    <file>icons/bars-solid.svg</file>
+    <file>icons/circle-user-regular.svg</file>
+    <file>icons/file-plus-blue.svg</file>
+    <file>icons/file-plus-white.svg</file>
+    <file>icons/home-blue.svg</file>
+    <file>icons/home-white.svg</file>
+    <file>icons/log-out-blue.svg</file>
+    <file>icons/log-out-white.svg</file>
+    <file>icons/user-solid.svg</file>
   </qresource>
 </RCC>

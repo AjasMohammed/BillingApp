@@ -1,32 +1,26 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'dashboard.ui'
+## Form generated from reading UI file 'dashboardeJHDbm.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.1
+## Created by: Qt User Interface Compiler version 5.15.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QLayout, QMainWindow, QMenuBar, QPushButton,
-    QSizePolicy, QVBoxLayout, QWidget)
+from PySide2.QtCore import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import *
 
 from Custom_Widgets.Widgets import QCustomSlideMenu
-import resource_rc
+
+import resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(898, 579)
+        MainWindow.resize(965, 579)
         MainWindow.setStyleSheet(u"")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -89,6 +83,7 @@ class Ui_MainWindow(object):
         font = QFont()
         font.setPointSize(15)
         font.setBold(True)
+        font.setWeight(75)
         self.label_menu.setFont(font)
         self.label_menu.setLineWidth(1)
 
@@ -135,7 +130,7 @@ class Ui_MainWindow(object):
 "	border-bottom-left-radius: 18px;\n"
 "")
         icon = QIcon()
-        icon.addFile(u":/icons/home-blue.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/icons/icons/home-blue.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.dashboard_btn.setIcon(icon)
         self.dashboard_btn.setIconSize(QSize(20, 20))
         self.dashboard_btn.setFlat(True)
@@ -148,7 +143,7 @@ class Ui_MainWindow(object):
         self.newbill_btn.setStyleSheet(u"	padding: 10px 5px;\n"
 "	text-align: left;")
         icon1 = QIcon()
-        icon1.addFile(u":/icons/file-plus-white.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u":/icons/icons/file-plus-white.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.newbill_btn.setIcon(icon1)
         self.newbill_btn.setIconSize(QSize(20, 20))
         self.newbill_btn.setFlat(True)
@@ -161,7 +156,7 @@ class Ui_MainWindow(object):
         self.statistics_btn.setStyleSheet(u"	padding: 10px 5px;\n"
 "	text-align: left;")
         icon2 = QIcon()
-        icon2.addFile(u":/icons/bar-chart-white.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u":/icons/icons/bar-chart-white.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.statistics_btn.setIcon(icon2)
         self.statistics_btn.setIconSize(QSize(20, 20))
         self.statistics_btn.setFlat(True)
@@ -174,7 +169,7 @@ class Ui_MainWindow(object):
         self.logout_btn.setStyleSheet(u"	padding: 10px 5px;\n"
 "	text-align: left;")
         icon3 = QIcon()
-        icon3.addFile(u":/icons/log-out-white.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u":/icons/icons/log-out-white.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.logout_btn.setIcon(icon3)
         self.logout_btn.setIconSize(QSize(20, 20))
         self.logout_btn.setFlat(True)
@@ -214,9 +209,9 @@ class Ui_MainWindow(object):
         self.menu_btn = QPushButton(self.menu)
         self.menu_btn.setObjectName(u"menu_btn")
         icon4 = QIcon()
-        icon4.addFile(u":/icons/bars-solid.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u":/icons/icons/bars-solid.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.menu_btn.setIcon(icon4)
-        self.menu_btn.setIconSize(QSize(25, 25))
+        self.menu_btn.setIconSize(QSize(30, 30))
         self.menu_btn.setFlat(True)
 
         self.horizontalLayout_6.addWidget(self.menu_btn)
@@ -224,7 +219,7 @@ class Ui_MainWindow(object):
         self.label_appname = QLabel(self.menu)
         self.label_appname.setObjectName(u"label_appname")
         font3 = QFont()
-        font3.setFamilies([u"SF New Republic"])
+        font3.setFamily(u"SF New Republic")
         font3.setPointSize(20)
         self.label_appname.setFont(font3)
 
@@ -249,10 +244,11 @@ class Ui_MainWindow(object):
         self.label_dashboard = QLabel(self.frame)
         self.label_dashboard.setObjectName(u"label_dashboard")
         font4 = QFont()
-        font4.setFamilies([u"SF New Republic"])
+        font4.setFamily(u"SF New Republic")
         font4.setPointSize(28)
         font4.setBold(True)
         font4.setUnderline(False)
+        font4.setWeight(75)
         self.label_dashboard.setFont(font4)
         self.label_dashboard.setStyleSheet(u"")
 
@@ -280,7 +276,7 @@ class Ui_MainWindow(object):
         self.profile_btn.setAutoFillBackground(False)
         self.profile_btn.setStyleSheet(u"")
         icon5 = QIcon()
-        icon5.addFile(u":/icons/circle-user-regular.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u":/icons/icons/circle-user-regular.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.profile_btn.setIcon(icon5)
         self.profile_btn.setIconSize(QSize(70, 70))
         self.profile_btn.setFlat(True)
@@ -376,6 +372,7 @@ class Ui_MainWindow(object):
         font8.setPointSize(12)
         font8.setBold(True)
         font8.setUnderline(False)
+        font8.setWeight(75)
         self.label_name.setFont(font8)
         self.label_name.setScaledContents(True)
         self.label_name.setAlignment(Qt.AlignCenter)
@@ -473,7 +470,7 @@ class Ui_MainWindow(object):
         self.arrow_btn = QPushButton(self.goto_btn)
         self.arrow_btn.setObjectName(u"arrow_btn")
         icon6 = QIcon()
-        icon6.addFile(u":/icons/arrow-right-solid.svg", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(u":/icons/icons/arrow-right-solid.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.arrow_btn.setIcon(icon6)
         self.arrow_btn.setFlat(True)
 
@@ -890,7 +887,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 898, 21))
+        self.menubar.setGeometry(QRect(0, 0, 965, 21))
         MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)

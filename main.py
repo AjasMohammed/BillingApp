@@ -1,6 +1,6 @@
 import sys
 
-from ui_modified import *
+from ui_dashboard import *
 from Custom_Widgets.Widgets import loadJsonStyle
 
 
@@ -28,4 +28,4 @@ if __name__ == "__main__":
     window = MainWindow()
 
     window.show()
-    sys.exit(app.exec())
+    sys.exit(app.exec_())

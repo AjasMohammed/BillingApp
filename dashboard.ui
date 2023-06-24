@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>898</width>
+    <width>965</width>
     <height>579</height>
    </rect>
   </property>
@@ -236,7 +236,7 @@ border-radius: 20px;
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/icons/home-blue.svg</normaloff>:/icons/home-blue.svg</iconset>
+                    <normaloff>:/icons/icons/home-blue.svg</normaloff>:/icons/icons/home-blue.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -265,7 +265,7 @@ border-radius: 20px;
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/icons/file-plus-white.svg</normaloff>:/icons/file-plus-white.svg</iconset>
+                    <normaloff>:/icons/icons/file-plus-white.svg</normaloff>:/icons/icons/file-plus-white.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -294,7 +294,7 @@ border-radius: 20px;
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/icons/bar-chart-white.svg</normaloff>:/icons/bar-chart-white.svg</iconset>
+                    <normaloff>:/icons/icons/bar-chart-white.svg</normaloff>:/icons/icons/bar-chart-white.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -323,7 +323,7 @@ border-radius: 20px;
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/icons/log-out-white.svg</normaloff>:/icons/log-out-white.svg</iconset>
+                    <normaloff>:/icons/icons/log-out-white.svg</normaloff>:/icons/icons/log-out-white.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -400,12 +400,12 @@ border-radius: 20px;
                </property>
                <property name="icon">
                 <iconset resource="resources.qrc">
-                 <normaloff>:/icons/bars-solid.svg</normaloff>:/icons/bars-solid.svg</iconset>
+                 <normaloff>:/icons/icons/bars-solid.svg</normaloff>:/icons/icons/bars-solid.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
-                 <width>25</width>
-                 <height>25</height>
+                 <width>30</width>
+                 <height>30</height>
                 </size>
                </property>
                <property name="flat">
@@ -524,7 +524,7 @@ border-radius: 20px;
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/icons/circle-user-regular.svg</normaloff>:/icons/circle-user-regular.svg</iconset>
+                    <normaloff>:/icons/icons/circle-user-regular.svg</normaloff>:/icons/icons/circle-user-regular.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -848,7 +848,7 @@ border-radius: 20px;</string>
                      </property>
                      <property name="icon">
                       <iconset resource="resources.qrc">
-                       <normaloff>:/icons/arrow-right-solid.svg</normaloff>:/icons/arrow-right-solid.svg</iconset>
+                       <normaloff>:/icons/icons/arrow-right-solid.svg</normaloff>:/icons/icons/arrow-right-solid.svg</iconset>
                      </property>
                      <property name="flat">
                       <bool>true</bool>
@@ -1071,7 +1071,7 @@ border-radius: 20px;</string>
                      </property>
                      <property name="icon">
                       <iconset resource="resources.qrc">
-                       <normaloff>:/icons/arrow-right-solid.svg</normaloff>:/icons/arrow-right-solid.svg</iconset>
+                       <normaloff>:/icons/icons/arrow-right-solid.svg</normaloff>:/icons/icons/arrow-right-solid.svg</iconset>
                      </property>
                      <property name="flat">
                       <bool>true</bool>
@@ -1294,7 +1294,7 @@ border-radius: 20px;</string>
                      </property>
                      <property name="icon">
                       <iconset resource="resources.qrc">
-                       <normaloff>:/icons/arrow-right-solid.svg</normaloff>:/icons/arrow-right-solid.svg</iconset>
+                       <normaloff>:/icons/icons/arrow-right-solid.svg</normaloff>:/icons/icons/arrow-right-solid.svg</iconset>
                      </property>
                      <property name="flat">
                       <bool>true</bool>
@@ -1517,7 +1517,7 @@ border-radius: 20px;</string>
                      </property>
                      <property name="icon">
                       <iconset resource="resources.qrc">
-                       <normaloff>:/icons/arrow-right-solid.svg</normaloff>:/icons/arrow-right-solid.svg</iconset>
+                       <normaloff>:/icons/icons/arrow-right-solid.svg</normaloff>:/icons/icons/arrow-right-solid.svg</iconset>
                      </property>
                      <property name="flat">
                       <bool>true</bool>
@@ -1546,7 +1546,7 @@ border-radius: 20px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>898</width>
+     <width>965</width>
      <height>21</height>
     </rect>
    </property>
