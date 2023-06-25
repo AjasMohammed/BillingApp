@@ -1,6 +1,6 @@
 import sys
 
-from ui_dashboard_1 import *
+from ui_dashboard import *
 from Custom_Widgets.Widgets import *
 # from custom_buttons import loadJsonStyle as lj
 
@@ -10,6 +10,9 @@ class MainWindow(QMainWindow):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        # lj(self.ui.add_btn)
+        # lj(self.ui.save_btn)
 
 
         ########################################################################

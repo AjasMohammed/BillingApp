@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'dashboardHQsBWV.ui'
+## Form generated from reading UI file 'dashboardusdOtH.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -1272,9 +1272,7 @@ class Ui_MainWindow(object):
         self.bill_info_frame.setMaximumSize(QSize(10000, 10000))
         self.bill_info_frame.setStyleSheet(u"")
         self.verticalLayout_33 = QVBoxLayout(self.bill_info_frame)
-        self.verticalLayout_33.setSpacing(5)
         self.verticalLayout_33.setObjectName(u"verticalLayout_33")
-        self.verticalLayout_33.setContentsMargins(0, 0, 0, 0)
         self.customer_info_frame = QFrame(self.bill_info_frame)
         self.customer_info_frame.setObjectName(u"customer_info_frame")
         self.customer_info_frame.setFrameShape(QFrame.StyledPanel)
