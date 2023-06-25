@@ -9,11 +9,17 @@
             "recent_title_frame",
             "mid_card1",
             "mid_card2",
-            "mid_card3"
+            "mid_card3",
+            "product_info_frame",
+            "customer_info_frame",
+            "bill_view",
+            "bill_tag_field",
+            "save_btn",
+            "add_btn"
         ],
         "shadow":[{
             "color": "#000",
-            "blurRadius": 12,
+            "blurRadius": 10,
             "xOffset": 0,
             "yOffset": 0
         }]
@@ -40,7 +46,7 @@
             }]
         }],
         "menuTransitionAnimation": [{
-            "animationDuration": 500,
+            "animationDuration": 300,
             "animationEasingCurve": "OutBack"
         }]
     }],
@@ -72,6 +78,31 @@
                 "Active": "background-color: #fefeff;border-top-left-radius: 18px ;border-bottom-left-radius: 18px",
                 "NotActive": ""
             }]
-        }]
-    
+        }],
+        "QStackedWidget":[{
+                "name":"body_frame",
+                "transitionAnimation":[{
+                        "fade":[{
+                                "active": true,
+                                "duration":100,
+                                "easingCurve": "OutBack"
+                            }],
+                        "slide":[{
+                                "active":true,
+                                "duration": 200,
+                                "direction": "horizontal",
+                                "easingCurve": "OutBack"
+                            }]
+                    }],
+                "navigation":[{
+                        "navigationButtons":[
+                            {
+                                "dashboard_btn": "dashboard",
+                                "newbill_btn": "newbill" ,
+                                "statistics_btn": "statistics" 
+                            }
+                        ]
+                    }]
+            }]
+
 }

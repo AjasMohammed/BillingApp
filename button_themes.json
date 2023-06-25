@@ -1,0 +1,16 @@
+{
+	"buttons": [
+		{
+			"name": "add_btn",
+			"shadow":[{
+				"blurRadius": 10
+		}]
+		},
+		{
+			"name": "save_btn",
+			"shadow":[{
+				"blurRadius": 10
+		}]
+		}
+	]
+}
