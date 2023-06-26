@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'dashboardoNxvST.ui'
+## Form generated from reading UI file 'dashboardIhZXZO.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -30,6 +30,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         font1 = QFont()
         font1.setFamily(u"Adobe Ming Std")
+        font1.setPointSize(8)
         font1.setBold(False)
         font1.setWeight(50)
         self.centralwidget.setFont(font1)
@@ -61,7 +62,7 @@ class Ui_MainWindow(object):
 "padding: 10px 5px;\n"
 "text-align: left;\n"
 "}\n"
-"#customer_name_field, #customer_contact_field, #product_name_field, #product_id_field, #product_qty_field, #product_price_field, #bill_tag_field{\n"
+"#customer_name_field, #customer_contact_field, #product_name_field, #product_id_field, #product_qty_field, #product_price_field, #bill_tag_field, #stat_billtag_field{\n"
 "border-radius:5px;\n"
 "}\n"
 "#customer_info_frame, #product_info_frame, #bill_view{\n"
@@ -1648,7 +1649,7 @@ class Ui_MainWindow(object):
         self.tableWidget.setFrameShape(QFrame.Panel)
         self.tableWidget.setFrameShadow(QFrame.Plain)
         self.tableWidget.setLineWidth(1)
-        self.tableWidget.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        self.tableWidget.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
         self.tableWidget.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContentsOnFirstShow)
         self.tableWidget.setAutoScrollMargin(16)
         self.tableWidget.setEditTriggers(QAbstractItemView.DoubleClicked|QAbstractItemView.EditKeyPressed)
@@ -1777,6 +1778,171 @@ class Ui_MainWindow(object):
         self.body_frame.addWidget(self.newbill)
         self.statistics = QWidget()
         self.statistics.setObjectName(u"statistics")
+        self.verticalLayout_42 = QVBoxLayout(self.statistics)
+        self.verticalLayout_42.setObjectName(u"verticalLayout_42")
+        self.body = QFrame(self.statistics)
+        self.body.setObjectName(u"body")
+        self.body.setFrameShape(QFrame.StyledPanel)
+        self.body.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_43 = QVBoxLayout(self.body)
+        self.verticalLayout_43.setObjectName(u"verticalLayout_43")
+        self.selection_frame = QFrame(self.body)
+        self.selection_frame.setObjectName(u"selection_frame")
+        sizePolicy1.setHeightForWidth(self.selection_frame.sizePolicy().hasHeightForWidth())
+        self.selection_frame.setSizePolicy(sizePolicy1)
+        self.selection_frame.setMaximumSize(QSize(561, 16777215))
+        self.selection_frame.setFrameShape(QFrame.StyledPanel)
+        self.selection_frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_46 = QHBoxLayout(self.selection_frame)
+        self.horizontalLayout_46.setSpacing(10)
+        self.horizontalLayout_46.setObjectName(u"horizontalLayout_46")
+        self.horizontalLayout_46.setContentsMargins(-1, -1, 65, -1)
+        self.frame_2 = QFrame(self.selection_frame)
+        self.frame_2.setObjectName(u"frame_2")
+        sizePolicy1.setHeightForWidth(self.frame_2.sizePolicy().hasHeightForWidth())
+        self.frame_2.setSizePolicy(sizePolicy1)
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_47 = QHBoxLayout(self.frame_2)
+        self.horizontalLayout_47.setObjectName(u"horizontalLayout_47")
+        self.label_9 = QLabel(self.frame_2)
+        self.label_9.setObjectName(u"label_9")
+        sizePolicy7 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.label_9.sizePolicy().hasHeightForWidth())
+        self.label_9.setSizePolicy(sizePolicy7)
+        self.label_9.setFont(font6)
+        self.label_9.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_47.addWidget(self.label_9)
+
+        self.vis_type = QComboBox(self.frame_2)
+        self.vis_type.addItem("")
+        self.vis_type.addItem("")
+        self.vis_type.addItem("")
+        self.vis_type.setObjectName(u"vis_type")
+        sizePolicy5.setHeightForWidth(self.vis_type.sizePolicy().hasHeightForWidth())
+        self.vis_type.setSizePolicy(sizePolicy5)
+        self.vis_type.setFont(font6)
+        self.vis_type.setEditable(True)
+        self.vis_type.setSizeAdjustPolicy(QComboBox.AdjustToContentsOnFirstShow)
+        self.vis_type.setFrame(True)
+
+        self.horizontalLayout_47.addWidget(self.vis_type, 0, Qt.AlignLeft)
+
+
+        self.horizontalLayout_46.addWidget(self.frame_2)
+
+        self.frame_3 = QFrame(self.selection_frame)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_48 = QHBoxLayout(self.frame_3)
+        self.horizontalLayout_48.setObjectName(u"horizontalLayout_48")
+        self.label_10 = QLabel(self.frame_3)
+        self.label_10.setObjectName(u"label_10")
+        sizePolicy7.setHeightForWidth(self.label_10.sizePolicy().hasHeightForWidth())
+        self.label_10.setSizePolicy(sizePolicy7)
+        self.label_10.setFont(font6)
+
+        self.horizontalLayout_48.addWidget(self.label_10)
+
+        self.vis_timeframe = QComboBox(self.frame_3)
+        self.vis_timeframe.addItem("")
+        self.vis_timeframe.addItem("")
+        self.vis_timeframe.addItem("")
+        self.vis_timeframe.setObjectName(u"vis_timeframe")
+        self.vis_timeframe.setEnabled(True)
+        sizePolicy5.setHeightForWidth(self.vis_timeframe.sizePolicy().hasHeightForWidth())
+        self.vis_timeframe.setSizePolicy(sizePolicy5)
+        self.vis_timeframe.setFont(font6)
+
+        self.horizontalLayout_48.addWidget(self.vis_timeframe, 0, Qt.AlignLeft)
+
+
+        self.horizontalLayout_46.addWidget(self.frame_3, 0, Qt.AlignLeft)
+
+        self.vis_btn = QPushButton(self.selection_frame)
+        self.vis_btn.setObjectName(u"vis_btn")
+        self.vis_btn.setEnabled(False)
+        sizePolicy8 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Expanding)
+        sizePolicy8.setHorizontalStretch(0)
+        sizePolicy8.setVerticalStretch(0)
+        sizePolicy8.setHeightForWidth(self.vis_btn.sizePolicy().hasHeightForWidth())
+        self.vis_btn.setSizePolicy(sizePolicy8)
+        self.vis_btn.setMaximumSize(QSize(105, 50))
+        self.vis_btn.setFont(font15)
+        self.vis_btn.setStyleSheet(u"background-color: #004cff;\n"
+"border-radius:8px;\n"
+"color: rgb(255, 255, 255);")
+        icon10 = QIcon()
+        icon10.addFile(u":/whiteicons/icons/white_icons/activity.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.vis_btn.setIcon(icon10)
+        self.vis_btn.setIconSize(QSize(30, 30))
+
+        self.horizontalLayout_46.addWidget(self.vis_btn)
+
+
+        self.verticalLayout_43.addWidget(self.selection_frame, 0, Qt.AlignLeft)
+
+        self.chart_frame = QFrame(self.body)
+        self.chart_frame.setObjectName(u"chart_frame")
+        self.chart_frame.setFrameShape(QFrame.StyledPanel)
+        self.chart_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_44 = QVBoxLayout(self.chart_frame)
+        self.verticalLayout_44.setObjectName(u"verticalLayout_44")
+        self.stackedWidget = QStackedWidget(self.chart_frame)
+        self.stackedWidget.setObjectName(u"stackedWidget")
+        self.bar_chart_page = QWidget()
+        self.bar_chart_page.setObjectName(u"bar_chart_page")
+        self.verticalLayout_45 = QVBoxLayout(self.bar_chart_page)
+        self.verticalLayout_45.setObjectName(u"verticalLayout_45")
+        self.frame_4 = QFrame(self.bar_chart_page)
+        self.frame_4.setObjectName(u"frame_4")
+        sizePolicy1.setHeightForWidth(self.frame_4.sizePolicy().hasHeightForWidth())
+        self.frame_4.setSizePolicy(sizePolicy1)
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_46 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_46.setObjectName(u"verticalLayout_46")
+        self.label_11 = QLabel(self.frame_4)
+        self.label_11.setObjectName(u"label_11")
+        sizePolicy1.setHeightForWidth(self.label_11.sizePolicy().hasHeightForWidth())
+        self.label_11.setSizePolicy(sizePolicy1)
+        font19 = QFont()
+        font19.setPointSize(18)
+        font19.setBold(False)
+        font19.setUnderline(True)
+        font19.setWeight(50)
+        self.label_11.setFont(font19)
+        self.label_11.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_46.addWidget(self.label_11)
+
+
+        self.verticalLayout_45.addWidget(self.frame_4)
+
+        self.chart_vis_frame = QFrame(self.bar_chart_page)
+        self.chart_vis_frame.setObjectName(u"chart_vis_frame")
+        self.chart_vis_frame.setFrameShape(QFrame.StyledPanel)
+        self.chart_vis_frame.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_45.addWidget(self.chart_vis_frame)
+
+        self.stackedWidget.addWidget(self.bar_chart_page)
+        self.page_4 = QWidget()
+        self.page_4.setObjectName(u"page_4")
+        self.stackedWidget.addWidget(self.page_4)
+
+        self.verticalLayout_44.addWidget(self.stackedWidget)
+
+
+        self.verticalLayout_43.addWidget(self.chart_frame)
+
+
+        self.verticalLayout_42.addWidget(self.body)
+
         self.body_frame.addWidget(self.statistics)
 
         self.verticalLayout.addWidget(self.body_frame)
@@ -1800,6 +1966,8 @@ class Ui_MainWindow(object):
         self.profile_btn.setDefault(False)
         self.add_btn.setDefault(False)
         self.save_btn.setDefault(False)
+        self.vis_type.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1978,5 +2146,19 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"Bill Tag :", None))
         self.bill_tag_field.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Bill Name", None))
         self.save_btn.setText(QCoreApplication.translate("MainWindow", u"Save", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Select Type:", None))
+        self.vis_type.setItemText(0, QCoreApplication.translate("MainWindow", u"BarChart", None))
+        self.vis_type.setItemText(1, QCoreApplication.translate("MainWindow", u"LineGraph", None))
+        self.vis_type.setItemText(2, QCoreApplication.translate("MainWindow", u"PieChart", None))
+
+        self.vis_type.setCurrentText(QCoreApplication.translate("MainWindow", u"BarChart", None))
+        self.vis_type.setPlaceholderText(QCoreApplication.translate("MainWindow", u"select type", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"TimeFrame:", None))
+        self.vis_timeframe.setItemText(0, QCoreApplication.translate("MainWindow", u"Today", None))
+        self.vis_timeframe.setItemText(1, QCoreApplication.translate("MainWindow", u"This Week", None))
+        self.vis_timeframe.setItemText(2, QCoreApplication.translate("MainWindow", u"This Month", None))
+
+        self.vis_btn.setText(QCoreApplication.translate("MainWindow", u"Visualise", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Bar Chart", None))
     # retranslateUi
 
