@@ -48,10 +48,10 @@ class MainWindow(QMainWindow):
         else:
             print("Query execution failed.")
         
-        print(self.id)
-        print(self.username)
-        print(self.password)
-        print(self.company)
+        # print(self.id)
+        # print(self.username)
+        # print(self.password)
+        # print(self.company)
 
 
         # Setting the default page to dashboard
@@ -129,20 +129,26 @@ class LoginWindow(QMainWindow):
         self.ui.setupUi(self)
 
         # BUTTON CLICKS
-        self.ui.goto_login.clicked.connect(lambda : self.ui.stackedWidget.setCurrentWidget(self.ui.login_frame))
-        self.ui.goto_signup.clicked.connect(lambda : self.ui.stackedWidget.setCurrentWidget(self.ui.signup_frame))
+        self.ui.goto_login.clicked.connect(lambda : self.ui.auth_frame.setCurrentWidget(self.ui.login_frame))
+        self.ui.goto_signup.clicked.connect(lambda : self.ui.auth_frame.setCurrentWidget(self.ui.signup_frame))
 
         self.ui.signup_btn.clicked.connect(self.signup_info)
         self.ui.login_btn.clicked.connect(self.login_info)
 
         self.ui.auth_frame.setCurrentWidget(self.ui.login_frame)
 
+        # Initialize the completer model
+        self.completer_model = QStringListModel()
+
+        # Connect the completer to the username field
+        self.ui.username_field_login.setCompleter(self.auto_complete())
+
 
         self.username = ""
         self.password = ""
         self.company_name = ""
 
-
+        self.auto_complete()
 
 
         self.show()
@@ -165,7 +171,6 @@ class LoginWindow(QMainWindow):
 
         else:
 
-            print("User Doesn't Exist")
             QMessageBox.information(self, "User Created", "The user is created.")
 
             # # Insert the new user into the database
@@ -198,6 +203,27 @@ class LoginWindow(QMainWindow):
             else :
                 QMessageBox.warning(self, "LogIn Error", "The User Doesn't Exist")
         
+    
+    def auto_complete(self):
+
+        previous_users = []
+
+        query.prepare("SELECT username FROM users")
+        if query.exec_():
+            while query.next():
+                user = query.value(0)
+                previous_users.append(user)
+
+        # Set the completer model with previous usernames
+        self.completer_model.setStringList(previous_users)
+
+        # Create the completer widget
+        completer = QCompleter()
+        completer.setModel(self.completer_model)
+
+        return completer
+
+
 
     def open_dash_window(self):
 
