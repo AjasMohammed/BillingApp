@@ -15,7 +15,8 @@
             "bill_view",
             "bill_tag_field",
             "save_btn",
-            "add_btn"
+            "add_btn",
+            "login_btn"
         ],
         "shadow":[{
             "color": "#000",
