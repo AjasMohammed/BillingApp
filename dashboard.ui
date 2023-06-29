@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1636</width>
+    <width>892</width>
     <height>705</height>
    </rect>
   </property>
@@ -2573,7 +2573,7 @@ border-radius: 10px;</string>
            <item>
             <widget class="QWidget" name="bill_info_frame" native="true">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -2605,6 +2605,18 @@ border-radius: 10px;</string>
               </property>
               <item>
                <widget class="QFrame" name="customer_info_frame">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>210</height>
+                 </size>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -2627,7 +2639,7 @@ border-radius: 10px;</string>
                  <item>
                   <widget class="QWidget" name="customer_label_frame" native="true">
                    <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
@@ -2677,7 +2689,7 @@ border-radius: 10px;</string>
                     <item>
                      <widget class="QWidget" name="widget" native="true">
                       <property name="sizePolicy">
-                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                         <horstretch>0</horstretch>
                         <verstretch>0</verstretch>
                        </sizepolicy>
@@ -2727,7 +2739,7 @@ border-radius: 10px;</string>
                     <item>
                      <widget class="QWidget" name="widget_5" native="true">
                       <property name="sizePolicy">
-                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                         <horstretch>0</horstretch>
                         <verstretch>0</verstretch>
                        </sizepolicy>
@@ -2783,10 +2795,16 @@ border-radius: 10px;</string>
               <item>
                <widget class="QFrame" name="product_info_frame">
                 <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>355</height>
+                 </size>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -2797,6 +2815,12 @@ border-radius: 10px;</string>
                 <layout class="QVBoxLayout" name="verticalLayout_37">
                  <item>
                   <widget class="QWidget" name="widget_7" native="true">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
                    <layout class="QVBoxLayout" name="verticalLayout_38">
                     <item>
                      <widget class="QLabel" name="label_4">
@@ -2821,6 +2845,12 @@ border-radius: 10px;</string>
                  </item>
                  <item>
                   <widget class="QWidget" name="widget_6" native="true">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
                    <layout class="QVBoxLayout" name="verticalLayout_39">
                     <item>
                      <widget class="QWidget" name="widget_8" native="true">
@@ -3015,6 +3045,12 @@ border-radius: 10px;</string>
                     </item>
                     <item>
                      <widget class="QWidget" name="widget_12" native="true">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_42">
                        <item>
                         <widget class="QPushButton" name="add_btn">
@@ -3303,6 +3339,12 @@ border-radius:12px;</string>
               </item>
               <item>
                <widget class="QFrame" name="bill_tag_frame">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -3848,7 +3890,7 @@ color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1636</width>
+     <width>892</width>
      <height>19</height>
     </rect>
    </property>

@@ -1,6 +1,6 @@
 import sys
 
-from ui_dashboard_1 import *
+from ui_dashboard import *
 from ui_login import Ui_MainWindow as Ui_Loginwindow
 
 from Custom_Widgets.Widgets import *
@@ -9,6 +9,7 @@ import csv
 import os
 from datetime import datetime
 from PyQt5.QtSql import QSqlDatabase, QSqlQuery
+import hashlib
 
 
         # DATABASE INNITIALISATION
@@ -23,6 +24,19 @@ query.exec_("CREATE TABLE IF NOT EXISTS users ("
                     "password TEXT NOT NULL,"
                     "company TEXT NOT NULL"
                     ");")
+
+def hash_item(item):
+
+    # Create a SHA-256 hash object
+    hash_object = hashlib.sha256()
+
+    # Convert the item to bytes and hash it
+    hash_object.update(item.encode('utf-8'))
+
+    # Get the hashed item as a hexadecimal string
+    hashed_item = hash_object.hexdigest()
+
+    return hashed_item
 
 
 class MainWindow(QMainWindow):
@@ -48,14 +62,11 @@ class MainWindow(QMainWindow):
         else:
             print("Query execution failed.")
         
-        # print(self.id)
-        # print(self.username)
-        # print(self.password)
-        # print(self.company)
 
 
         # Setting the default page to dashboard
         self.ui.body_frame.setCurrentWidget(self.ui.dashboard)
+
 
         self.ui.add_btn.clicked.connect(self.clickme)
 
@@ -73,11 +84,6 @@ class MainWindow(QMainWindow):
         self.ui.company_name.setText(self.company)
         self.ui.label_username.setText(self.username)
         self.ui.bill_table.horizontalHeader().setVisible(True)
-        
-
-
-
-
 
 
 
@@ -115,9 +121,14 @@ class MainWindow(QMainWindow):
         
     def set_items(self):
 
-        item = QTableWidgetItem()
-        item.setText("ABCD")
+        item = QTableWidgetItem("ABCD")
+        # item.setText("ABCD")
+        row = self.ui.bill_table.rowCount()
+        # col = self.ui.bill_table.columnCount()
+        self.ui.bill_table.insertRow(row)
+        print(self.ui.bill_table.rowCount())
         self.ui.bill_table.setItem(0,0,item)
+
 
 
         
@@ -155,9 +166,11 @@ class LoginWindow(QMainWindow):
     
     def signup_info(self):
         self.username = self.ui.username_field_signup.text()
-        self.password = self.ui.password_field_signup.text()
+        password = self.ui.password_field_signup.text()
         self.company_name = self.ui.company_name_field.text()
 
+        self.password = hash_item(password)
+        print(self.password)
 
         if self.password == "" or self.username == "" or self. company_name == "":
             QMessageBox.warning(self, "Invalid Input!", "Don't leave fields empty")
@@ -184,11 +197,11 @@ class LoginWindow(QMainWindow):
 
     def login_info(self):
         self.username = self.ui.username_field_login.text().strip()
-        self.password = self.ui.password_field_login.text()
-        # print(self.username=="")
+        password = self.ui.password_field_login.text()
 
+        self.password = hash_item(password)
+        print(self.password)
 
-        # if self.password == "" or self.username == "":
         if not self.username:
             QMessageBox.warning(self, "Invalid Input!", "Don't leave fields empty")
         else:
@@ -220,9 +233,9 @@ class LoginWindow(QMainWindow):
         # Create the completer widget
         completer = QCompleter()
         completer.setModel(self.completer_model)
+        completer.setCaseSensitivity(Qt.CaseInsensitive)
 
         return completer
-
 
 
     def open_dash_window(self):

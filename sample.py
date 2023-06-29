@@ -14,7 +14,7 @@ cursr = conn.cursor()
 # cursr.execute("DELETE FROM users")
 
 conn.commit()
-cursr.execute("SELECT company FROM users WHERE username=?",("Ajas Mohammed",))
+cursr.execute("SELECT * FROM users")
 
 row = cursr.fetchall()
 
