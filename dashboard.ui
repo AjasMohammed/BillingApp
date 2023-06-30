@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1189</width>
+    <width>892</width>
     <height>705</height>
    </rect>
   </property>
@@ -452,7 +452,7 @@ border-bottom-left-radius: 18px;
        <item>
         <widget class="QCustomStackedWidget" name="body_frame">
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="dashboard">
           <layout class="QVBoxLayout" name="verticalLayout_32">
@@ -3260,7 +3260,7 @@ border-radius:12px;</string>
                     <bool>true</bool>
                    </property>
                    <attribute name="horizontalHeaderVisible">
-                    <bool>true</bool>
+                    <bool>false</bool>
                    </attribute>
                    <attribute name="horizontalHeaderCascadingSectionResizes">
                     <bool>true</bool>
@@ -3903,6 +3903,20 @@ color: rgb(255, 255, 255);</string>
            </item>
           </layout>
          </widget>
+         <widget class="QWidget" name="bills_history">
+          <layout class="QVBoxLayout" name="verticalLayout_48">
+           <item>
+            <widget class="QFrame" name="frame_5">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </item>
        <item>
@@ -3931,7 +3945,7 @@ color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1189</width>
+     <width>892</width>
      <height>19</height>
     </rect>
    </property>
