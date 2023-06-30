@@ -12,9 +12,16 @@ from PyQt5.QtSql import QSqlDatabase, QSqlQuery
 import hashlib
 
 
+# PATH WHERE THE DATABASE WILL BE CREATED
+system_user_path = os.path.expanduser("~")
+app_path = os.path.join(system_user_path, "Pybill")
+
+os.makedirs(app_path, exist_ok=True)
+
         # DATABASE INNITIALISATION
+db_path = os.path.join(app_path, "users.db")
 db = QSqlDatabase.addDatabase("QSQLITE")
-db.setDatabaseName("pybill.db")
+db.setDatabaseName(db_path)
 db.open()
 
 query = QSqlQuery()
@@ -54,7 +61,6 @@ class MainWindow(QMainWindow):
         query.prepare("SELECT id, company FROM users WHERE username=? And password=?")
         query.addBindValue(username)
         query.addBindValue(password)
-
         if query.exec_():
             while query.next():
                 self.id = query.value(0)
@@ -64,11 +70,38 @@ class MainWindow(QMainWindow):
         
 
 
+        # CREATES A DB TO STORE USER SPECIFIC INFORMATION
+        folder_path = self.create_user_folder()
+        self.user_db_path = os.path.join(folder_path, "bill_info.db")
+        self.user_db = QSqlDatabase.addDatabase("QSQLITE")
+        self.user_db.setDatabaseName(self.user_db_path)
+        self.user_db.open()
+        print("connection : ", self.user_db.open())
+
+        self.query = QSqlQuery(self.user_db)
+
+        self.query.exec_("""CREATE TABLE IF NOT EXISTS bill_info (
+                         bill_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                         bill_name TEXT NOT NULL,
+                         total REAL NOT NULL,
+                         created_date DATETIME DEFAULT CURRENT_TIMESTAMP
+        )""")
+        if self.query.exec_():
+            print("good")
+        else:
+            print("error")
+            print(self.query.lastQuery())
+            print(self.query.lastError().text())
+
+        
+
+
         # Setting the default page to dashboard
         self.ui.body_frame.setCurrentWidget(self.ui.dashboard)
 
 
-        self.ui.add_btn.clicked.connect(self.clickme)
+        self.ui.add_btn.clicked.connect(self.add_products)
+        self.ui.save_btn.clicked.connect(self.save_table)
 
 
         ########################################################################
@@ -80,11 +113,21 @@ class MainWindow(QMainWindow):
         ########################################################################
         self.show()
 
-    def load_info(self):
+
+    def create_user_folder(self):
+        folder_name = self.username
+        folder_path = os.path.join(app_path, folder_name)
+
+        # CREATES A FOLDER IN THE NAME OF USER
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+        return folder_path
+
+
+    def load_ui_info(self):
         self.ui.company_name.setText(self.company)
         self.ui.label_username.setText(self.username)
         self.ui.bill_table.horizontalHeader().setVisible(True)
-
 
 
         ###########CREATE CHART###############
@@ -113,25 +156,98 @@ class MainWindow(QMainWindow):
 
                 # print(row)
 
-    def clickme(self):
-        file_path = os.path.expanduser("~")
-        print(file_path)
-        print("clicked")
-        print(self.username, self.password, self.company)
+
+    def add_products(self):
+        try:
+            customer_name = self.ui.customer_name_field.text()
+            customer_contact = self.ui.customer_contact_field.text()
+
+            product_name = self.ui.product_name_field.text()
+            product_id = self.ui.product_id_field.text()
+            product_price = float(self.ui.product_price_field.text())
+            product_qty = int(self.ui.product_qty_field.text())
+
+            assert all([product_name, product_id, product_price, product_qty]), "Connot leave the product fields empty"
+            
+        except AssertionError as e:
+            QMessageBox.warning(self, "Empty Fields", str(e))
+            print(e)
         
-    def set_items(self):
-
-        item = QTableWidgetItem("ABCD")
-        # item.setText("ABCD")
-        row = self.ui.bill_table.rowCount()
-        # col = self.ui.bill_table.columnCount()
-        self.ui.bill_table.insertRow(row)
-        print(self.ui.bill_table.rowCount())
-        self.ui.bill_table.setItem(0,0,item)
+        except ValueError:
+            QMessageBox.warning(self, "Wrong Input!", "Wrong input for the field!")
+            
 
 
+        else:
+            data = [product_name,  product_id, product_qty, product_price, customer_name, customer_contact]
 
-        
+            row = self.ui.bill_table.rowCount()
+
+            self.ui.bill_table.insertRow(row)
+
+            for col, value in enumerate(data):
+                item = QTableWidgetItem(str(value))
+                self.ui.bill_table.setItem(row, col, item)
+            
+            # Clear the input fields
+            self.ui.customer_name_field.clear()
+            self.ui.customer_contact_field.clear()
+            self.ui.product_name_field.clear()
+            self.ui.product_id_field.clear()
+            self.ui.product_price_field.clear()
+            self.ui.product_qty_field.clear()
+
+
+
+    def save_table(self):
+        bill_tag = self.ui.bill_tag_field.text()
+
+        # CEATES TABLE TO STORE THE BILL
+        self.query.exec_(f"""CREATE TABLE IF NOT EXISTS {bill_tag} (
+                         item_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                         product_name TEXT NOT NULL,
+                         product_id TEXT NOT NULL,
+                         price REAL NOT NULL,
+                         quantity INTEGER NOT NULL,
+                         customer_name TEXT,
+                         customer_contact TEXT
+        )""")
+
+        rows = self.ui.bill_table.rowCount()
+
+        # ITERATES THROUGH THE TABLE WIDGET AND ADDS THE VALUES TO THE DB TABLE
+        for row in range(rows):
+            prod_name = self.ui.bill_table.item(row, 0).text()
+            prod_id = self.ui.bill_table.item(row, 1).text()
+            qty = self.ui.bill_table.item(row, 2).text()
+            price = self.ui.bill_table.item(row, 3).text()
+            cust_name = self.ui.bill_table.item(row, 4).text()
+            cust_contact = self.ui.bill_table.item(row, 5).text()
+
+            self.query.prepare(f"""INSERT INTO {bill_tag} (product_name, product_id, price, quantity,
+                              customer_name, customer_contact)
+                               VALUES (?, ?, ?, ?, ?, ?)""")
+            self.query.addBindValue(prod_name)
+            self.query.addBindValue(prod_id)
+            self.query.addBindValue(float(price))
+            self.query.addBindValue(int(qty))
+            self.query.addBindValue(cust_name)
+            self.query.addBindValue(cust_contact)
+
+            if not self.query.exec_():
+                print("Error inserting values:", self.query.lastError().text())
+
+        # ADDS THE BILL TO THE bill_info TABLE
+        self.query.prepare(f"""INSERT INTO bill_info (bill_name, total)
+                           VALUES (?, (SELECT SUM(price * quantity) FROM {bill_tag}))""")
+        self.query.addBindValue(bill_tag)
+        if not self.query.exec_():
+            print(self.query.lastQuery())
+            print(self.query.lastError().text())
+        else:
+            self.ui.bill_table.clearContents()
+            self.ui.bill_table.setRowCount(0)
+
 
 class LoginWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -169,21 +285,19 @@ class LoginWindow(QMainWindow):
         password = self.ui.password_field_signup.text()
         self.company_name = self.ui.company_name_field.text()
 
-        self.password = hash_item(password)
-        print(self.password)
+        self.password = hash_item(password) # HASHED PASSWORD
 
-        if self.password == "" or self.username == "" or self. company_name == "":
-            QMessageBox.warning(self, "Invalid Input!", "Don't leave fields empty")
+        if len(password) < 4 or len(self.username) < 4 or self. company_name == "":
+            QMessageBox.warning(self, "Invalid Input!", "Must contain atleast 4 characters")
+
 
         query.prepare("SELECT * FROM users WHERE username=?")
         query.addBindValue(self.username)
 
         if query.exec_() and query.next():
-
             QMessageBox.warning(self, "User Exists", "The entered username already exists. Please choose a different username.")
 
         else:
-
             QMessageBox.information(self, "User Created", "The user is created.")
 
             # # Insert the new user into the database
@@ -244,9 +358,8 @@ class LoginWindow(QMainWindow):
 
         self.close()
         ui = window.ui
-        window.load_info()
+        window.load_ui_info()
         window.create_barchart()
-        window.set_items()
         window.show()
 
 

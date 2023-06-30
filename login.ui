@@ -428,6 +428,12 @@ border-radius:12px;</string>
                      <pointsize>12</pointsize>
                     </font>
                    </property>
+                   <property name="contextMenuPolicy">
+                    <enum>Qt::DefaultContextMenu</enum>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>false</bool>
+                   </property>
                   </widget>
                  </item>
                 </layout>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'dashboardnldPxg.ui'
+## Form generated from reading UI file 'dashboardljYRfC.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -21,7 +21,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(892, 705)
+        MainWindow.resize(1189, 705)
         font = QFont()
         font.setPointSize(8)
         MainWindow.setFont(font)
@@ -1599,8 +1599,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_40.setObjectName(u"verticalLayout_40")
         self.verticalLayout_40.setContentsMargins(9, 9, 9, 9)
         self.bill_table = QTableWidget(self.table_frame)
-        if (self.bill_table.columnCount() < 4):
-            self.bill_table.setColumnCount(4)
+        if (self.bill_table.columnCount() < 6):
+            self.bill_table.setColumnCount(6)
         font16 = QFont()
         font16.setPointSize(10)
         font16.setBold(True)
@@ -1621,11 +1621,20 @@ class Ui_MainWindow(object):
         __qtablewidgetitem3.setTextAlignment(Qt.AlignCenter);
         __qtablewidgetitem3.setFont(font16);
         self.bill_table.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        __qtablewidgetitem4.setTextAlignment(Qt.AlignCenter);
+        __qtablewidgetitem4.setFont(font16);
+        self.bill_table.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        __qtablewidgetitem5.setTextAlignment(Qt.AlignCenter);
+        __qtablewidgetitem5.setFont(font16);
+        self.bill_table.setHorizontalHeaderItem(5, __qtablewidgetitem5)
         self.bill_table.setObjectName(u"bill_table")
         self.bill_table.setEnabled(True)
         sizePolicy7.setHeightForWidth(self.bill_table.sizePolicy().hasHeightForWidth())
         self.bill_table.setSizePolicy(sizePolicy7)
         self.bill_table.setBaseSize(QSize(0, 0))
+        self.bill_table.setFont(font)
         self.bill_table.viewport().setProperty("cursor", QCursor(Qt.CrossCursor))
         self.bill_table.setFrameShape(QFrame.Panel)
         self.bill_table.setFrameShadow(QFrame.Plain)
@@ -1650,6 +1659,7 @@ class Ui_MainWindow(object):
         self.bill_table.horizontalHeader().setVisible(True)
         self.bill_table.horizontalHeader().setCascadingSectionResizes(True)
         self.bill_table.horizontalHeader().setDefaultSectionSize(150)
+        self.bill_table.horizontalHeader().setHighlightSections(True)
         self.bill_table.horizontalHeader().setStretchLastSection(True)
         self.bill_table.verticalHeader().setCascadingSectionResizes(False)
         self.bill_table.verticalHeader().setHighlightSections(True)
@@ -1939,7 +1949,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 892, 19))
+        self.menubar.setGeometry(QRect(0, 0, 1189, 19))
         MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
@@ -2047,6 +2057,10 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Qty", None));
         ___qtablewidgetitem3 = self.bill_table.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Price", None));
+        ___qtablewidgetitem4 = self.bill_table.horizontalHeaderItem(4)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Customer Name", None));
+        ___qtablewidgetitem5 = self.bill_table.horizontalHeaderItem(5)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Customer Contact", None));
         self.label.setText(QCoreApplication.translate("MainWindow", u"Bill Tag :", None))
         self.bill_tag_field.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Bill Name", None))
         self.save_btn.setText(QCoreApplication.translate("MainWindow", u"Save", None))
