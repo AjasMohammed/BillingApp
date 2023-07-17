@@ -1,4 +1,5 @@
 import sys
+from datetime import datetime
 
 from ui_dashboard import *
 from ui_login import Ui_MainWindow as Ui_Loginwindow
@@ -68,7 +69,11 @@ class MainWindow(QMainWindow):
         else:
             print("Query execution failed.")
         
+        
+        # Initialize dynamic_frame to None
+        self.dynamic_frame = None
 
+        
 
         # CREATES A DB TO STORE USER SPECIFIC INFORMATION
         folder_path = self.create_user_folder()
@@ -95,13 +100,13 @@ class MainWindow(QMainWindow):
 
         
 
-
         # Setting the default page to dashboard
         self.ui.body_frame.setCurrentWidget(self.ui.dashboard)
 
-
+        # Button clicks
         self.ui.add_btn.clicked.connect(self.add_products)
         self.ui.save_btn.clicked.connect(self.save_table)
+        self.ui.more_btn.clicked.connect(self.create_dynamic_frame)
 
 
         ########################################################################
@@ -128,6 +133,8 @@ class MainWindow(QMainWindow):
         self.ui.company_name.setText(self.company)
         self.ui.label_username.setText(self.username)
         self.ui.bill_table.horizontalHeader().setVisible(True)
+
+        self.dashboard_billcard()
 
 
         ###########CREATE CHART###############
@@ -200,7 +207,8 @@ class MainWindow(QMainWindow):
 
 
     def save_table(self):
-        bill_tag = self.ui.bill_tag_field.text()
+        bill_tag = self.ui.bill_tag_field.text().capitalize()
+        self.ui.bill_tag_field.clear()
 
         # CEATES TABLE TO STORE THE BILL
         self.query.exec_(f"""CREATE TABLE IF NOT EXISTS {bill_tag} (
@@ -247,6 +255,179 @@ class MainWindow(QMainWindow):
         else:
             self.ui.bill_table.clearContents()
             self.ui.bill_table.setRowCount(0)
+
+
+    def create_dynamic_frame(self):
+        bills = self.__fetch_table()
+
+        if self.dynamic_frame is not None:
+            self.dynamic_frame.deleteLater()
+        self.dynamic_frame = QFrame(self.ui.card_views)
+        self.dynamic_frame.setObjectName("dynamic_frame")
+
+        # Create the layout for the dynamic frame
+        self.vertical_layout = QVBoxLayout(self.dynamic_frame)
+        self.vertical_layout.setObjectName("vertical_layout")
+
+        bills_per_page = 4  # Number of bills to show per page
+        current_row_layout = None
+
+        # Loop through all bills from the database and create cards
+        for i, bill_data in enumerate(bills):
+            if i % bills_per_page == 0:
+                # Create a new horizontal layout for each row of cards
+                current_row_layout = QHBoxLayout()
+                current_row_layout.setObjectName(f"row_layout_{i}")
+                self.vertical_layout.addLayout(current_row_layout)
+
+            item_frame = QFrame()
+            item_frame.setObjectName(f"item_frame_{i}")
+            # Set the stylesheet for the card frame
+            item_frame.setStyleSheet("""
+                QFrame {
+                    background-color: white;
+                    border-radius: 10px; /* Set the border-radius to control the curvature */
+                    margin: 10px; /* Add some margin around the card */
+                }
+            """)
+
+            # Set a fixed width and height for the cards
+            card_width = 220
+            card_height = 250
+            item_frame.setFixedSize(card_width, card_height)
+
+            # Create labels for each item and add them to the card layout
+            bill_name_label = QLabel(f"<u>{bill_data['bill_name']}</u>", item_frame)
+            total_label = QLabel(f"Total: {bill_data['bill_amount']}", item_frame)
+            bill_id_label = QLabel(f"Bill ID: {bill_data['bill_id']}", item_frame)
+            bill_date_label = QLabel(f"Bill Date: {bill_data['bill_date']}", item_frame)
+
+            label_styles = """
+                margin: 5px; /* Add some margin between the labels */
+                padding-left:10px;
+                font-size: 13px;
+            """
+            # Apply styles to the labels
+            bill_name_label.setStyleSheet("font-size:15px;margin: 5px;")
+            total_label.setStyleSheet(label_styles)
+            bill_id_label.setStyleSheet(label_styles)
+            bill_date_label.setStyleSheet(label_styles)
+
+            # Set a fixed width and height for the labels
+            label_width = 150
+            label_height = 40
+            bill_name_label.setFixedSize(label_width, label_height)
+            total_label.setFixedSize(label_width, label_height)
+            bill_id_label.setFixedSize(label_width, label_height)
+            bill_date_label.setFixedSize(label_width, label_height)
+
+            # Center align the labels in each card
+            bill_name_label.setAlignment(Qt.AlignCenter)
+            total_label.setAlignment(Qt.AlignLeft)
+            bill_id_label.setAlignment(Qt.AlignLeft)
+            bill_date_label.setAlignment(Qt.AlignLeft)
+
+            # Set bold font for the "Bill name" label
+            font = bill_name_label.font()
+            font.setBold(True)
+            bill_name_label.setFont(font)
+
+            # Create a horizontal layout for each card
+            card_layout = QVBoxLayout(item_frame)
+            card_layout.setAlignment(Qt.AlignTop)  # Align the card contents to the top
+            card_layout.setContentsMargins(10, 10, 10, 10)  # Add margins around the card
+
+            # Add the labels to the card layout
+            card_layout.addWidget(bill_name_label)
+            card_layout.addWidget(total_label)
+            card_layout.addWidget(bill_id_label)
+            card_layout.addWidget(bill_date_label)
+
+            # Create a button for each card with an icon
+            button = QPushButton()
+            button.setObjectName(u"arrow_btn")
+            icon7 = QIcon()
+            icon7.addFile(u":/blueicons/icons/blue_icons/arrow-right.svg", QSize(), QIcon.Normal, QIcon.Off)
+            button.setIcon(icon7)
+            button.setIconSize(QSize(35, 20))
+            button.setFlat(True)
+            button.setStyleSheet("background-color: #fff;")
+
+            # Add stretching space to push the button to the right side
+            card_layout.addStretch()
+
+            # Add the button to the card layout
+            card_layout.addWidget(button)
+
+            # Connect the button's clicked signal to a slot for handling the button click event
+            # button.clicked.connect(self.handle_button_click)  # Replace "self.handle_button_click" with the appropriate slot function
+
+            # Set the vertical layout for the item frame
+            item_frame.setLayout(card_layout)
+
+            # Add the item frame to the current row layout
+            current_row_layout.addWidget(item_frame)
+
+        # Set the layout for the dynamic frame
+        self.dynamic_frame.setLayout(self.vertical_layout)
+
+        # Create a scroll area to hold the dynamic frame
+        self.scroll_area = QScrollArea(self.ui.card_views)
+        self.scroll_area.setObjectName("scroll_area")
+        self.scroll_area.setWidgetResizable(True)
+
+        # Create a widget to hold the dynamic frame
+        self.scroll_widget = QWidget()
+        self.scroll_layout = QVBoxLayout(self.scroll_widget)
+        self.scroll_layout.setContentsMargins(0, 0, 0, 0)
+        self.scroll_layout.addWidget(self.dynamic_frame)  # Add the dynamic frame to the scroll widget
+        self.scroll_area.setWidget(self.scroll_widget)
+        self.scroll_widget.setStyleSheet("background-color: #eff9fe;")
+
+        # Add the scroll area to the card_views frame
+        self.ui.verticalLayout_49.addWidget(self.scroll_area)
+
+        self.ui.body_frame.setCurrentWidget(self.ui.bills_history)
+
+
+    def dashboard_billcard(self):
+        bills = self.__fetch_table(True)
+        cards = {}
+
+        for i in range(1,5):
+            cards[f'label_bill{i}'] = str(bills[i-1]['bill_name'])
+            cards[f'label_id{i}'] = str(bills[i-1]['bill_id'])
+            cards[f'label_price{i}'] = str(bills[i-1]['bill_amount'])
+            cards[f'label_billdate{i}'] = str(bills[i-1]['bill_date'])
+        
+        for i in cards:
+            label = getattr(self.ui, i, None)
+            if label:
+                label.setText(cards[i])
+
+
+    def __fetch_table(self, limit=False):
+            if limit == True:
+                self.query.prepare("SELECT * FROM bill_info ORDER BY created_date DESC LIMIT 4")
+            else:
+                self.query.prepare("SELECT * FROM bill_info ORDER BY created_date DESC")
+            bills = []
+            # Execute the query
+            if self.query.exec_():
+            # Iterate over the result set and retrieve the data
+                while self.query.next():
+                    bill = {}
+                    bill["bill_id"] = self.query.value(0)
+                    bill["bill_name"] = self.query.value(1)
+                    bill["bill_amount"] = self.query.value(2)
+                    datetime_string = self.query.value(3)
+                    # Parse the datetime string into a datetime object
+                    dt_object = datetime.strptime(datetime_string, '%Y-%m-%d %H:%M:%S')
+                    # Extract the date part from the datetime object
+                    bill["bill_date"] = dt_object.date()
+                    bills.append(bill)
+            return bills
+
 
 
 class LoginWindow(QMainWindow):
