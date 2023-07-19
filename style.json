@@ -16,7 +16,12 @@
             "bill_tag_field",
             "save_btn",
             "add_btn",
-            "login_btn"
+            "login_btn",
+            "export_btn",
+            "delete_btn",
+            "frame_8",
+            "frame_9"
+
         ],
         "shadow":[{
             "color": "#000",
