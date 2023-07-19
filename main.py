@@ -12,6 +12,12 @@ from datetime import datetime
 from PyQt5.QtSql import QSqlDatabase, QSqlQuery
 import hashlib
 
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib import colors
+
+
 
 # PATH WHERE THE DATABASE WILL BE CREATED
 system_user_path = os.path.expanduser("~")
@@ -297,7 +303,7 @@ class MainWindow(QMainWindow):
             item_frame.setFixedSize(card_width, card_height)
 
             # Create labels for each item and add them to the card layout
-            bill_name_label = QLabel(f"<u>{bill_data['bill_name']}</u>", item_frame)
+            bill_name_label = QLabel(f"<u>{bill_data['bill_name'].capitalize()}</u>", item_frame)
             total_label = QLabel(f"Total: {bill_data['bill_amount']}", item_frame)
             bill_id_label = QLabel(f"Bill ID: {bill_data['bill_id']}", item_frame)
             bill_date_label = QLabel(f"Bill Date: {bill_data['bill_date']}", item_frame)
@@ -345,7 +351,7 @@ class MainWindow(QMainWindow):
 
             # Create a button for each card with an icon
             button = QPushButton()
-            button.setObjectName(u"arrow_btn")
+            button.setObjectName(f"bill_{bill_data['bill_id']}")
             icon7 = QIcon()
             icon7.addFile(u":/blueicons/icons/blue_icons/arrow-right.svg", QSize(), QIcon.Normal, QIcon.Off)
             button.setIcon(icon7)
@@ -360,7 +366,7 @@ class MainWindow(QMainWindow):
             card_layout.addWidget(button)
 
             # Connect the button's clicked signal to a slot for handling the button click event
-            # button.clicked.connect(self.handle_button_click)  # Replace "self.handle_button_click" with the appropriate slot function
+            button.clicked.connect(self.bill_btn)  # Replace "self.handle_button_click" with the appropriate slot function
 
             # Set the vertical layout for the item frame
             item_frame.setLayout(card_layout)
@@ -399,16 +405,221 @@ class MainWindow(QMainWindow):
             cards[f'label_id{i}'] = str(bills[i-1]['bill_id'])
             cards[f'label_price{i}'] = str(bills[i-1]['bill_amount'])
             cards[f'label_billdate{i}'] = str(bills[i-1]['bill_date'])
+            cards[f'arrow_btn{i}'] = f'bill_{bills[i-1]["bill_id"]}'
         
         for i in cards:
-            label = getattr(self.ui, i, None)
-            if label:
-                label.setText(cards[i])
+            item = getattr(self.ui, i, None)
+            if item:
+                if 'arrow' in i:
+                    item.setObjectName(cards[i])
+                    item.clicked.connect(self.bill_btn)
+                else:
+                    item.setText(cards[i])
 
 
-    def __fetch_table(self, limit=False):
+    def bill_btn(self):
+        btn = self.sender()
+        bill_id = int(btn.objectName().split("_")[1])
+        bill_info = self.__fetch_table(bill_id=bill_id)[0]
+        bill_name = bill_info["bill_name"]
+        bill_total = bill_info["bill_amount"]
+        bill_date = bill_info["bill_date"]
+        bill_time = bill_info["bill_time"]
+
+        self.__load_table(bill_name)
+
+        self.ui.label_id.setText(str(bill_id))
+        self.ui.label_date_2.setText(str(bill_date))
+        self.ui.label_amount.setText(str(bill_total))
+        self.ui.label_name.setText(str(bill_name).capitalize())
+
+        self.ui.export_btn.clicked.connect(lambda: self.__bill_export(bill_name, bill_id, bill_total, bill_date, bill_time))
+        self.ui.delete_btn.clicked.connect(lambda: self.__bill_del(bill_name, bill_id))
+
+        self.ui.body_frame.setCurrentWidget(self.ui.bill_history)
+            
+
+
+    def __bill_del(self, bill_name, bill_id):
+        reply = QMessageBox.question(None, "Confirm Deletion", "Are you sure you want to delete?", 
+                                    QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+
+        if reply == QMessageBox.Yes:
+            # self.ui.body_frame.setCurrentWidget(self.ui.bills_history)
+            # Delete the specified table
+            delete_table_query = f"DROP TABLE IF EXISTS {bill_name}"
+            self.query.exec_(delete_table_query)
+
+            # Delete the row from the 'bill_info' table based on the bill_id
+            delete_row_query = f"DELETE FROM bill_info WHERE bill_id = ?"
+            self.query.prepare(delete_row_query)
+            self.query.addBindValue(bill_id)
+
+            self.dashboard_billcard()
+            self.create_dynamic_frame()
+
+            if self.query.exec_():
+                print("Table and row deleted successfully.")
+            else:
+                print("Error deleting table or row:", self.query.lastError().text())
+
+        else:
+            pass
+
+
+    def __bill_export(self, bill_name, bill_id, bill_total, bill_date, bill_time):
+        products = self.__fetch_bill(bill_name)
+        
+        # Create a file dialog and set its properties
+        file_dialog = QFileDialog()
+        file_dialog.setWindowTitle("Save Bill")
+        file_dialog.setAcceptMode(QFileDialog.AcceptSave)
+        file_dialog.setNameFilter("PDF Files (*.pdf);;All Files (*)")
+
+        # Set the default filename using bill_name and bill_id
+        default_file_name = f"{bill_name}_{bill_id}.pdf"
+        file_dialog.selectFile(default_file_name)
+
+        # Show the file dialog and get the selected file path
+        if file_dialog.exec_() == QFileDialog.Accepted:
+            file_path = file_dialog.selectedFiles()[0]
+
+            # Set up the PDF document
+            pdf_file = f"{bill_name}_invoice.pdf"
+            # Create a PDF document
+            doc = SimpleDocTemplate(file_path, pagesize=letter)
+            story = []
+            
+            # Create styles for the document
+            styles = getSampleStyleSheet()
+            title_style = styles["Title"]
+            normal_style = styles["Normal"]
+            bold_style = styles["Heading1"]
+
+            # Add the title of the invoice
+            title = f"{bill_name.capitalize()} Invoice"
+            story.append(Paragraph(title, title_style))
+            story.append(Spacer(1, 24))
+
+            space = "&nbsp;"
+            bill_info = f"Bill ID:{space} <b>{bill_id}</b>{space*20}Date:{space} <b>{bill_date}</b>{space*20}Time:{space} <b>{bill_time}</b> <br/><br/>Total Amount: <b>{bill_total}</b>  <br/><br/>"
+
+            bill_info_style = ParagraphStyle(
+                                    'BillInfoStyle',
+                                    parent=normal_style,
+                                    fontSize=12,
+                                    leading=14,
+                                    leftIndent=40,
+                                    spaceAfter=10
+                                    )
+            
+            bill_info_paragraph = Paragraph(bill_info, bill_info_style)
+            story.append(bill_info_paragraph)
+            story.append(Spacer(1, 12))
+
+            table_title = "<u>Products</u>"
+            story.append(Paragraph(table_title, bold_style))
+            story.append(Spacer(1,12))
+
+            # Add product details to the story in a table format
+            product_data = [["No.", "Name", "ID", "Price", "Quantity"]]
+            for i, product in enumerate(products, 1):
+                product_data.append([str(i), product["prod_name"], product["prod_id"], str(product["prod_price"]), str(product["prod_qty"])])
+            
+            # Create a table with the sample data
+            product_table = Table(product_data)
+            
+            # Customize the TableStyle
+            product_table.setStyle(TableStyle([
+                ('BACKGROUND', (0, 0), (-1, 0), colors.white),
+                ('TEXTCOLOR', (0, 0), (-1, 0), colors.black),
+                ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                ('FONTSIZE', (0, 0), (-1, 0), 12),  # Set the font size to 12
+                ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+                ('BACKGROUND', (0, 1), (-1, -1), colors.white),
+                ('GRID', (0, 0), (-1, -1), 1, colors.black),  # Add grid lines to all cells
+                ('INNERGRID', (0, 0), (-1, -1), 1, colors.black),  # Add inner grid lines to all cells
+                ('BOX', (0, 0), (-1, -1), 1, colors.black),  # Add border around the table
+                ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),  # Center align the content vertically
+                ('LEFTPADDING', (0, 0), (-1, -1), 6),  # Add left padding to the cells
+                ('RIGHTPADDING', (0, 0), (-1, -1), 6),  # Add right padding to the cells
+            ]))
+
+            # Set the column widths to increase the size of the table
+            product_table._argW[1] = 100  # Width of the first column
+            product_table._argW[2] = 70   # Width of the second column
+            product_table._argW[3] = 70   # Width of the third column
+            product_table._argW[4] = 100  # Width of the fourth column
+
+            # Set the row heights to increase the size of the table
+            product_table._argH[0] = 30   # Height of the first row
+
+            story.append(product_table)
+            story.append(Spacer(1, 12))
+
+            # Build the PDF document
+            doc.build(story)
+            print(f"Bills exported to '{file_path}'")
+
+
+    def __load_table(self, bill_name):
+
+        bill = self.__fetch_bill(bill_name)
+
+        model = QStandardItemModel(len(bill), 4)
+        model.setHorizontalHeaderLabels(["<b>Name</b>", "<b>ID</b>", "<b>Price</b>", "<b>Quantity</b>"])
+
+        # Populate the model with data from the list of dictionaries
+        for row, product in enumerate(bill):
+            for col, (key, value) in enumerate(product.items()):
+                item = QStandardItem(str(value))
+                model.setItem(row, col, item)
+
+                # Align the items in each column to the center
+                item.setTextAlignment(Qt.AlignCenter)
+            
+        # Create the QTableView and set the model
+        table_view = self.ui.bill_tableView
+        table_view.setModel(model)
+
+        # Optionally, set the table view properties
+        table_view.setEditTriggers(QTableView.NoEditTriggers)  # Make the cells non-editable
+        # Resize the rows and columns to fit the contents
+        table_view.resizeRowsToContents()
+        table_view.resizeColumnsToContents()
+
+        # Set the stretchLastSection property to True
+        table_view.horizontalHeader().Stretch
+
+
+        # Show the table view
+        table_view.show()
+    
+
+    def __fetch_bill(self, bill_name):
+        bill = []
+        self.query.prepare(f'SELECT *  FROM {bill_name} ORDER BY item_id ASC')
+        x = 0
+        if self.query.exec_():
+            while self.query.next():
+                item = {}
+                # item["item_id"] = self.query.value(0)
+                item["prod_name"] = self.query.value(1)
+                item["prod_id"] = self.query.value(2)
+                item["prod_price"] = self.query.value(3)
+                item["prod_qty"] = self.query.value(4)
+                
+                bill.append(item)
+        return bill
+
+
+    def __fetch_table(self, limit=False, **condition):
             if limit == True:
                 self.query.prepare("SELECT * FROM bill_info ORDER BY created_date DESC LIMIT 4")
+            elif condition:
+                key, value = list(condition.items())[0]
+                self.query.prepare(f'SELECT * FROM bill_info WHERE {key}={value}')
             else:
                 self.query.prepare("SELECT * FROM bill_info ORDER BY created_date DESC")
             bills = []
@@ -425,6 +636,7 @@ class MainWindow(QMainWindow):
                     dt_object = datetime.strptime(datetime_string, '%Y-%m-%d %H:%M:%S')
                     # Extract the date part from the datetime object
                     bill["bill_date"] = dt_object.date()
+                    bill["bill_time"] = dt_object.time()
                     bills.append(bill)
             return bills
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'dashboardpnEAkV.ui'
+## Form generated from reading UI file 'dashboardonEVCd.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -960,13 +960,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.setSpacing(0)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.arrow_btn_2 = QPushButton(self.goto_btn_2)
-        self.arrow_btn_2.setObjectName(u"arrow_btn_2")
-        self.arrow_btn_2.setIcon(icon7)
-        self.arrow_btn_2.setIconSize(QSize(35, 16))
-        self.arrow_btn_2.setFlat(True)
+        self.arrow_btn2 = QPushButton(self.goto_btn_2)
+        self.arrow_btn2.setObjectName(u"arrow_btn2")
+        self.arrow_btn2.setIcon(icon7)
+        self.arrow_btn2.setIconSize(QSize(35, 16))
+        self.arrow_btn2.setFlat(True)
 
-        self.verticalLayout_11.addWidget(self.arrow_btn_2, 0, Qt.AlignRight)
+        self.verticalLayout_11.addWidget(self.arrow_btn2, 0, Qt.AlignRight)
 
 
         self.verticalLayout_9.addWidget(self.goto_btn_2)
@@ -1110,13 +1110,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
-        self.arrow_btn_3 = QPushButton(self.goto_btn_3)
-        self.arrow_btn_3.setObjectName(u"arrow_btn_3")
-        self.arrow_btn_3.setIcon(icon7)
-        self.arrow_btn_3.setIconSize(QSize(35, 16))
-        self.arrow_btn_3.setFlat(True)
+        self.arrow_btn3 = QPushButton(self.goto_btn_3)
+        self.arrow_btn3.setObjectName(u"arrow_btn3")
+        self.arrow_btn3.setIcon(icon7)
+        self.arrow_btn3.setIconSize(QSize(35, 16))
+        self.arrow_btn3.setFlat(True)
 
-        self.verticalLayout_14.addWidget(self.arrow_btn_3, 0, Qt.AlignRight)
+        self.verticalLayout_14.addWidget(self.arrow_btn3, 0, Qt.AlignRight)
 
 
         self.verticalLayout_12.addWidget(self.goto_btn_3)
@@ -1260,13 +1260,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_17.setSpacing(0)
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
         self.verticalLayout_17.setContentsMargins(0, 0, 0, 0)
-        self.arrow_btn_4 = QPushButton(self.goto_btn_4)
-        self.arrow_btn_4.setObjectName(u"arrow_btn_4")
-        self.arrow_btn_4.setIcon(icon7)
-        self.arrow_btn_4.setIconSize(QSize(35, 16))
-        self.arrow_btn_4.setFlat(True)
+        self.arrow_btn4 = QPushButton(self.goto_btn_4)
+        self.arrow_btn4.setObjectName(u"arrow_btn4")
+        self.arrow_btn4.setIcon(icon7)
+        self.arrow_btn4.setIconSize(QSize(35, 16))
+        self.arrow_btn4.setFlat(True)
 
-        self.verticalLayout_17.addWidget(self.arrow_btn_4, 0, Qt.AlignRight)
+        self.verticalLayout_17.addWidget(self.arrow_btn4, 0, Qt.AlignRight)
 
 
         self.verticalLayout_15.addWidget(self.goto_btn_4)
@@ -1951,6 +1951,299 @@ class Ui_MainWindow(object):
         self.verticalLayout_48.addWidget(self.card_views)
 
         self.body_frame.addWidget(self.bills_history)
+        self.bill_history = QWidget()
+        self.bill_history.setObjectName(u"bill_history")
+        self.verticalLayout_50 = QVBoxLayout(self.bill_history)
+        self.verticalLayout_50.setObjectName(u"verticalLayout_50")
+        self.frame_5 = QFrame(self.bill_history)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_51 = QVBoxLayout(self.frame_5)
+        self.verticalLayout_51.setObjectName(u"verticalLayout_51")
+        self.frame_6 = QFrame(self.frame_5)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setFrameShape(QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_52 = QVBoxLayout(self.frame_6)
+        self.verticalLayout_52.setObjectName(u"verticalLayout_52")
+        self.widget_13 = QWidget(self.frame_6)
+        self.widget_13.setObjectName(u"widget_13")
+        self.verticalLayout_53 = QVBoxLayout(self.widget_13)
+        self.verticalLayout_53.setObjectName(u"verticalLayout_53")
+        self.label_name = QLabel(self.widget_13)
+        self.label_name.setObjectName(u"label_name")
+        font21 = QFont()
+        font21.setPointSize(18)
+        font21.setUnderline(True)
+        self.label_name.setFont(font21)
+        self.label_name.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_53.addWidget(self.label_name)
+
+
+        self.verticalLayout_52.addWidget(self.widget_13)
+
+
+        self.verticalLayout_51.addWidget(self.frame_6, 0, Qt.AlignTop)
+
+        self.frame_7 = QFrame(self.frame_5)
+        self.frame_7.setObjectName(u"frame_7")
+        self.frame_7.setFrameShape(QFrame.StyledPanel)
+        self.frame_7.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_49 = QHBoxLayout(self.frame_7)
+        self.horizontalLayout_49.setSpacing(30)
+        self.horizontalLayout_49.setObjectName(u"horizontalLayout_49")
+        self.horizontalLayout_49.setContentsMargins(20, 15, 20, 20)
+        self.frame_8 = QFrame(self.frame_7)
+        self.frame_8.setObjectName(u"frame_8")
+        sizePolicy3.setHeightForWidth(self.frame_8.sizePolicy().hasHeightForWidth())
+        self.frame_8.setSizePolicy(sizePolicy3)
+        self.frame_8.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"border-radius: 10px;")
+        self.frame_8.setFrameShape(QFrame.StyledPanel)
+        self.frame_8.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_54 = QVBoxLayout(self.frame_8)
+        self.verticalLayout_54.setObjectName(u"verticalLayout_54")
+        self.verticalLayout_54.setContentsMargins(50, -1, -1, -1)
+        self.bill_tableView = QTableView(self.frame_8)
+        self.bill_tableView.setObjectName(u"bill_tableView")
+        sizePolicy3.setHeightForWidth(self.bill_tableView.sizePolicy().hasHeightForWidth())
+        self.bill_tableView.setSizePolicy(sizePolicy3)
+        self.bill_tableView.setMaximumSize(QSize(550, 16777215))
+        self.bill_tableView.setFont(font7)
+        self.bill_tableView.setProperty("showDropIndicator", True)
+        self.bill_tableView.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.bill_tableView.setVerticalScrollMode(QAbstractItemView.ScrollPerPixel)
+        self.bill_tableView.setHorizontalScrollMode(QAbstractItemView.ScrollPerPixel)
+        self.bill_tableView.horizontalHeader().setMinimumSectionSize(110)
+        self.bill_tableView.horizontalHeader().setDefaultSectionSize(120)
+
+        self.verticalLayout_54.addWidget(self.bill_tableView)
+
+
+        self.horizontalLayout_49.addWidget(self.frame_8)
+
+        self.frame_9 = QFrame(self.frame_7)
+        self.frame_9.setObjectName(u"frame_9")
+        sizePolicy.setHeightForWidth(self.frame_9.sizePolicy().hasHeightForWidth())
+        self.frame_9.setSizePolicy(sizePolicy)
+        self.frame_9.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"border-radius: 10px;")
+        self.frame_9.setFrameShape(QFrame.StyledPanel)
+        self.frame_9.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_55 = QVBoxLayout(self.frame_9)
+        self.verticalLayout_55.setObjectName(u"verticalLayout_55")
+        self.widget_26 = QWidget(self.frame_9)
+        self.widget_26.setObjectName(u"widget_26")
+        self.horizontalLayout_60 = QHBoxLayout(self.widget_26)
+        self.horizontalLayout_60.setObjectName(u"horizontalLayout_60")
+        self.widget_27 = QWidget(self.widget_26)
+        self.widget_27.setObjectName(u"widget_27")
+        self.horizontalLayout_61 = QHBoxLayout(self.widget_27)
+        self.horizontalLayout_61.setObjectName(u"horizontalLayout_61")
+        self.label_15 = QLabel(self.widget_27)
+        self.label_15.setObjectName(u"label_15")
+        self.label_15.setFont(font18)
+        self.label_15.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_61.addWidget(self.label_15)
+
+
+        self.horizontalLayout_60.addWidget(self.widget_27)
+
+        self.widget_28 = QWidget(self.widget_26)
+        self.widget_28.setObjectName(u"widget_28")
+        self.horizontalLayout_62 = QHBoxLayout(self.widget_28)
+        self.horizontalLayout_62.setObjectName(u"horizontalLayout_62")
+        self.label_custname = QLabel(self.widget_28)
+        self.label_custname.setObjectName(u"label_custname")
+        self.label_custname.setFont(font3)
+        self.label_custname.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.horizontalLayout_62.addWidget(self.label_custname)
+
+
+        self.horizontalLayout_60.addWidget(self.widget_28)
+
+
+        self.verticalLayout_55.addWidget(self.widget_26)
+
+        self.widget_14 = QWidget(self.frame_9)
+        self.widget_14.setObjectName(u"widget_14")
+        self.horizontalLayout_51 = QHBoxLayout(self.widget_14)
+        self.horizontalLayout_51.setObjectName(u"horizontalLayout_51")
+        self.widget_18 = QWidget(self.widget_14)
+        self.widget_18.setObjectName(u"widget_18")
+        self.horizontalLayout_50 = QHBoxLayout(self.widget_18)
+        self.horizontalLayout_50.setObjectName(u"horizontalLayout_50")
+        self.label_12 = QLabel(self.widget_18)
+        self.label_12.setObjectName(u"label_12")
+        self.label_12.setFont(font18)
+        self.label_12.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_50.addWidget(self.label_12)
+
+
+        self.horizontalLayout_51.addWidget(self.widget_18)
+
+        self.widget_21 = QWidget(self.widget_14)
+        self.widget_21.setObjectName(u"widget_21")
+        self.horizontalLayout_56 = QHBoxLayout(self.widget_21)
+        self.horizontalLayout_56.setObjectName(u"horizontalLayout_56")
+        self.label_id = QLabel(self.widget_21)
+        self.label_id.setObjectName(u"label_id")
+        self.label_id.setFont(font3)
+        self.label_id.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.horizontalLayout_56.addWidget(self.label_id)
+
+
+        self.horizontalLayout_51.addWidget(self.widget_21)
+
+
+        self.verticalLayout_55.addWidget(self.widget_14)
+
+        self.widget_15 = QWidget(self.frame_9)
+        self.widget_15.setObjectName(u"widget_15")
+        self.horizontalLayout_54 = QHBoxLayout(self.widget_15)
+        self.horizontalLayout_54.setObjectName(u"horizontalLayout_54")
+        self.widget_19 = QWidget(self.widget_15)
+        self.widget_19.setObjectName(u"widget_19")
+        self.horizontalLayout_52 = QHBoxLayout(self.widget_19)
+        self.horizontalLayout_52.setObjectName(u"horizontalLayout_52")
+        self.label_13 = QLabel(self.widget_19)
+        self.label_13.setObjectName(u"label_13")
+        self.label_13.setFont(font18)
+        self.label_13.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_52.addWidget(self.label_13)
+
+        self.widget_22 = QWidget(self.widget_19)
+        self.widget_22.setObjectName(u"widget_22")
+        self.horizontalLayout_57 = QHBoxLayout(self.widget_22)
+        self.horizontalLayout_57.setObjectName(u"horizontalLayout_57")
+        self.label_date_2 = QLabel(self.widget_22)
+        self.label_date_2.setObjectName(u"label_date_2")
+        self.label_date_2.setFont(font3)
+        self.label_date_2.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.horizontalLayout_57.addWidget(self.label_date_2)
+
+
+        self.horizontalLayout_52.addWidget(self.widget_22)
+
+
+        self.horizontalLayout_54.addWidget(self.widget_19)
+
+
+        self.verticalLayout_55.addWidget(self.widget_15)
+
+        self.widget_16 = QWidget(self.frame_9)
+        self.widget_16.setObjectName(u"widget_16")
+        self.widget_16.setFont(font7)
+        self.horizontalLayout_55 = QHBoxLayout(self.widget_16)
+        self.horizontalLayout_55.setObjectName(u"horizontalLayout_55")
+        self.widget_20 = QWidget(self.widget_16)
+        self.widget_20.setObjectName(u"widget_20")
+        self.horizontalLayout_53 = QHBoxLayout(self.widget_20)
+        self.horizontalLayout_53.setObjectName(u"horizontalLayout_53")
+        self.label_14 = QLabel(self.widget_20)
+        self.label_14.setObjectName(u"label_14")
+        self.label_14.setFont(font18)
+        self.label_14.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_53.addWidget(self.label_14)
+
+
+        self.horizontalLayout_55.addWidget(self.widget_20)
+
+        self.widget_23 = QWidget(self.widget_16)
+        self.widget_23.setObjectName(u"widget_23")
+        self.horizontalLayout_58 = QHBoxLayout(self.widget_23)
+        self.horizontalLayout_58.setObjectName(u"horizontalLayout_58")
+        self.label_amount = QLabel(self.widget_23)
+        self.label_amount.setObjectName(u"label_amount")
+        self.label_amount.setFont(font3)
+        self.label_amount.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.horizontalLayout_58.addWidget(self.label_amount)
+
+
+        self.horizontalLayout_55.addWidget(self.widget_23)
+
+
+        self.verticalLayout_55.addWidget(self.widget_16)
+
+        self.widget_17 = QWidget(self.frame_9)
+        self.widget_17.setObjectName(u"widget_17")
+        self.horizontalLayout_59 = QHBoxLayout(self.widget_17)
+        self.horizontalLayout_59.setObjectName(u"horizontalLayout_59")
+        self.widget_25 = QWidget(self.widget_17)
+        self.widget_25.setObjectName(u"widget_25")
+        self.verticalLayout_56 = QVBoxLayout(self.widget_25)
+        self.verticalLayout_56.setObjectName(u"verticalLayout_56")
+        self.export_btn = QPushButton(self.widget_25)
+        self.export_btn.setObjectName(u"export_btn")
+        sizePolicy2.setHeightForWidth(self.export_btn.sizePolicy().hasHeightForWidth())
+        self.export_btn.setSizePolicy(sizePolicy2)
+        self.export_btn.setMaximumSize(QSize(80, 30))
+        self.export_btn.setFont(font13)
+        self.export_btn.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.export_btn.setLayoutDirection(Qt.RightToLeft)
+        self.export_btn.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"border-radius: 10px;\n"
+"")
+        icon11 = QIcon()
+        icon11.addFile(u":/blueicons/icons/blue_icons/download.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.export_btn.setIcon(icon11)
+        self.export_btn.setIconSize(QSize(20, 20))
+        self.export_btn.setFlat(False)
+
+        self.verticalLayout_56.addWidget(self.export_btn)
+
+
+        self.horizontalLayout_59.addWidget(self.widget_25)
+
+        self.widget_24 = QWidget(self.widget_17)
+        self.widget_24.setObjectName(u"widget_24")
+        self.verticalLayout_57 = QVBoxLayout(self.widget_24)
+        self.verticalLayout_57.setObjectName(u"verticalLayout_57")
+        self.delete_btn = QPushButton(self.widget_24)
+        self.delete_btn.setObjectName(u"delete_btn")
+        sizePolicy2.setHeightForWidth(self.delete_btn.sizePolicy().hasHeightForWidth())
+        self.delete_btn.setSizePolicy(sizePolicy2)
+        self.delete_btn.setMaximumSize(QSize(80, 30))
+        self.delete_btn.setFont(font13)
+        self.delete_btn.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.delete_btn.setLayoutDirection(Qt.RightToLeft)
+        self.delete_btn.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"border-radius: 10px;\n"
+"")
+        icon12 = QIcon()
+        icon12.addFile(u":/blueicons/icons/blue_icons/trash-2.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.delete_btn.setIcon(icon12)
+        self.delete_btn.setIconSize(QSize(20, 20))
+        self.delete_btn.setFlat(False)
+
+        self.verticalLayout_57.addWidget(self.delete_btn)
+
+
+        self.horizontalLayout_59.addWidget(self.widget_24)
+
+
+        self.verticalLayout_55.addWidget(self.widget_17, 0, Qt.AlignHCenter)
+
+
+        self.horizontalLayout_49.addWidget(self.frame_9)
+
+
+        self.verticalLayout_51.addWidget(self.frame_7)
+
+
+        self.verticalLayout_50.addWidget(self.frame_5)
+
+        self.body_frame.addWidget(self.bill_history)
 
         self.verticalLayout.addWidget(self.body_frame)
 
@@ -1969,7 +2262,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.body_frame.setCurrentIndex(0)
+        self.body_frame.setCurrentIndex(4)
         self.profile_btn.setDefault(False)
         self.add_btn.setDefault(False)
         self.save_btn.setDefault(False)
@@ -2028,7 +2321,7 @@ class Ui_MainWindow(object):
         self.label_billdate2.setText(QCoreApplication.translate("MainWindow", u"date", None))
         self.label_billid_5.setText(QCoreApplication.translate("MainWindow", u"Bill ID:", None))
         self.label_id2.setText(QCoreApplication.translate("MainWindow", u"id", None))
-        self.arrow_btn_2.setText("")
+        self.arrow_btn2.setText("")
         self.label_bill3.setText(QCoreApplication.translate("MainWindow", u"Bill Name", None))
         self.label_coustomer_6.setText(QCoreApplication.translate("MainWindow", u"Customer: ", None))
         self.label_cust3.setText(QCoreApplication.translate("MainWindow", u"name", None))
@@ -2038,7 +2331,7 @@ class Ui_MainWindow(object):
         self.label_billdate3.setText(QCoreApplication.translate("MainWindow", u"date", None))
         self.label_billid_6.setText(QCoreApplication.translate("MainWindow", u"Bill ID:", None))
         self.label_id3.setText(QCoreApplication.translate("MainWindow", u"id", None))
-        self.arrow_btn_3.setText("")
+        self.arrow_btn3.setText("")
         self.label_bill4.setText(QCoreApplication.translate("MainWindow", u"Bill Name", None))
         self.label_coustomer_7.setText(QCoreApplication.translate("MainWindow", u"Customer: ", None))
         self.label_cust4.setText(QCoreApplication.translate("MainWindow", u"name", None))
@@ -2048,7 +2341,7 @@ class Ui_MainWindow(object):
         self.label_billdate4.setText(QCoreApplication.translate("MainWindow", u"date", None))
         self.label_billid_7.setText(QCoreApplication.translate("MainWindow", u"Bill ID:", None))
         self.label_id4.setText(QCoreApplication.translate("MainWindow", u"id", None))
-        self.arrow_btn_4.setText("")
+        self.arrow_btn4.setText("")
         self.customer_label.setText(QCoreApplication.translate("MainWindow", u"Customer Info :", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Name            :", None))
         self.customer_name_field.setPlaceholderText(QCoreApplication.translate("MainWindow", u"customer name", None))
@@ -2093,5 +2386,16 @@ class Ui_MainWindow(object):
 
         self.vis_btn.setText(QCoreApplication.translate("MainWindow", u"Visualise", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Bar Chart", None))
+        self.label_name.setText(QCoreApplication.translate("MainWindow", u"Bill Name", None))
+        self.label_15.setText(QCoreApplication.translate("MainWindow", u"Customer :", None))
+        self.label_custname.setText(QCoreApplication.translate("MainWindow", u"name", None))
+        self.label_12.setText(QCoreApplication.translate("MainWindow", u"Bill ID : ", None))
+        self.label_id.setText(QCoreApplication.translate("MainWindow", u"id", None))
+        self.label_13.setText(QCoreApplication.translate("MainWindow", u"Bill date : ", None))
+        self.label_date_2.setText(QCoreApplication.translate("MainWindow", u"date", None))
+        self.label_14.setText(QCoreApplication.translate("MainWindow", u"Total Amount :", None))
+        self.label_amount.setText(QCoreApplication.translate("MainWindow", u"amount", None))
+        self.export_btn.setText(QCoreApplication.translate("MainWindow", u"Export", None))
+        self.delete_btn.setText(QCoreApplication.translate("MainWindow", u"Delete", None))
     # retranslateUi
 
