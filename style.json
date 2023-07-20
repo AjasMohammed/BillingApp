@@ -20,8 +20,8 @@
             "export_btn",
             "delete_btn",
             "frame_8",
-            "frame_9"
-
+            "frame_9",
+            "chart_vis_frame"
         ],
         "shadow":[{
             "color": "#000",

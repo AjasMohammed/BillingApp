@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'dashboardonEVCd.ui'
+## Form generated from reading UI file 'dashboardbtkzQH.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -21,7 +21,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(892, 705)
+        MainWindow.resize(1125, 781)
         font = QFont()
         font.setPointSize(8)
         MainWindow.setFont(font)
@@ -316,7 +316,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
         self.profilebtn = QWidget(self.profile_frame)
         self.profilebtn.setObjectName(u"profilebtn")
-        self.profilebtn.setStyleSheet(u"border:1px solid #0000;")
+        self.profilebtn.setStyleSheet(u"")
         self.verticalLayout_24 = QVBoxLayout(self.profilebtn)
         self.verticalLayout_24.setSpacing(0)
         self.verticalLayout_24.setObjectName(u"verticalLayout_24")
@@ -1810,19 +1810,19 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_47.addWidget(self.label_9)
 
-        self.vis_type = QComboBox(self.frame_2)
-        self.vis_type.addItem("")
-        self.vis_type.addItem("")
-        self.vis_type.addItem("")
-        self.vis_type.setObjectName(u"vis_type")
-        sizePolicy2.setHeightForWidth(self.vis_type.sizePolicy().hasHeightForWidth())
-        self.vis_type.setSizePolicy(sizePolicy2)
-        self.vis_type.setFont(font7)
-        self.vis_type.setEditable(True)
-        self.vis_type.setSizeAdjustPolicy(QComboBox.AdjustToContentsOnFirstShow)
-        self.vis_type.setFrame(True)
+        self.chart_type = QComboBox(self.frame_2)
+        self.chart_type.addItem("")
+        self.chart_type.addItem("")
+        self.chart_type.addItem("")
+        self.chart_type.setObjectName(u"chart_type")
+        sizePolicy2.setHeightForWidth(self.chart_type.sizePolicy().hasHeightForWidth())
+        self.chart_type.setSizePolicy(sizePolicy2)
+        self.chart_type.setFont(font7)
+        self.chart_type.setEditable(True)
+        self.chart_type.setSizeAdjustPolicy(QComboBox.AdjustToContentsOnFirstShow)
+        self.chart_type.setFrame(True)
 
-        self.horizontalLayout_47.addWidget(self.vis_type, 0, Qt.AlignLeft)
+        self.horizontalLayout_47.addWidget(self.chart_type, 0, Qt.AlignLeft)
 
 
         self.horizontalLayout_46.addWidget(self.frame_2)
@@ -1841,24 +1841,24 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_48.addWidget(self.label_10)
 
-        self.vis_timeframe = QComboBox(self.frame_3)
-        self.vis_timeframe.addItem("")
-        self.vis_timeframe.addItem("")
-        self.vis_timeframe.addItem("")
-        self.vis_timeframe.setObjectName(u"vis_timeframe")
-        self.vis_timeframe.setEnabled(True)
-        sizePolicy2.setHeightForWidth(self.vis_timeframe.sizePolicy().hasHeightForWidth())
-        self.vis_timeframe.setSizePolicy(sizePolicy2)
-        self.vis_timeframe.setFont(font7)
+        self.chart_timeframe = QComboBox(self.frame_3)
+        self.chart_timeframe.addItem("")
+        self.chart_timeframe.addItem("")
+        self.chart_timeframe.addItem("")
+        self.chart_timeframe.setObjectName(u"chart_timeframe")
+        self.chart_timeframe.setEnabled(True)
+        sizePolicy2.setHeightForWidth(self.chart_timeframe.sizePolicy().hasHeightForWidth())
+        self.chart_timeframe.setSizePolicy(sizePolicy2)
+        self.chart_timeframe.setFont(font7)
 
-        self.horizontalLayout_48.addWidget(self.vis_timeframe, 0, Qt.AlignLeft)
+        self.horizontalLayout_48.addWidget(self.chart_timeframe, 0, Qt.AlignLeft)
 
 
         self.horizontalLayout_46.addWidget(self.frame_3, 0, Qt.AlignLeft)
 
         self.vis_btn = QPushButton(self.selection_frame)
         self.vis_btn.setObjectName(u"vis_btn")
-        self.vis_btn.setEnabled(False)
+        self.vis_btn.setEnabled(True)
         sizePolicy11 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Expanding)
         sizePolicy11.setHorizontalStretch(0)
         sizePolicy11.setVerticalStretch(0)
@@ -1885,8 +1885,8 @@ class Ui_MainWindow(object):
         self.chart_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_44 = QVBoxLayout(self.chart_frame)
         self.verticalLayout_44.setObjectName(u"verticalLayout_44")
-        self.stackedWidget = QStackedWidget(self.chart_frame)
-        self.stackedWidget.setObjectName(u"stackedWidget")
+        self.chart_widget = QStackedWidget(self.chart_frame)
+        self.chart_widget.setObjectName(u"chart_widget")
         self.bar_chart_page = QWidget()
         self.bar_chart_page.setObjectName(u"bar_chart_page")
         self.verticalLayout_45 = QVBoxLayout(self.bar_chart_page)
@@ -1918,17 +1918,34 @@ class Ui_MainWindow(object):
 
         self.chart_vis_frame = QFrame(self.bar_chart_page)
         self.chart_vis_frame.setObjectName(u"chart_vis_frame")
+        sizePolicy6.setHeightForWidth(self.chart_vis_frame.sizePolicy().hasHeightForWidth())
+        self.chart_vis_frame.setSizePolicy(sizePolicy6)
+        self.chart_vis_frame.setMinimumSize(QSize(805, 480))
+        self.chart_vis_frame.setMaximumSize(QSize(16777215, 16777215))
+        self.chart_vis_frame.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"border-radius: 15px;")
         self.chart_vis_frame.setFrameShape(QFrame.StyledPanel)
         self.chart_vis_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_59 = QVBoxLayout(self.chart_vis_frame)
+        self.verticalLayout_59.setObjectName(u"verticalLayout_59")
 
-        self.verticalLayout_45.addWidget(self.chart_vis_frame)
+        self.verticalLayout_45.addWidget(self.chart_vis_frame, 0, Qt.AlignHCenter)
 
-        self.stackedWidget.addWidget(self.bar_chart_page)
+        self.chart_widget.addWidget(self.bar_chart_page)
         self.page_4 = QWidget()
         self.page_4.setObjectName(u"page_4")
-        self.stackedWidget.addWidget(self.page_4)
+        self.verticalLayout_58 = QVBoxLayout(self.page_4)
+        self.verticalLayout_58.setObjectName(u"verticalLayout_58")
+        self.frame_10 = QFrame(self.page_4)
+        self.frame_10.setObjectName(u"frame_10")
+        self.frame_10.setFrameShape(QFrame.StyledPanel)
+        self.frame_10.setFrameShadow(QFrame.Raised)
 
-        self.verticalLayout_44.addWidget(self.stackedWidget)
+        self.verticalLayout_58.addWidget(self.frame_10)
+
+        self.chart_widget.addWidget(self.page_4)
+
+        self.verticalLayout_44.addWidget(self.chart_widget)
 
 
         self.verticalLayout_43.addWidget(self.chart_frame)
@@ -2257,7 +2274,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 892, 19))
+        self.menubar.setGeometry(QRect(0, 0, 1125, 19))
         MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
@@ -2266,8 +2283,8 @@ class Ui_MainWindow(object):
         self.profile_btn.setDefault(False)
         self.add_btn.setDefault(False)
         self.save_btn.setDefault(False)
-        self.vis_type.setCurrentIndex(0)
-        self.stackedWidget.setCurrentIndex(1)
+        self.chart_type.setCurrentIndex(0)
+        self.chart_widget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2373,16 +2390,16 @@ class Ui_MainWindow(object):
         self.bill_tag_field.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Bill Name", None))
         self.save_btn.setText(QCoreApplication.translate("MainWindow", u"Save", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Select Type:", None))
-        self.vis_type.setItemText(0, QCoreApplication.translate("MainWindow", u"BarChart", None))
-        self.vis_type.setItemText(1, QCoreApplication.translate("MainWindow", u"LineGraph", None))
-        self.vis_type.setItemText(2, QCoreApplication.translate("MainWindow", u"PieChart", None))
+        self.chart_type.setItemText(0, QCoreApplication.translate("MainWindow", u"BarChart", None))
+        self.chart_type.setItemText(1, QCoreApplication.translate("MainWindow", u"LineGraph", None))
+        self.chart_type.setItemText(2, QCoreApplication.translate("MainWindow", u"PieChart", None))
 
-        self.vis_type.setCurrentText(QCoreApplication.translate("MainWindow", u"BarChart", None))
-        self.vis_type.setPlaceholderText(QCoreApplication.translate("MainWindow", u"select type", None))
+        self.chart_type.setCurrentText(QCoreApplication.translate("MainWindow", u"BarChart", None))
+        self.chart_type.setPlaceholderText(QCoreApplication.translate("MainWindow", u"select type", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"TimeFrame:", None))
-        self.vis_timeframe.setItemText(0, QCoreApplication.translate("MainWindow", u"Today", None))
-        self.vis_timeframe.setItemText(1, QCoreApplication.translate("MainWindow", u"This Week", None))
-        self.vis_timeframe.setItemText(2, QCoreApplication.translate("MainWindow", u"This Month", None))
+        self.chart_timeframe.setItemText(0, QCoreApplication.translate("MainWindow", u"Today", None))
+        self.chart_timeframe.setItemText(1, QCoreApplication.translate("MainWindow", u"This Week", None))
+        self.chart_timeframe.setItemText(2, QCoreApplication.translate("MainWindow", u"This Month", None))
 
         self.vis_btn.setText(QCoreApplication.translate("MainWindow", u"Visualise", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Bar Chart", None))

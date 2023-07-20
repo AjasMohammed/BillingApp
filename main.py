@@ -1,12 +1,12 @@
+import calendar
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from ui_dashboard import *
 from ui_login import Ui_MainWindow as Ui_Loginwindow
 
 from Custom_Widgets.Widgets import *
 
-import csv
 import os
 from datetime import datetime
 from PyQt5.QtSql import QSqlDatabase, QSqlQuery
@@ -17,6 +17,8 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib import colors
 
+from PySide2.QtCharts import QtCharts
+from functools import partial
 
 
 # PATH WHERE THE DATABASE WILL BE CREATED
@@ -113,6 +115,7 @@ class MainWindow(QMainWindow):
         self.ui.add_btn.clicked.connect(self.add_products)
         self.ui.save_btn.clicked.connect(self.save_table)
         self.ui.more_btn.clicked.connect(self.create_dynamic_frame)
+        self.ui.vis_btn.clicked.connect(self.chart_selection)
 
 
         ########################################################################
@@ -123,6 +126,9 @@ class MainWindow(QMainWindow):
         loadJsonStyle(self, self.ui)
         ########################################################################
         self.show()
+
+        # self.bar_chart()
+        # self.get_data()
 
 
     def create_user_folder(self):
@@ -145,29 +151,185 @@ class MainWindow(QMainWindow):
 
         ###########CREATE CHART###############
 
-    def create_barchart(self):
+    def chart_selection(self):
+        chart_type = self.ui.chart_type.currentText()
+        time_frame = self.ui.chart_timeframe.currentText()
 
-        # jason objects to hold data
-        names = {}
-        id = {}
-        price = {}
-        qty = {}
+        if self.ui.chart_vis_frame is not None:
+            # self.ui.chart_vis_frame.deleteLater()
+            while self.ui.chart_vis_frame.layout().count():
+                item = self.ui.chart_vis_frame.layout().takeAt(0)
+        
+        if chart_type == 'BarChart':
+            if time_frame == 'Today':
+                pass
+            elif time_frame == "This Week":
+                self.bar_chart(time_frame)
+            elif time_frame == 'This Month':
+                self.bar_chart(time_frame)
+        if chart_type == 'Linegraph':
+            if time_frame == 'Today':
+                pass
+            elif time_frame == "This Week":
+                pass
+            elif time_frame == 'This Month':
+                pass
 
-        row_count = 0
+    @staticmethod
+    def date_calc(week_number):
+        year = datetime.today().year
+        # Find the first day of the year
+        first_day = datetime(year, 1, 1)
+
+        # Find the first day of the week (Monday) of the given week number
+        days_to_add = (week_number - 1) * 7
+        first_day_of_week = first_day + timedelta(days=days_to_add)
+
+        # Find the last day of the week (Sunday) of the given week number
+        last_day_of_week = first_day_of_week + timedelta(days=6)
+
+        first_day = first_day_of_week.strftime('%Y-%m-%d')
+        last_day = last_day_of_week.strftime('%Y-%m-%d')
+
+        return first_day, last_day
 
 
-        with open("product.csv", 'r') as file:
-            # reader = csv.reader(file, delimiter=",")
-            reader = csv.DictReader(file)
+    def bar_chart(self, arg):
+        bills = self.get_data(arg)
 
-            for row in reader:
+        categories = []
+        amount = []
+        if arg == 'This Week':
+            for bill in bills:
+                day = datetime.strptime(bill['bill_date'], "%Y-%m-%d").strftime('%A')
+                categories.append(day)
+                amount.append(bill['bill_amount'])
 
-                date_str = row['date']
+        elif arg == 'This Month':
+            for week, amt in bills.items():
+                # categories.append(f"week-{week}")
+                week = self.date_calc(week)
+                categories.append(week)
+                amount.append(amt)
+        
+        n = max(amount)
+        amount.append(n+(n*0.1))
 
-                date = datetime.strptime(date_str, "%Y-%m-%d")
-                week = date.isocalendar()[1]
+        # Create a bar chart
+        chart = QtCharts.QChart()
+        chart.setTitle("Bar Chart Example")
 
-                # print(row)
+        # Create a bar series
+        series = QtCharts.QBarSeries()
+        set0 = QtCharts.QBarSet("Data Set 1")
+        set0.append (amount)
+        series.append(set0)
+
+        series.setBarWidth(0.3)
+
+        # Add the series to the chart
+        chart.addSeries(series)
+
+        # Create a category axis for the x-axis
+        axis_x = QtCharts.QBarCategoryAxis()
+        axis_x.append(categories)
+        chart.addAxis(axis_x, Qt.AlignBottom)
+
+        # Attach the series to the x-axis
+        series.attachAxis(axis_x)
+
+        # Create a value axis for the y-axis
+        axis_y = QtCharts.QValueAxis()
+        chart.addAxis(axis_y, Qt.AlignLeft)
+
+            # Set the range for the y-axis
+        # axis_y.setMin(0) # Minimum value on y-axis
+        # axis_y.setMax()  
+
+        # Attach the series to the y-axis
+        series.attachAxis(axis_y)
+
+        # Add animation to the chart
+        chart.setAnimationOptions(QtCharts.QChart.AllAnimations)
+
+        # Create a chart view
+        chart_view = QtCharts.QChartView(chart)
+        chart_view.setRenderHint(QPainter.Antialiasing)
+
+        self.ui.chart_vis_frame.layout().addWidget(chart_view)
+
+
+    def get_data(self, arg):
+        current_date = datetime.today()
+
+
+        if arg == 'This Week':
+            # Calculate the start of the current week (Monday)
+            start_of_week = current_date - timedelta(days=current_date.weekday())
+            # Calculate the end of the current week (Sunday)
+            end_of_week = start_of_week + timedelta(days=6)
+
+            self.query.prepare("""
+                SELECT DATE(created_date) AS week_number, SUM(total) FROM bill_info 
+                WHERE created_date BETWEEN :start_date AND :end_date
+                GROUP BY DATE(created_date) 
+                ORDER BY created_date
+            """)
+
+            self.query.bindValue(":start_date", str(start_of_week))
+            self.query.bindValue(":end_date", str(end_of_week))
+
+            if self.query.exec_():
+                print("Done")
+
+            else:
+                # Query execution failed, handle the error
+                print("Query Error:", self.query.lastError().text())
+
+        elif arg == "This Month":
+            start_of_month = current_date.replace(day=1)
+            end_of_month = start_of_month + timedelta(days=calendar.monthrange(start_of_month.year, start_of_month.month)[1])
+            
+            self.query.prepare("""
+                SELECT DATE(created_date) AS week_number, SUM(total) FROM bill_info 
+                WHERE created_date BETWEEN :start_date AND :end_date
+                GROUP BY DATE(created_date) 
+                ORDER BY created_date
+            """)
+            # self.query.prepare(q)
+            self.query.bindValue(":start_date", str(start_of_month))
+            self.query.bindValue(":end_date", str(end_of_month))
+
+            if self.query.exec_():
+            # Iterate over the result set and retrieve the data
+                bill = {}
+                while self.query.next():
+                    date = datetime.strptime(self.query.value(0), '%Y-%m-%d')
+                    amount = self.query.value(1)
+
+                    week_number = datetime.isocalendar(date)[1]
+
+                    if week_number in bill:
+                        bill[week_number] += amount
+                    else:
+                        bill[week_number] = amount
+                return bill
+
+            else:
+                # Query execution failed, handle the error
+                print("Query Error:", self.query.lastError().text())
+                print("Query Error:", self.query.lastQuery())
+
+        bills = []
+            # Iterate over the result set and retrieve the data
+        while self.query.next():
+            bill = {}
+
+            bill['bill_date']  = self.query.value(0)
+            bill["bill_amount"] = self.query.value(1)
+            bills.append(bill)
+
+        return bills
 
 
     def add_products(self):
@@ -261,6 +423,7 @@ class MainWindow(QMainWindow):
         else:
             self.ui.bill_table.clearContents()
             self.ui.bill_table.setRowCount(0)
+        self.dashboard_billcard()
 
 
     def create_dynamic_frame(self):
@@ -268,6 +431,8 @@ class MainWindow(QMainWindow):
 
         if self.dynamic_frame is not None:
             self.dynamic_frame.deleteLater()
+            while self.ui.card_views.layout().count():
+                item = self.ui.card_views.layout().takeAt(0)
         self.dynamic_frame = QFrame(self.ui.card_views)
         self.dynamic_frame.setObjectName("dynamic_frame")
 
@@ -451,15 +616,15 @@ class MainWindow(QMainWindow):
             self.query.exec_(delete_table_query)
 
             # Delete the row from the 'bill_info' table based on the bill_id
-            delete_row_query = f"DELETE FROM bill_info WHERE bill_id = ?"
+            delete_row_query = "DELETE FROM bill_info WHERE bill_id = ?"
             self.query.prepare(delete_row_query)
             self.query.addBindValue(bill_id)
 
-            self.dashboard_billcard()
-            self.create_dynamic_frame()
 
             if self.query.exec_():
                 print("Table and row deleted successfully.")
+                self.dashboard_billcard()
+                self.create_dynamic_frame()
             else:
                 print("Error deleting table or row:", self.query.lastError().text())
 
@@ -568,7 +733,7 @@ class MainWindow(QMainWindow):
         bill = self.__fetch_bill(bill_name)
 
         model = QStandardItemModel(len(bill), 4)
-        model.setHorizontalHeaderLabels(["Name", "ID", "Price", "Quantity"])
+        model.setHorizontalHeaderLabels(["<b>Name</b>", "<b>ID</b>", "<b>Price</b>", "<b>Quantity</b>"])
 
         # Populate the model with data from the list of dictionaries
         for row, product in enumerate(bill):
@@ -752,7 +917,6 @@ class LoginWindow(QMainWindow):
         self.close()
         ui = window.ui
         window.load_ui_info()
-        window.create_barchart()
         window.show()
 
 
@@ -761,7 +925,12 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
 
 
-    login_window = LoginWindow()
+    # login_window = LoginWindow()
 
-    login_window.show()
+    # login_window.show()
+    window = MainWindow('z', hash_item('z'))
+
+    ui = window.ui
+    window.load_ui_info()
+    window.show()
     sys.exit(app.exec_())
