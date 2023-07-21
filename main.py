@@ -116,6 +116,9 @@ class MainWindow(QMainWindow):
         self.ui.more_btn.clicked.connect(self.create_dynamic_frame)
         self.ui.vis_btn.clicked.connect(self.chart_selection)
 
+        self.ui.to_dynamic.clicked.connect(lambda: self.ui.body_frame.setCurrentWidget(self.ui.bills_history))
+        self.ui.to_home.clicked.connect(lambda: self.ui.body_frame.setCurrentWidget(self.ui.dashboard))
+
 
         ########################################################################
         # APPLY JSON STYLESHEET
@@ -126,8 +129,7 @@ class MainWindow(QMainWindow):
         ########################################################################
         self.show()
 
-        # self.bar_chart()
-        # self.get_data()
+        self.bar_chart('This Week')
 
 
     def create_user_folder(self):
@@ -151,7 +153,6 @@ class MainWindow(QMainWindow):
         ###########CREATE CHART###############
 
     def chart_selection(self):
-        chart_type = self.ui.chart_type.currentText()
         time_frame = self.ui.chart_timeframe.currentText()
 
         if self.ui.chart_vis_frame is not None:
@@ -159,20 +160,13 @@ class MainWindow(QMainWindow):
             while self.ui.chart_vis_frame.layout().count():
                 item = self.ui.chart_vis_frame.layout().takeAt(0)
         
-        if chart_type == 'BarChart':
-            if time_frame == 'Today':
-                pass
-            elif time_frame == "This Week":
-                self.bar_chart(time_frame)
-            elif time_frame == 'This Month':
-                self.bar_chart(time_frame)
-        if chart_type == 'Linegraph':
-            if time_frame == 'Today':
-                pass
-            elif time_frame == "This Week":
-                pass
-            elif time_frame == 'This Month':
-                pass
+
+        if time_frame == "This Week":
+            self.bar_chart(time_frame)
+        elif time_frame == 'This Month':
+            self.bar_chart(time_frame)
+
+
 
     @staticmethod
     def date_calc(week_number):
@@ -195,7 +189,6 @@ class MainWindow(QMainWindow):
 
     def bar_chart(self, arg):
         bills = self.get_data(arg)
-        print(bills)
         categories = []
         amount = []
         if arg == 'This Week':
@@ -206,7 +199,7 @@ class MainWindow(QMainWindow):
 
         elif arg == 'This Month':
             for week, amt in bills.items():
-                # categories.append(f"week-{week}")
+                # categories.append(week)
                 week = self.date_calc(week)
                 start = "/".join(week[0].split('-')[1:])
                 end = "/".join(week[1].split('-')[1:])
@@ -218,12 +211,12 @@ class MainWindow(QMainWindow):
 
         # Create a bar chart
         chart = QtCharts.QChart()
-        chart.setTitle("Bar Chart Example")
+        chart.setTitle(f"{arg}'s Performance")
 
         # Create a bar series
         series = QtCharts.QBarSeries()
-        set0 = QtCharts.QBarSet("Data Set 1")
-        set0.append (amount)
+        set0 = QtCharts.QBarSet(arg)
+        set0.append(amount)
         series.append(set0)
 
         series.setBarWidth(0.3)
@@ -243,7 +236,7 @@ class MainWindow(QMainWindow):
         axis_y = QtCharts.QValueAxis()
         chart.addAxis(axis_y, Qt.AlignLeft)
 
-            # Set the range for the y-axis
+        # Set the range for the y-axis
         # axis_y.setMin(0) # Minimum value on y-axis
         # axis_y.setMax()  
 
@@ -263,14 +256,11 @@ class MainWindow(QMainWindow):
     def get_data(self, arg):
         current_date = datetime.today()
 
-
         if arg == 'This Week':
             # Calculate the start of the current week (Monday)
             start_of_week = current_date - timedelta(days=current_date.weekday())
             # Calculate the end of the current week (Sunday)
             end_of_week = start_of_week + timedelta(days=6)
-
-            print(start_of_week, end_of_week)
 
             self.query.prepare("""
                 SELECT DATE(created_date) AS week_number, SUM(total) FROM bill_info 
@@ -331,7 +321,7 @@ class MainWindow(QMainWindow):
             bill['bill_date']  = self.query.value(0)
             bill["bill_amount"] = self.query.value(1)
             bills.append(bill)
-        print(bills)
+
         return bills
 
 
@@ -809,7 +799,6 @@ class MainWindow(QMainWindow):
             return bills
 
 
-
 class LoginWindow(QMainWindow):
     def __init__(self, parent=None):
         QMainWindow.__init__(self)
@@ -831,13 +820,11 @@ class LoginWindow(QMainWindow):
         # Connect the completer to the username field
         self.ui.username_field_login.setCompleter(self.auto_complete())
 
-
         self.username = ""
         self.password = ""
         self.company_name = ""
 
         self.auto_complete()
-
 
         self.show()
     

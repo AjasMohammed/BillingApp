@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'dashboardbtkzQH.ui'
+## Form generated from reading UI file 'dashboardkEkfdN.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -1783,6 +1783,7 @@ class Ui_MainWindow(object):
         self.selection_frame.setObjectName(u"selection_frame")
         sizePolicy1.setHeightForWidth(self.selection_frame.sizePolicy().hasHeightForWidth())
         self.selection_frame.setSizePolicy(sizePolicy1)
+        self.selection_frame.setMinimumSize(QSize(0, 0))
         self.selection_frame.setMaximumSize(QSize(561, 16777215))
         self.selection_frame.setFrameShape(QFrame.StyledPanel)
         self.selection_frame.setFrameShadow(QFrame.Raised)
@@ -1790,53 +1791,17 @@ class Ui_MainWindow(object):
         self.horizontalLayout_46.setSpacing(10)
         self.horizontalLayout_46.setObjectName(u"horizontalLayout_46")
         self.horizontalLayout_46.setContentsMargins(-1, -1, 65, -1)
-        self.frame_2 = QFrame(self.selection_frame)
-        self.frame_2.setObjectName(u"frame_2")
-        sizePolicy1.setHeightForWidth(self.frame_2.sizePolicy().hasHeightForWidth())
-        self.frame_2.setSizePolicy(sizePolicy1)
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_47 = QHBoxLayout(self.frame_2)
-        self.horizontalLayout_47.setObjectName(u"horizontalLayout_47")
-        self.label_9 = QLabel(self.frame_2)
-        self.label_9.setObjectName(u"label_9")
-        sizePolicy10 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
-        sizePolicy10.setHorizontalStretch(0)
-        sizePolicy10.setVerticalStretch(0)
-        sizePolicy10.setHeightForWidth(self.label_9.sizePolicy().hasHeightForWidth())
-        self.label_9.setSizePolicy(sizePolicy10)
-        self.label_9.setFont(font7)
-        self.label_9.setAlignment(Qt.AlignCenter)
-
-        self.horizontalLayout_47.addWidget(self.label_9)
-
-        self.chart_type = QComboBox(self.frame_2)
-        self.chart_type.addItem("")
-        self.chart_type.addItem("")
-        self.chart_type.addItem("")
-        self.chart_type.setObjectName(u"chart_type")
-        sizePolicy2.setHeightForWidth(self.chart_type.sizePolicy().hasHeightForWidth())
-        self.chart_type.setSizePolicy(sizePolicy2)
-        self.chart_type.setFont(font7)
-        self.chart_type.setEditable(True)
-        self.chart_type.setSizeAdjustPolicy(QComboBox.AdjustToContentsOnFirstShow)
-        self.chart_type.setFrame(True)
-
-        self.horizontalLayout_47.addWidget(self.chart_type, 0, Qt.AlignLeft)
-
-
-        self.horizontalLayout_46.addWidget(self.frame_2)
-
         self.frame_3 = QFrame(self.selection_frame)
         self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setMinimumSize(QSize(0, 0))
         self.frame_3.setFrameShape(QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_48 = QHBoxLayout(self.frame_3)
         self.horizontalLayout_48.setObjectName(u"horizontalLayout_48")
         self.label_10 = QLabel(self.frame_3)
         self.label_10.setObjectName(u"label_10")
-        sizePolicy10.setHeightForWidth(self.label_10.sizePolicy().hasHeightForWidth())
-        self.label_10.setSizePolicy(sizePolicy10)
+        sizePolicy3.setHeightForWidth(self.label_10.sizePolicy().hasHeightForWidth())
+        self.label_10.setSizePolicy(sizePolicy3)
         self.label_10.setFont(font7)
 
         self.horizontalLayout_48.addWidget(self.label_10)
@@ -1844,12 +1809,14 @@ class Ui_MainWindow(object):
         self.chart_timeframe = QComboBox(self.frame_3)
         self.chart_timeframe.addItem("")
         self.chart_timeframe.addItem("")
-        self.chart_timeframe.addItem("")
         self.chart_timeframe.setObjectName(u"chart_timeframe")
         self.chart_timeframe.setEnabled(True)
-        sizePolicy2.setHeightForWidth(self.chart_timeframe.sizePolicy().hasHeightForWidth())
-        self.chart_timeframe.setSizePolicy(sizePolicy2)
-        self.chart_timeframe.setFont(font7)
+        sizePolicy1.setHeightForWidth(self.chart_timeframe.sizePolicy().hasHeightForWidth())
+        self.chart_timeframe.setSizePolicy(sizePolicy1)
+        self.chart_timeframe.setMinimumSize(QSize(94, 0))
+        self.chart_timeframe.setFont(font17)
+        self.chart_timeframe.setEditable(False)
+        self.chart_timeframe.setFrame(True)
 
         self.horizontalLayout_48.addWidget(self.chart_timeframe, 0, Qt.AlignLeft)
 
@@ -1859,11 +1826,11 @@ class Ui_MainWindow(object):
         self.vis_btn = QPushButton(self.selection_frame)
         self.vis_btn.setObjectName(u"vis_btn")
         self.vis_btn.setEnabled(True)
-        sizePolicy11 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Expanding)
-        sizePolicy11.setHorizontalStretch(0)
-        sizePolicy11.setVerticalStretch(0)
-        sizePolicy11.setHeightForWidth(self.vis_btn.sizePolicy().hasHeightForWidth())
-        self.vis_btn.setSizePolicy(sizePolicy11)
+        sizePolicy10 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Expanding)
+        sizePolicy10.setHorizontalStretch(0)
+        sizePolicy10.setVerticalStretch(0)
+        sizePolicy10.setHeightForWidth(self.vis_btn.sizePolicy().hasHeightForWidth())
+        self.vis_btn.setSizePolicy(sizePolicy10)
         self.vis_btn.setMaximumSize(QSize(105, 50))
         self.vis_btn.setFont(font16)
         self.vis_btn.setStyleSheet(u"background-color: #004cff;\n"
@@ -1877,7 +1844,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_46.addWidget(self.vis_btn)
 
 
-        self.verticalLayout_43.addWidget(self.selection_frame, 0, Qt.AlignLeft)
+        self.verticalLayout_43.addWidget(self.selection_frame, 0, Qt.AlignHCenter)
 
         self.chart_frame = QFrame(self.body)
         self.chart_frame.setObjectName(u"chart_frame")
@@ -1899,20 +1866,6 @@ class Ui_MainWindow(object):
         self.frame_4.setFrameShadow(QFrame.Raised)
         self.verticalLayout_46 = QVBoxLayout(self.frame_4)
         self.verticalLayout_46.setObjectName(u"verticalLayout_46")
-        self.label_11 = QLabel(self.frame_4)
-        self.label_11.setObjectName(u"label_11")
-        sizePolicy1.setHeightForWidth(self.label_11.sizePolicy().hasHeightForWidth())
-        self.label_11.setSizePolicy(sizePolicy1)
-        font20 = QFont()
-        font20.setPointSize(18)
-        font20.setBold(False)
-        font20.setUnderline(True)
-        font20.setWeight(50)
-        self.label_11.setFont(font20)
-        self.label_11.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_46.addWidget(self.label_11)
-
 
         self.verticalLayout_45.addWidget(self.frame_4)
 
@@ -1958,6 +1911,33 @@ class Ui_MainWindow(object):
         self.bills_history.setObjectName(u"bills_history")
         self.verticalLayout_48 = QVBoxLayout(self.bills_history)
         self.verticalLayout_48.setObjectName(u"verticalLayout_48")
+        self.frame_11 = QFrame(self.bills_history)
+        self.frame_11.setObjectName(u"frame_11")
+        sizePolicy1.setHeightForWidth(self.frame_11.sizePolicy().hasHeightForWidth())
+        self.frame_11.setSizePolicy(sizePolicy1)
+        self.frame_11.setFrameShape(QFrame.StyledPanel)
+        self.frame_11.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_63 = QVBoxLayout(self.frame_11)
+        self.verticalLayout_63.setObjectName(u"verticalLayout_63")
+        self.widget_30 = QWidget(self.frame_11)
+        self.widget_30.setObjectName(u"widget_30")
+        self.verticalLayout_62 = QVBoxLayout(self.widget_30)
+        self.verticalLayout_62.setObjectName(u"verticalLayout_62")
+        self.to_home = QPushButton(self.widget_30)
+        self.to_home.setObjectName(u"to_home")
+        icon11 = QIcon()
+        icon11.addFile(u":/blueicons/icons/blue_icons/arrow-left.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.to_home.setIcon(icon11)
+        self.to_home.setIconSize(QSize(20, 20))
+
+        self.verticalLayout_62.addWidget(self.to_home, 0, Qt.AlignLeft)
+
+
+        self.verticalLayout_63.addWidget(self.widget_30)
+
+
+        self.verticalLayout_48.addWidget(self.frame_11, 0, Qt.AlignTop)
+
         self.card_views = QFrame(self.bills_history)
         self.card_views.setObjectName(u"card_views")
         self.card_views.setFrameShape(QFrame.StyledPanel)
@@ -1978,6 +1958,29 @@ class Ui_MainWindow(object):
         self.frame_5.setFrameShadow(QFrame.Raised)
         self.verticalLayout_51 = QVBoxLayout(self.frame_5)
         self.verticalLayout_51.setObjectName(u"verticalLayout_51")
+        self.frame_2 = QFrame(self.frame_5)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_60 = QVBoxLayout(self.frame_2)
+        self.verticalLayout_60.setObjectName(u"verticalLayout_60")
+        self.widget_29 = QWidget(self.frame_2)
+        self.widget_29.setObjectName(u"widget_29")
+        self.verticalLayout_61 = QVBoxLayout(self.widget_29)
+        self.verticalLayout_61.setObjectName(u"verticalLayout_61")
+        self.to_dynamic = QPushButton(self.widget_29)
+        self.to_dynamic.setObjectName(u"to_dynamic")
+        self.to_dynamic.setIcon(icon11)
+        self.to_dynamic.setIconSize(QSize(20, 20))
+
+        self.verticalLayout_61.addWidget(self.to_dynamic, 0, Qt.AlignLeft)
+
+
+        self.verticalLayout_60.addWidget(self.widget_29)
+
+
+        self.verticalLayout_51.addWidget(self.frame_2)
+
         self.frame_6 = QFrame(self.frame_5)
         self.frame_6.setObjectName(u"frame_6")
         self.frame_6.setFrameShape(QFrame.StyledPanel)
@@ -1990,10 +1993,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_53.setObjectName(u"verticalLayout_53")
         self.label_name = QLabel(self.widget_13)
         self.label_name.setObjectName(u"label_name")
-        font21 = QFont()
-        font21.setPointSize(18)
-        font21.setUnderline(True)
-        self.label_name.setFont(font21)
+        font20 = QFont()
+        font20.setPointSize(18)
+        font20.setUnderline(True)
+        self.label_name.setFont(font20)
         self.label_name.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_53.addWidget(self.label_name)
@@ -2211,9 +2214,9 @@ class Ui_MainWindow(object):
         self.export_btn.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border-radius: 10px;\n"
 "")
-        icon11 = QIcon()
-        icon11.addFile(u":/blueicons/icons/blue_icons/download.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.export_btn.setIcon(icon11)
+        icon12 = QIcon()
+        icon12.addFile(u":/blueicons/icons/blue_icons/download.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.export_btn.setIcon(icon12)
         self.export_btn.setIconSize(QSize(20, 20))
         self.export_btn.setFlat(False)
 
@@ -2237,9 +2240,9 @@ class Ui_MainWindow(object):
         self.delete_btn.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border-radius: 10px;\n"
 "")
-        icon12 = QIcon()
-        icon12.addFile(u":/blueicons/icons/blue_icons/trash-2.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.delete_btn.setIcon(icon12)
+        icon13 = QIcon()
+        icon13.addFile(u":/blueicons/icons/blue_icons/trash-2.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.delete_btn.setIcon(icon13)
         self.delete_btn.setIconSize(QSize(20, 20))
         self.delete_btn.setFlat(False)
 
@@ -2279,11 +2282,10 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.body_frame.setCurrentIndex(4)
+        self.body_frame.setCurrentIndex(3)
         self.profile_btn.setDefault(False)
         self.add_btn.setDefault(False)
         self.save_btn.setDefault(False)
-        self.chart_type.setCurrentIndex(0)
         self.chart_widget.setCurrentIndex(0)
 
 
@@ -2297,7 +2299,7 @@ class Ui_MainWindow(object):
         self.newbill_btn.setText(QCoreApplication.translate("MainWindow", u" New Bill", None))
         self.statistics_btn.setText(QCoreApplication.translate("MainWindow", u" Statistics", None))
         self.logout_btn.setText(QCoreApplication.translate("MainWindow", u" LogOut", None))
-        self.menu_btn.setText(QCoreApplication.translate("MainWindow", u"Dashboard", None))
+        self.menu_btn.setText("")
         self.label_pybill.setText(QCoreApplication.translate("MainWindow", u"Py Bill", None))
         self.company_name.setText(QCoreApplication.translate("MainWindow", u"company_name", None))
         self.profile_btn.setText("")
@@ -2389,20 +2391,13 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"Bill Tag :", None))
         self.bill_tag_field.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Bill Name", None))
         self.save_btn.setText(QCoreApplication.translate("MainWindow", u"Save", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Select Type:", None))
-        self.chart_type.setItemText(0, QCoreApplication.translate("MainWindow", u"BarChart", None))
-        self.chart_type.setItemText(1, QCoreApplication.translate("MainWindow", u"LineGraph", None))
-        self.chart_type.setItemText(2, QCoreApplication.translate("MainWindow", u"PieChart", None))
-
-        self.chart_type.setCurrentText(QCoreApplication.translate("MainWindow", u"BarChart", None))
-        self.chart_type.setPlaceholderText(QCoreApplication.translate("MainWindow", u"select type", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"TimeFrame:", None))
-        self.chart_timeframe.setItemText(0, QCoreApplication.translate("MainWindow", u"Today", None))
-        self.chart_timeframe.setItemText(1, QCoreApplication.translate("MainWindow", u"This Week", None))
-        self.chart_timeframe.setItemText(2, QCoreApplication.translate("MainWindow", u"This Month", None))
+        self.chart_timeframe.setItemText(0, QCoreApplication.translate("MainWindow", u"This Week", None))
+        self.chart_timeframe.setItemText(1, QCoreApplication.translate("MainWindow", u"This Month", None))
 
         self.vis_btn.setText(QCoreApplication.translate("MainWindow", u"Visualise", None))
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Bar Chart", None))
+        self.to_home.setText("")
+        self.to_dynamic.setText("")
         self.label_name.setText(QCoreApplication.translate("MainWindow", u"Bill Name", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"Customer :", None))
         self.label_custname.setText(QCoreApplication.translate("MainWindow", u"name", None))

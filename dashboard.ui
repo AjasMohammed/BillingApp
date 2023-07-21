@@ -429,7 +429,7 @@ border-bottom-left-radius: 18px;
              </font>
             </property>
             <property name="text">
-             <string>Dashboard</string>
+             <string/>
             </property>
             <property name="icon">
              <iconset resource="resources.qrc">
@@ -452,7 +452,7 @@ border-bottom-left-radius: 18px;
        <item>
         <widget class="QCustomStackedWidget" name="body_frame">
          <property name="currentIndex">
-          <number>0</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="dashboard">
           <layout class="QVBoxLayout" name="verticalLayout_32">
@@ -3598,13 +3598,19 @@ border:3px solid #fff;
               <enum>QFrame::Raised</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_43">
-              <item alignment="Qt::AlignLeft">
+              <item alignment="Qt::AlignHCenter">
                <widget class="QFrame" name="selection_frame">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
                 </property>
                 <property name="maximumSize">
                  <size>
@@ -3625,95 +3631,14 @@ border:3px solid #fff;
                  <property name="rightMargin">
                   <number>65</number>
                  </property>
-                 <item>
-                  <widget class="QFrame" name="frame_2">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_47">
-                    <item>
-                     <widget class="QLabel" name="label_9">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>10</pointsize>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>Select Type:</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item alignment="Qt::AlignLeft">
-                     <widget class="QComboBox" name="chart_type">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>10</pointsize>
-                       </font>
-                      </property>
-                      <property name="editable">
-                       <bool>true</bool>
-                      </property>
-                      <property name="currentText">
-                       <string>BarChart</string>
-                      </property>
-                      <property name="currentIndex">
-                       <number>0</number>
-                      </property>
-                      <property name="sizeAdjustPolicy">
-                       <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
-                      </property>
-                      <property name="placeholderText">
-                       <string>select type</string>
-                      </property>
-                      <property name="frame">
-                       <bool>true</bool>
-                      </property>
-                      <item>
-                       <property name="text">
-                        <string>BarChart</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>LineGraph</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>PieChart</string>
-                       </property>
-                      </item>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
                  <item alignment="Qt::AlignLeft">
                   <widget class="QFrame" name="frame_3">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
                    </property>
@@ -3724,7 +3649,7 @@ border:3px solid #fff;
                     <item>
                      <widget class="QLabel" name="label_10">
                       <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                         <horstretch>0</horstretch>
                         <verstretch>0</verstretch>
                        </sizepolicy>
@@ -3745,21 +3670,30 @@ border:3px solid #fff;
                        <bool>true</bool>
                       </property>
                       <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                         <horstretch>0</horstretch>
                         <verstretch>0</verstretch>
                        </sizepolicy>
                       </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>94</width>
+                        <height>0</height>
+                       </size>
+                      </property>
                       <property name="font">
                        <font>
                         <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
                        </font>
                       </property>
-                      <item>
-                       <property name="text">
-                        <string>Today</string>
-                       </property>
-                      </item>
+                      <property name="editable">
+                       <bool>false</bool>
+                      </property>
+                      <property name="frame">
+                       <bool>true</bool>
+                      </property>
                       <item>
                        <property name="text">
                         <string>This Week</string>
@@ -3852,32 +3786,7 @@ color: rgb(255, 255, 255);</string>
                        <property name="frameShadow">
                         <enum>QFrame::Raised</enum>
                        </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_46">
-                        <item>
-                         <widget class="QLabel" name="label_11">
-                          <property name="sizePolicy">
-                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                           </sizepolicy>
-                          </property>
-                          <property name="font">
-                           <font>
-                            <pointsize>18</pointsize>
-                            <weight>50</weight>
-                            <bold>false</bold>
-                            <underline>true</underline>
-                           </font>
-                          </property>
-                          <property name="text">
-                           <string>Bar Chart</string>
-                          </property>
-                          <property name="alignment">
-                           <set>Qt::AlignCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                       </layout>
+                       <layout class="QVBoxLayout" name="verticalLayout_46"/>
                       </widget>
                      </item>
                      <item alignment="Qt::AlignHCenter">
@@ -3941,6 +3850,47 @@ border-radius: 15px;</string>
          </widget>
          <widget class="QWidget" name="bills_history">
           <layout class="QVBoxLayout" name="verticalLayout_48">
+           <item alignment="Qt::AlignTop">
+            <widget class="QFrame" name="frame_11">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_63">
+              <item>
+               <widget class="QWidget" name="widget_30" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_62">
+                 <item alignment="Qt::AlignLeft">
+                  <widget class="QPushButton" name="to_home">
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="resources.qrc">
+                     <normaloff>:/blueicons/icons/blue_icons/arrow-left.svg</normaloff>:/blueicons/icons/blue_icons/arrow-left.svg</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>20</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
            <item>
             <widget class="QFrame" name="card_views">
              <property name="frameShape">
@@ -3965,6 +3915,41 @@ border-radius: 15px;</string>
               <enum>QFrame::Raised</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_51">
+              <item>
+               <widget class="QFrame" name="frame_2">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_60">
+                 <item>
+                  <widget class="QWidget" name="widget_29" native="true">
+                   <layout class="QVBoxLayout" name="verticalLayout_61">
+                    <item alignment="Qt::AlignLeft">
+                     <widget class="QPushButton" name="to_dynamic">
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="resources.qrc">
+                        <normaloff>:/blueicons/icons/blue_icons/arrow-left.svg</normaloff>:/blueicons/icons/blue_icons/arrow-left.svg</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>20</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
               <item alignment="Qt::AlignTop">
                <widget class="QFrame" name="frame_6">
                 <property name="frameShape">
