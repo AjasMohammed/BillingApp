@@ -18,7 +18,6 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib import colors
 
 from PySide2.QtCharts import QtCharts
-from functools import partial
 
 
 # PATH WHERE THE DATABASE WILL BE CREATED
@@ -196,7 +195,7 @@ class MainWindow(QMainWindow):
 
     def bar_chart(self, arg):
         bills = self.get_data(arg)
-
+        print(bills)
         categories = []
         amount = []
         if arg == 'This Week':
@@ -209,7 +208,9 @@ class MainWindow(QMainWindow):
             for week, amt in bills.items():
                 # categories.append(f"week-{week}")
                 week = self.date_calc(week)
-                categories.append(week)
+                start = "/".join(week[0].split('-')[1:])
+                end = "/".join(week[1].split('-')[1:])
+                categories.append(f"({start} - {end})")
                 amount.append(amt)
         
         n = max(amount)
@@ -269,6 +270,8 @@ class MainWindow(QMainWindow):
             # Calculate the end of the current week (Sunday)
             end_of_week = start_of_week + timedelta(days=6)
 
+            print(start_of_week, end_of_week)
+
             self.query.prepare("""
                 SELECT DATE(created_date) AS week_number, SUM(total) FROM bill_info 
                 WHERE created_date BETWEEN :start_date AND :end_date
@@ -276,8 +279,8 @@ class MainWindow(QMainWindow):
                 ORDER BY created_date
             """)
 
-            self.query.bindValue(":start_date", str(start_of_week))
-            self.query.bindValue(":end_date", str(end_of_week))
+            self.query.bindValue(":start_date", str(start_of_week.date()))
+            self.query.bindValue(":end_date", str(end_of_week.date()))
 
             if self.query.exec_():
                 print("Done")
@@ -328,7 +331,7 @@ class MainWindow(QMainWindow):
             bill['bill_date']  = self.query.value(0)
             bill["bill_amount"] = self.query.value(1)
             bills.append(bill)
-
+        print(bills)
         return bills
 
 
@@ -733,7 +736,7 @@ class MainWindow(QMainWindow):
         bill = self.__fetch_bill(bill_name)
 
         model = QStandardItemModel(len(bill), 4)
-        model.setHorizontalHeaderLabels(["<b>Name</b>", "<b>ID</b>", "<b>Price</b>", "<b>Quantity</b>"])
+        model.setHorizontalHeaderLabels(["Name", "ID", "Price", "Quantity"])
 
         # Populate the model with data from the list of dictionaries
         for row, product in enumerate(bill):
