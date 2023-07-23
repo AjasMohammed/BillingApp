@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'logintFFmCQ.ui'
+## Form generated from reading UI file 'loginiNwMIz.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -31,6 +31,9 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.auth_frame.sizePolicy().hasHeightForWidth())
         self.auth_frame.setSizePolicy(sizePolicy)
         self.auth_frame.setMaximumSize(QSize(16777215, 438))
+        font = QFont()
+        font.setPointSize(10)
+        self.auth_frame.setFont(font)
         self.signup_frame = QWidget()
         self.signup_frame.setObjectName(u"signup_frame")
         self.verticalLayout_3 = QVBoxLayout(self.signup_frame)
@@ -42,6 +45,8 @@ class Ui_MainWindow(object):
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
         self.frame.setSizePolicy(sizePolicy1)
+        self.frame.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"border-radius: 20px;")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.frame)
@@ -69,19 +74,22 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.pushButton = QPushButton(self.widget_16)
         self.pushButton.setObjectName(u"pushButton")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.pushButton.sizePolicy().hasHeightForWidth())
         self.pushButton.setSizePolicy(sizePolicy2)
+        self.pushButton.setMinimumSize(QSize(100, 0))
         self.pushButton.setMaximumSize(QSize(16777215, 100))
+        self.pushButton.setStyleSheet(u"border:3px solid #004cff;\n"
+"border-radius:50px")
         icon1 = QIcon()
         icon1.addFile(u":/blueicons/icons/blue_icons/user.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton.setIcon(icon1)
         self.pushButton.setIconSize(QSize(60, 110))
         self.pushButton.setFlat(True)
 
-        self.verticalLayout_14.addWidget(self.pushButton)
+        self.verticalLayout_14.addWidget(self.pushButton, 0, Qt.AlignHCenter|Qt.AlignTop)
 
 
         self.verticalLayout_2.addWidget(self.widget_16, 0, Qt.AlignTop)
@@ -100,19 +108,21 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setContentsMargins(-1, -1, 15, -1)
         self.label = QLabel(self.widget_3)
         self.label.setObjectName(u"label")
-        font = QFont()
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label.setFont(font)
+        font1 = QFont()
+        font1.setPointSize(12)
+        font1.setBold(True)
+        font1.setWeight(75)
+        self.label.setFont(font1)
 
         self.horizontalLayout.addWidget(self.label)
 
         self.username_field_signup = QLineEdit(self.widget_3)
         self.username_field_signup.setObjectName(u"username_field_signup")
-        font1 = QFont()
-        font1.setPointSize(12)
-        self.username_field_signup.setFont(font1)
+        self.username_field_signup.setMinimumSize(QSize(150, 27))
+        self.username_field_signup.setFont(font)
+        self.username_field_signup.setStyleSheet(u"border-radius: 10px;\n"
+"border: 1px solid;\n"
+"border-color: rgb(156, 156, 156);")
 
         self.horizontalLayout.addWidget(self.username_field_signup)
 
@@ -127,13 +137,17 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setContentsMargins(-1, -1, 15, -1)
         self.label_2 = QLabel(self.widget_4)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setFont(font)
+        self.label_2.setFont(font1)
 
         self.horizontalLayout_2.addWidget(self.label_2)
 
         self.password_field_signup = QLineEdit(self.widget_4)
         self.password_field_signup.setObjectName(u"password_field_signup")
-        self.password_field_signup.setFont(font1)
+        self.password_field_signup.setMinimumSize(QSize(150, 27))
+        self.password_field_signup.setFont(font)
+        self.password_field_signup.setStyleSheet(u"border-radius: 10px;\n"
+"border: 1px solid;\n"
+"border-color: rgb(156, 156, 156);")
         self.password_field_signup.setInputMethodHints(Qt.ImhHiddenText|Qt.ImhNoAutoUppercase|Qt.ImhNoPredictiveText|Qt.ImhSensitiveData)
         self.password_field_signup.setEchoMode(QLineEdit.Password)
 
@@ -148,13 +162,17 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.label_3 = QLabel(self.widget_6)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setFont(font)
+        self.label_3.setFont(font1)
 
         self.horizontalLayout_3.addWidget(self.label_3)
 
         self.company_name_field = QLineEdit(self.widget_6)
         self.company_name_field.setObjectName(u"company_name_field")
-        self.company_name_field.setFont(font1)
+        self.company_name_field.setMinimumSize(QSize(150, 27))
+        self.company_name_field.setFont(font)
+        self.company_name_field.setStyleSheet(u"border-radius: 10px;\n"
+"border: 1px solid;\n"
+"border-color: rgb(156, 156, 156);")
 
         self.horizontalLayout_3.addWidget(self.company_name_field)
 
@@ -166,14 +184,12 @@ class Ui_MainWindow(object):
         self.verticalLayout_6 = QVBoxLayout(self.widget_5)
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.verticalLayout_6.setContentsMargins(9, 9, 9, 9)
+        self.verticalLayout_6.setContentsMargins(9, 15, 9, 9)
         self.signup_btn = QPushButton(self.widget_5)
         self.signup_btn.setObjectName(u"signup_btn")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.signup_btn.sizePolicy().hasHeightForWidth())
-        self.signup_btn.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.signup_btn.sizePolicy().hasHeightForWidth())
+        self.signup_btn.setSizePolicy(sizePolicy2)
+        self.signup_btn.setMinimumSize(QSize(115, 35))
         self.signup_btn.setMaximumSize(QSize(212, 47))
         font2 = QFont()
         font2.setPointSize(16)
@@ -211,6 +227,8 @@ class Ui_MainWindow(object):
         self.frame_2.setObjectName(u"frame_2")
         sizePolicy1.setHeightForWidth(self.frame_2.sizePolicy().hasHeightForWidth())
         self.frame_2.setSizePolicy(sizePolicy1)
+        self.frame_2.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"border-radius: 20px;")
         self.frame_2.setFrameShape(QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Raised)
         self.verticalLayout_4 = QVBoxLayout(self.frame_2)
@@ -221,9 +239,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.goto_signup = QPushButton(self.widget_13)
         self.goto_signup.setObjectName(u"goto_signup")
-        font3 = QFont()
-        font3.setPointSize(10)
-        self.goto_signup.setFont(font3)
+        self.goto_signup.setFont(font)
         self.goto_signup.setLayoutDirection(Qt.RightToLeft)
         self.goto_signup.setIcon(icon)
         self.goto_signup.setIconSize(QSize(20, 20))
@@ -234,16 +250,26 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addWidget(self.widget_13)
 
-        self.pushButton_2 = QPushButton(self.frame_2)
+        self.widget_8 = QWidget(self.frame_2)
+        self.widget_8.setObjectName(u"widget_8")
+        self.horizontalLayout_4 = QHBoxLayout(self.widget_8)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.pushButton_2 = QPushButton(self.widget_8)
         self.pushButton_2.setObjectName(u"pushButton_2")
         sizePolicy2.setHeightForWidth(self.pushButton_2.sizePolicy().hasHeightForWidth())
         self.pushButton_2.setSizePolicy(sizePolicy2)
+        self.pushButton_2.setMinimumSize(QSize(100, 0))
         self.pushButton_2.setMaximumSize(QSize(16777215, 100))
+        self.pushButton_2.setStyleSheet(u"border:3px solid #004cff;\n"
+"border-radius:50px")
         self.pushButton_2.setIcon(icon1)
         self.pushButton_2.setIconSize(QSize(60, 110))
         self.pushButton_2.setFlat(True)
 
-        self.verticalLayout_4.addWidget(self.pushButton_2)
+        self.horizontalLayout_4.addWidget(self.pushButton_2, 0, Qt.AlignHCenter|Qt.AlignTop)
+
+
+        self.verticalLayout_4.addWidget(self.widget_8, 0, Qt.AlignVCenter)
 
         self.widget_2 = QWidget(self.frame_2)
         self.widget_2.setObjectName(u"widget_2")
@@ -259,13 +285,19 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7.setContentsMargins(-1, -1, 15, -1)
         self.label_7 = QLabel(self.widget_7)
         self.label_7.setObjectName(u"label_7")
-        self.label_7.setFont(font)
+        self.label_7.setFont(font1)
 
         self.horizontalLayout_7.addWidget(self.label_7)
 
         self.username_field_login = QLineEdit(self.widget_7)
         self.username_field_login.setObjectName(u"username_field_login")
-        self.username_field_login.setFont(font1)
+        self.username_field_login.setMinimumSize(QSize(150, 27))
+        self.username_field_login.setFont(font)
+        self.username_field_login.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.username_field_login.setStyleSheet(u"border-radius: 10px;\n"
+"border: 1px solid;\n"
+"border-color: rgb(156, 156, 156);")
+        self.username_field_login.setClearButtonEnabled(False)
 
         self.horizontalLayout_7.addWidget(self.username_field_login)
 
@@ -280,13 +312,17 @@ class Ui_MainWindow(object):
         self.horizontalLayout_8.setContentsMargins(-1, -1, 15, -1)
         self.label_8 = QLabel(self.widget_12)
         self.label_8.setObjectName(u"label_8")
-        self.label_8.setFont(font)
+        self.label_8.setFont(font1)
 
         self.horizontalLayout_8.addWidget(self.label_8)
 
         self.password_field_login = QLineEdit(self.widget_12)
         self.password_field_login.setObjectName(u"password_field_login")
-        self.password_field_login.setFont(font1)
+        self.password_field_login.setMinimumSize(QSize(150, 27))
+        self.password_field_login.setFont(font)
+        self.password_field_login.setStyleSheet(u"border-radius: 10px;\n"
+"border: 1px solid;\n"
+"border-color: rgb(156, 156, 156);")
         self.password_field_login.setInputMethodHints(Qt.ImhHiddenText|Qt.ImhNoAutoUppercase|Qt.ImhNoPredictiveText|Qt.ImhSensitiveData)
         self.password_field_login.setEchoMode(QLineEdit.Password)
 
@@ -300,11 +336,12 @@ class Ui_MainWindow(object):
         self.verticalLayout_10 = QVBoxLayout(self.widget_14)
         self.verticalLayout_10.setSpacing(0)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.verticalLayout_10.setContentsMargins(9, 9, 9, 9)
+        self.verticalLayout_10.setContentsMargins(9, 15, 9, 9)
         self.login_btn = QPushButton(self.widget_14)
         self.login_btn.setObjectName(u"login_btn")
-        sizePolicy3.setHeightForWidth(self.login_btn.sizePolicy().hasHeightForWidth())
-        self.login_btn.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.login_btn.sizePolicy().hasHeightForWidth())
+        self.login_btn.setSizePolicy(sizePolicy2)
+        self.login_btn.setMinimumSize(QSize(115, 35))
         self.login_btn.setMaximumSize(QSize(212, 37))
         self.login_btn.setFont(font2)
         self.login_btn.setStyleSheet(u"background-color: #004cff;\n"
@@ -349,6 +386,8 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        self.auth_frame.setStyleSheet(QCoreApplication.translate("MainWindow", u"border-radius: 10px;\n"
+"border-color: rgb(156, 156, 156);", None))
         self.goto_login.setText(QCoreApplication.translate("MainWindow", u"Existing User", None))
         self.pushButton.setText("")
         self.label.setText(QCoreApplication.translate("MainWindow", u"User Name      :", None))

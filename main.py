@@ -1,6 +1,7 @@
 import calendar
 import sys
 from datetime import datetime, timedelta
+import time
 
 from ui_dashboard import *
 from ui_login import Ui_MainWindow as Ui_Loginwindow
@@ -74,13 +75,10 @@ class MainWindow(QMainWindow):
                 self.id = query.value(0)
                 self.company = query.value(1)
         else:
-            print("Query execution failed.")
-        
+            print("Query execution failed.")        
         
         # Initialize dynamic_frame to None
         self.dynamic_frame = None
-
-        
 
         # CREATES A DB TO STORE USER SPECIFIC INFORMATION
         folder_path = self.create_user_folder()
@@ -92,7 +90,7 @@ class MainWindow(QMainWindow):
 
         self.query = QSqlQuery(self.user_db)
 
-        self.query.exec_("""CREATE TABLE IF NOT EXISTS bill_info (
+        self.query.prepare("""CREATE TABLE IF NOT EXISTS bill_info (
                          bill_id INTEGER PRIMARY KEY AUTOINCREMENT,
                          bill_name TEXT NOT NULL,
                          total REAL NOT NULL,
@@ -115,11 +113,12 @@ class MainWindow(QMainWindow):
         self.ui.save_btn.clicked.connect(self.save_table)
         self.ui.more_btn.clicked.connect(self.create_dynamic_frame)
         self.ui.vis_btn.clicked.connect(self.chart_selection)
+        self.ui.logout_btn.clicked.connect(self.log_out)
 
         self.ui.to_dynamic.clicked.connect(lambda: self.ui.body_frame.setCurrentWidget(self.ui.bills_history))
         self.ui.to_home.clicked.connect(lambda: self.ui.body_frame.setCurrentWidget(self.ui.dashboard))
 
-
+        
         ########################################################################
         # APPLY JSON STYLESHEET
         ########################################################################
@@ -127,9 +126,9 @@ class MainWindow(QMainWindow):
         # self.ui = Ui_MainWindow / user interface class
         loadJsonStyle(self, self.ui)
         ########################################################################
+
         self.show()
 
-        self.bar_chart('This Week')
 
 
     def create_user_folder(self):
@@ -148,9 +147,11 @@ class MainWindow(QMainWindow):
         self.ui.bill_table.horizontalHeader().setVisible(True)
 
         self.dashboard_billcard()
+        self.bar_chart('This Week')
 
 
         ###########CREATE CHART###############
+
 
     def chart_selection(self):
         time_frame = self.ui.chart_timeframe.currentText()
@@ -165,7 +166,6 @@ class MainWindow(QMainWindow):
             self.bar_chart(time_frame)
         elif time_frame == 'This Month':
             self.bar_chart(time_frame)
-
 
 
     @staticmethod
@@ -364,7 +364,6 @@ class MainWindow(QMainWindow):
             self.ui.product_id_field.clear()
             self.ui.product_price_field.clear()
             self.ui.product_qty_field.clear()
-
 
 
     def save_table(self):
@@ -597,7 +596,6 @@ class MainWindow(QMainWindow):
         self.ui.body_frame.setCurrentWidget(self.ui.bill_history)
             
 
-
     def __bill_del(self, bill_name, bill_id):
         reply = QMessageBox.question(None, "Confirm Deletion", "Are you sure you want to delete?", 
                                     QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
@@ -799,11 +797,24 @@ class MainWindow(QMainWindow):
             return bills
 
 
+    def log_out(self):
+        self.username = None
+        self.company = None
+        self.id = None
+        self.password = None
+        
+        time.sleep(1)
+        self.close()
+
+
+
 class LoginWindow(QMainWindow):
     def __init__(self, parent=None):
         QMainWindow.__init__(self)
         self.ui = Ui_Loginwindow()
         self.ui.setupUi(self)
+
+        db.open()
 
         # BUTTON CLICKS
         self.ui.goto_login.clicked.connect(lambda : self.ui.auth_frame.setCurrentWidget(self.ui.login_frame))
@@ -822,6 +833,7 @@ class LoginWindow(QMainWindow):
 
         self.username = ""
         self.password = ""
+
         self.company_name = ""
 
         self.auto_complete()
@@ -905,7 +917,6 @@ class LoginWindow(QMainWindow):
         window = MainWindow(self.username, self.password)
 
         self.close()
-        ui = window.ui
         window.load_ui_info()
         window.show()
 
@@ -915,12 +926,9 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
 
 
-    # login_window = LoginWindow()
+    login_window = LoginWindow()
 
-    # login_window.show()
-    window = MainWindow('z', hash_item('z'))
+    login_window.show()
 
-    ui = window.ui
-    window.load_ui_info()
-    window.show()
+
     sys.exit(app.exec_())

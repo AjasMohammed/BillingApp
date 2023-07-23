@@ -29,6 +29,15 @@
         <height>438</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>border-radius: 10px;
+border-color: rgb(156, 156, 156);</string>
+      </property>
       <property name="currentIndex">
        <number>1</number>
       </property>
@@ -41,6 +50,10 @@
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 20px;</string>
           </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
@@ -75,19 +88,29 @@
            <item alignment="Qt::AlignTop">
             <widget class="QWidget" name="widget_16" native="true">
              <layout class="QVBoxLayout" name="verticalLayout_14">
-              <item>
+              <item alignment="Qt::AlignHCenter|Qt::AlignTop">
                <widget class="QPushButton" name="pushButton">
                 <property name="sizePolicy">
-                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>100</width>
+                  <height>0</height>
+                 </size>
                 </property>
                 <property name="maximumSize">
                  <size>
                   <width>16777215</width>
                   <height>100</height>
                  </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:3px solid #004cff;
+border-radius:50px</string>
                 </property>
                 <property name="text">
                  <string/>
@@ -144,10 +167,21 @@
                  </item>
                  <item>
                   <widget class="QLineEdit" name="username_field_signup">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>27</height>
+                    </size>
+                   </property>
                    <property name="font">
                     <font>
-                     <pointsize>12</pointsize>
+                     <pointsize>10</pointsize>
                     </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border-radius: 10px;
+border: 1px solid;
+border-color: rgb(156, 156, 156);</string>
                    </property>
                   </widget>
                  </item>
@@ -179,10 +213,21 @@
                  </item>
                  <item>
                   <widget class="QLineEdit" name="password_field_signup">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>27</height>
+                    </size>
+                   </property>
                    <property name="font">
                     <font>
-                     <pointsize>12</pointsize>
+                     <pointsize>10</pointsize>
                     </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border-radius: 10px;
+border: 1px solid;
+border-color: rgb(156, 156, 156);</string>
                    </property>
                    <property name="inputMethodHints">
                     <set>Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhSensitiveData</set>
@@ -214,10 +259,21 @@
                  </item>
                  <item>
                   <widget class="QLineEdit" name="company_name_field">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>27</height>
+                    </size>
+                   </property>
                    <property name="font">
                     <font>
-                     <pointsize>12</pointsize>
+                     <pointsize>10</pointsize>
                     </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border-radius: 10px;
+border: 1px solid;
+border-color: rgb(156, 156, 156);</string>
                    </property>
                   </widget>
                  </item>
@@ -234,7 +290,7 @@
                   <number>9</number>
                  </property>
                  <property name="topMargin">
-                  <number>9</number>
+                  <number>15</number>
                  </property>
                  <property name="rightMargin">
                   <number>9</number>
@@ -249,6 +305,12 @@
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>115</width>
+                     <height>35</height>
+                    </size>
                    </property>
                    <property name="maximumSize">
                     <size>
@@ -316,6 +378,10 @@ border-radius:12px;</string>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 20px;</string>
+          </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
           </property>
@@ -357,36 +423,52 @@ border-radius:12px;</string>
              </layout>
             </widget>
            </item>
-           <item>
-            <widget class="QPushButton" name="pushButton_2">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>100</height>
-              </size>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="icon">
-              <iconset resource="resources.qrc">
-               <normaloff>:/blueicons/icons/blue_icons/user.svg</normaloff>:/blueicons/icons/blue_icons/user.svg</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>60</width>
-               <height>110</height>
-              </size>
-             </property>
-             <property name="flat">
-              <bool>true</bool>
-             </property>
+           <item alignment="Qt::AlignVCenter">
+            <widget class="QWidget" name="widget_8" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item alignment="Qt::AlignHCenter|Qt::AlignTop">
+               <widget class="QPushButton" name="pushButton_2">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>100</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>100</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:3px solid #004cff;
+border-radius:50px</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="resources.qrc">
+                  <normaloff>:/blueicons/icons/blue_icons/user.svg</normaloff>:/blueicons/icons/blue_icons/user.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>60</width>
+                  <height>110</height>
+                 </size>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </widget>
            </item>
            <item>
@@ -423,13 +505,24 @@ border-radius:12px;</string>
                  </item>
                  <item>
                   <widget class="QLineEdit" name="username_field_login">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>27</height>
+                    </size>
+                   </property>
                    <property name="font">
                     <font>
-                     <pointsize>12</pointsize>
+                     <pointsize>10</pointsize>
                     </font>
                    </property>
                    <property name="contextMenuPolicy">
                     <enum>Qt::DefaultContextMenu</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border-radius: 10px;
+border: 1px solid;
+border-color: rgb(156, 156, 156);</string>
                    </property>
                    <property name="clearButtonEnabled">
                     <bool>false</bool>
@@ -464,10 +557,21 @@ border-radius:12px;</string>
                  </item>
                  <item>
                   <widget class="QLineEdit" name="password_field_login">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>27</height>
+                    </size>
+                   </property>
                    <property name="font">
                     <font>
-                     <pointsize>12</pointsize>
+                     <pointsize>10</pointsize>
                     </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border-radius: 10px;
+border: 1px solid;
+border-color: rgb(156, 156, 156);</string>
                    </property>
                    <property name="inputMethodHints">
                     <set>Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhSensitiveData</set>
@@ -490,7 +594,7 @@ border-radius:12px;</string>
                   <number>9</number>
                  </property>
                  <property name="topMargin">
-                  <number>9</number>
+                  <number>15</number>
                  </property>
                  <property name="rightMargin">
                   <number>9</number>
@@ -505,6 +609,12 @@ border-radius:12px;</string>
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>115</width>
+                     <height>35</height>
+                    </size>
                    </property>
                    <property name="maximumSize">
                     <size>
