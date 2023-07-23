@@ -1,0 +1,16 @@
+{
+    "QCard" : [
+        {
+            "cards" : [
+                "frame_2",
+                "frame"
+            ],
+            "shadow":[{
+                "color": "#000",
+                "blurRadius": 10,
+                "xOffset": 0,
+                "yOffset": 0
+            }]
+        }
+    ]
+}

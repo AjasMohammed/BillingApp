@@ -452,7 +452,7 @@ border-bottom-left-radius: 18px;
        <item>
         <widget class="QCustomStackedWidget" name="body_frame">
          <property name="currentIndex">
-          <number>3</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="dashboard">
           <layout class="QVBoxLayout" name="verticalLayout_32">

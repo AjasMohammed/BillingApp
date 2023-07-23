@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'dashboardkEkfdN.ui'
+## Form generated from reading UI file 'dashboardSIQhTQ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -2282,7 +2282,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.body_frame.setCurrentIndex(3)
+        self.body_frame.setCurrentIndex(0)
         self.profile_btn.setDefault(False)
         self.add_btn.setDefault(False)
         self.save_btn.setDefault(False)

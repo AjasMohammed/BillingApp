@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>622</width>
-    <height>513</height>
+    <height>529</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -523,6 +523,12 @@ border-radius:50px</string>
                     <string notr="true">border-radius: 10px;
 border: 1px solid;
 border-color: rgb(156, 156, 156);</string>
+                   </property>
+                   <property name="frame">
+                    <bool>true</bool>
+                   </property>
+                   <property name="cursorPosition">
+                    <number>0</number>
                    </property>
                    <property name="clearButtonEnabled">
                     <bool>false</bool>
