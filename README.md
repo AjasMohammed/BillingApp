@@ -1,4 +1,34 @@
-# BillingApp
+# Billing Software
+
+The Billing Software is a Python-based application designed to handle billing and invoicing tasks for small businesses and shops. It provides a user-friendly interface for creating and managing bills, keeping track of sales, and generating invoices for customers.
+
+## Key Features
+
+- Create and manage bills with detailed information such as item names, quantities, and prices.
+- Calculate total amounts and generate invoices for customers.
+- Track sales and view sales reports for specific time periods.
+- Support for multiple users with login authentication and permissions.
+- Interactive charts to visualize sales data and trends.
+
+## Technologies Used
+
+- Python programming language
+- PyQt5 for the graphical user interface
+- SQLite database for data storage
+- Qt Charts for data visualization
+
+## Installation
+
+To run the Billing Software, make sure you have Python and PyQt5 installed. Clone the repository, create a virtual environment, and install the required packages from the `requirements.txt` file:
+
+```
+git clone https://github.com/yourusername/billing-software.git
+cd billing-software
+python -m venv venv
+source venv/bin/activate (or venv\Scripts\activate on Windows)
+pip install -r requirements.txt
+python main.py
+```
 
 After installing the packages, navigate to `enve\lib\site-packages\Custom_Widgets\Widgets.py` and open the `Widgets.py` file. Apply the following changes:
 
